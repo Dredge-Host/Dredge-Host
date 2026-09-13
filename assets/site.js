@@ -52,8 +52,6 @@
               '<a href="' + root + 'index.html#features"' + (active === 'features' ? ' aria-current="page"' : '') + '>Features</a>' +
               '<a href="' + root + 'pricing.html"' + (active === 'pricing' ? ' aria-current="page"' : '') + '>Pricing</a>' +
               '<a href="' + root + 'about.html"' + (active === 'about' ? ' aria-current="page"' : '') + '>About</a>' +
-              '<a href="' + root + 'docs.html"' + (active === 'docs' ? ' aria-current="page"' : '') + '>Docs</a>' +
-              '<a href="' + root + 'blog.html"' + (active === 'blog' ? ' aria-current="page"' : '') + '>Blog</a>' +
               '<a href="' + root + 'status.html"' + (active === 'status' ? ' aria-current="page"' : '') + '>Status</a>' +
               '<a class="nav-cta" href="' + root + 'index.html#get-started">Get started</a>' +
             '</nav>' +
@@ -82,8 +80,6 @@
               '<div class="footer-col">' +
                 '<span class="footer-head">Company</span>' +
                 '<a href="' + root + 'about.html">About</a>' +
-                '<a href="' + root + 'blog.html">Blog</a>' +
-                '<a href="' + root + 'docs.html">Docs</a>' +
                 '<a href="' + root + 'contact.html">Contact</a>' +
               '</div>' +
               '<div class="footer-col">' +
