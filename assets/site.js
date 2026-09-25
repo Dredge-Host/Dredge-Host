@@ -90,7 +90,7 @@
               '</div>' +
               '<div class="footer-col">' +
                 '<span class="footer-head">Connect</span>' +
-                '<a href="mailto:mail@dredgehost.com">Email</a>' +
+                '<a href="mailto:support@dredgehost.com">Email</a>' +
                 '<a href="https://dredgehost.com/">Website</a>' +
                 '<a href="https://github.com/Dredge-Host" rel="noopener">GitHub</a>' +
               '</div>' +
@@ -189,7 +189,7 @@
                     return res.json().then(function (data) {
                         var msg = (data && data.errors && data.errors.length)
                             ? data.errors.map(function (x) { return x.message; }).join(', ')
-                            : 'Something went wrong. Please try again, or email mail@dredgehost.com.';
+                            : 'Something went wrong. Please try again, or email support@dredgehost.com.';
                         throw new Error(msg);
                     });
                 }
@@ -244,7 +244,7 @@
                     return res.json().then(function (data) {
                         var m = (data && data.errors && data.errors.length)
                             ? data.errors.map(function (x) { return x.message; }).join(', ')
-                            : 'Something went wrong. Please try again, or email mail@dredgehost.com.';
+                            : 'Something went wrong. Please try again, or email support@dredgehost.com.';
                         throw new Error(m);
                     });
                 }
