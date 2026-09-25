@@ -10,16 +10,16 @@
     'use strict';
 
     /* ============================================================
-       CONFIG — edit these two lines after you create the forms.
+       CONFIG — edit this line after you create the signup form.
        1. Make a free account at https://formspree.io
        2. Create a form, copy its endpoint (looks like
           https://formspree.io/f/abcdwxyz)
        3. Paste the "abcdwxyz" part below (the form ID).
+       The contact page links to the WHMCS contact form instead.
        Leave as "" to keep the site in demo mode (validates and shows
        a success message locally, but does not send anywhere).
        ============================================================ */
     var NOTIFY_FORM_ID  = "";   // e.g. "abcdwxyz"  -> notify / signup form
-    var CONTACT_FORM_ID = "";   // e.g. "wxyzabcd"  -> contact page form
     var FORMSPREE = "https://formspree.io/f/";
 
     /* Optional: privacy-friendly analytics (Plausible). Leave blank to disable.
@@ -197,61 +197,6 @@
             }).catch(function (err) {
                 status.textContent = err.message || 'Network error \u2014 please try again.';
                 status.className = 'notify-status err';
-                if (btn) { btn.disabled = false; btn.textContent = label; }
-            });
-        });
-    }
-
-    /* ---- Contact form ---- */
-    var cform = document.getElementById('contactForm');
-    var cstatus = document.getElementById('contactStatus');
-    if (cform && cstatus) {
-        cform.addEventListener('submit', function (e) {
-            e.preventDefault();
-            var name = (cform.querySelector('#cname').value || '').trim();
-            var email = (cform.querySelector('#cemail').value || '').trim();
-            var msg = (cform.querySelector('#cmsg').value || '').trim();
-            var okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-            if (!name || !okEmail || !msg) {
-                cstatus.textContent = 'Please fill in your name, a valid email, and a message.';
-                cstatus.className = 'form-status err';
-                return;
-            }
-
-            if (!CONTACT_FORM_ID) {
-                cstatus.textContent = 'Thanks \u2014 your message is ready to send. (Demo mode \u2014 add a Formspree ID to deliver it.)';
-                cstatus.className = 'form-status ok';
-                cform.reset();
-                return;
-            }
-
-            var btn = cform.querySelector('button[type="submit"]');
-            var label = btn ? btn.textContent : '';
-            if (btn) { btn.disabled = true; btn.textContent = 'Sending\u2026'; }
-            cstatus.textContent = '';
-            cstatus.className = 'form-status';
-
-            fetch(FORMSPREE + CONTACT_FORM_ID, {
-                method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: new FormData(cform)
-            }).then(function (res) {
-                if (res.ok) {
-                    cstatus.textContent = 'Thanks \u2014 your message is on its way. We\u2019ll reply by email.';
-                    cstatus.className = 'form-status ok';
-                    cform.reset();
-                } else {
-                    return res.json().then(function (data) {
-                        var m = (data && data.errors && data.errors.length)
-                            ? data.errors.map(function (x) { return x.message; }).join(', ')
-                            : 'Something went wrong. Please try again, or email support@dredgehost.com.';
-                        throw new Error(m);
-                    });
-                }
-            }).catch(function (err) {
-                cstatus.textContent = err.message || 'Network error \u2014 please try again.';
-                cstatus.className = 'form-status err';
                 if (btn) { btn.disabled = false; btn.textContent = label; }
             });
         });
