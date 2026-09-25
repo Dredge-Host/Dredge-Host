@@ -67,14 +67,13 @@
           '<div class="wrap footer-inner">' +
             '<div class="footer-brand">' +
               '<img src="' + root + 'assets/logo-horizontal-light.png" alt="Dredge Host" class="footer-logo">' +
-              '<p class="footer-blurb">Fast, honest, independent web hosting. Twenty-five accounts, published limits.</p>' +
+              '<p class="footer-blurb">Fast, honest, independent web hosting. Every limit published.</p>' +
             '</div>' +
             '<nav class="footer-links" aria-label="Footer">' +
               '<div class="footer-col">' +
                 '<span class="footer-head">Product</span>' +
                 '<a href="' + (root || './') + '#features">Features</a>' +
                 '<a href="' + root + 'pricing.html">Pricing</a>' +
-                '<a href="' + (root || './') + '#capacity">Capacity</a>' +
                 '<a href="' + root + 'status.html">Status</a>' +
                 '<a href="' + (root || './') + '#get-started">Get started</a>' +
               '</div>' +
@@ -87,6 +86,8 @@
                 '<span class="footer-head">Legal</span>' +
                 '<a href="' + root + 'privacy.html">Privacy</a>' +
                 '<a href="' + root + 'terms.html">Terms</a>' +
+                '<a href="' + root + 'aup.html">Acceptable Use</a>' +
+                '<a href="' + root + 'refunds.html">Refunds</a>' +
               '</div>' +
               '<div class="footer-col">' +
                 '<span class="footer-head">Connect</span>' +
