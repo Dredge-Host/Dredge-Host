@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status | Dredge Host</title>
     <meta name="description" content="Dredge Host system status. Real-time service health and incident history.">
-    <link rel="canonical" href="https://dredge.aubergineux.com/status.html">
+    <link rel="canonical" href="https://dredgehost.com/status.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
     <meta property="og:title" content="Status | Dredge Host">
     <meta property="og:description" content="Real-time service health for Dredge Host.">
-    <meta property="og:image" content="https://dredge.aubergineux.com/assets/og-image.png">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://dredgehost.com/status.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0f5c58">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/dredge-app-tile-512.png">
@@ -17,13 +20,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Status",
+          "item": "https://dredgehost.com/status.html"
+        }
+      ]
+    }
+    </script>
 </head>
 <body data-root="" data-active="status">
     <div id="site-header"></div>
     <main id="main">
         <section class="page-hero">
             <div class="wrap">
-                <p class="crumb"><a href="index.html">Home</a> / Status</p>
+                <p class="crumb"><a href="./">Home</a> / Status</p>
                 <p class="eyebrow">System status</p>
                 <h1>Honest uptime, in plain sight.</h1>
                 <p class="lede">Live service health for the Dredge Host platform, updated continuously.

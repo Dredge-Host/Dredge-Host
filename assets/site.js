@@ -23,7 +23,7 @@
     var FORMSPREE = "https://formspree.io/f/";
 
     /* Optional: privacy-friendly analytics (Plausible). Leave blank to disable.
-       Set to your live domain, e.g. "dredge.aubergineux.com", after you add
+       Set to your live domain, e.g. "dredgehost.com", after you add
        the site at https://plausible.io — no cookies, no personal data. */
     var PLAUSIBLE_DOMAIN = "";
 
@@ -45,15 +45,15 @@
         '<a class="skip-link" href="#main">Skip to content</a>' +
         '<header class="site-header">' +
           '<div class="wrap header-inner">' +
-            '<a class="brand" href="' + root + 'index.html" aria-label="Dredge Host home">' +
-              '<img src="' + root + 'assets/logo-horizontal.png" alt="Dredge Hosting" class="brand-logo">' +
+            '<a class="brand" href="' + (root || './') + '" aria-label="Dredge Host home">' +
+              '<img src="' + root + 'assets/logo-horizontal.png" alt="Dredge Host" class="brand-logo">' +
             '</a>' +
             '<nav class="site-nav" aria-label="Primary">' +
-              '<a href="' + root + 'index.html#features"' + (active === 'features' ? ' aria-current="page"' : '') + '>Features</a>' +
+              '<a href="' + (root || './') + '#features"' + (active === 'features' ? ' aria-current="page"' : '') + '>Features</a>' +
               '<a href="' + root + 'pricing.html"' + (active === 'pricing' ? ' aria-current="page"' : '') + '>Pricing</a>' +
               '<a href="' + root + 'about.html"' + (active === 'about' ? ' aria-current="page"' : '') + '>About</a>' +
               '<a href="' + root + 'status.html"' + (active === 'status' ? ' aria-current="page"' : '') + '>Status</a>' +
-              '<a class="nav-cta" href="' + root + 'index.html#get-started">Get started</a>' +
+              '<a class="nav-cta" href="' + (root || './') + '#get-started">Get started</a>' +
             '</nav>' +
             '<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">' +
               '<span></span><span></span><span></span>' +
@@ -66,17 +66,17 @@
         '<footer class="site-footer">' +
           '<div class="wrap footer-inner">' +
             '<div class="footer-brand">' +
-              '<img src="' + root + 'assets/logo-horizontal-light.png" alt="Dredge Hosting" class="footer-logo">' +
+              '<img src="' + root + 'assets/logo-horizontal-light.png" alt="Dredge Host" class="footer-logo">' +
               '<p class="footer-blurb">Fast, honest, independent web hosting. Twenty-five accounts, published limits.</p>' +
             '</div>' +
             '<nav class="footer-links" aria-label="Footer">' +
               '<div class="footer-col">' +
                 '<span class="footer-head">Product</span>' +
-                '<a href="' + root + 'index.html#features">Features</a>' +
+                '<a href="' + (root || './') + '#features">Features</a>' +
                 '<a href="' + root + 'pricing.html">Pricing</a>' +
-                '<a href="' + root + 'index.html#capacity">Capacity</a>' +
+                '<a href="' + (root || './') + '#capacity">Capacity</a>' +
                 '<a href="' + root + 'status.html">Status</a>' +
-                '<a href="' + root + 'index.html#get-started">Get started</a>' +
+                '<a href="' + (root || './') + '#get-started">Get started</a>' +
               '</div>' +
               '<div class="footer-col">' +
                 '<span class="footer-head">Company</span>' +
@@ -91,7 +91,7 @@
               '<div class="footer-col">' +
                 '<span class="footer-head">Connect</span>' +
                 '<a href="mailto:mail@dredgehost.com">Email</a>' +
-                '<a href="https://dredge.aubergineux.com">Website</a>' +
+                '<a href="https://dredgehost.com/">Website</a>' +
                 '<a href="https://github.com/Dredge-Host" rel="noopener">GitHub</a>' +
               '</div>' +
             '</nav>' +

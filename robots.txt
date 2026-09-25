@@ -3,4 +3,4 @@ Allow: /
 Disallow: /thanks.html
 Disallow: /404.html
 
-Sitemap: https://dredge.aubergineux.com/sitemap.xml
+Sitemap: https://dredgehost.com/sitemap.xml
