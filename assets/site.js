@@ -1,7 +1,7 @@
 /* ============================================================
    Dredge Host — shared site script
    Injects the header + footer on every page, wires up nav,
-   scroll reveals, the notify form, and the current year.
+   scroll reveals, the FAQ accordion, and the current year.
    Pages set data-active on <body> to highlight the right nav link.
    Use data-root="" for root pages and data-root="../" for pages
    in subfolders so links and asset paths stay correct.
@@ -9,23 +9,9 @@
 (function () {
     'use strict';
 
-    /* ============================================================
-       CONFIG — edit this line after you create the signup form.
-       1. Make a free account at https://formspree.io
-       2. Create a form, copy its endpoint (looks like
-          https://formspree.io/f/abcdwxyz)
-       3. Paste the "abcdwxyz" part below (the form ID).
-       The contact page links to the WHMCS contact form instead.
-       Leave as "" to keep the site in demo mode (validates and shows
-       a success message locally, but does not send anywhere).
-       ============================================================ */
-    var NOTIFY_FORM_ID  = "";   // e.g. "abcdwxyz"  -> notify / signup form
-    var FORMSPREE = "https://formspree.io/f/";
-
-    /* Optional: privacy-friendly analytics (Plausible). Leave blank to disable.
-       Set to your live domain, e.g. "dredgehost.com", after you add
-       the site at https://plausible.io — no cookies, no personal data. */
-    var PLAUSIBLE_DOMAIN = "";
+    /* Privacy-friendly analytics (Plausible): no cookies, no personal data.
+       The site must also be added at https://plausible.io. Blank disables it. */
+    var PLAUSIBLE_DOMAIN = "dredgehost.com";
 
     var root = document.body.getAttribute('data-root') || '';
     var active = document.body.getAttribute('data-active') || '';
@@ -46,7 +32,7 @@
         '<header class="site-header">' +
           '<div class="wrap header-inner">' +
             '<a class="brand" href="' + (root || './') + '" aria-label="Dredge Host home">' +
-              '<img src="' + root + 'assets/logo-horizontal.png" alt="Dredge Host" class="brand-logo">' +
+              '<img src="' + root + 'assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150">' +
             '</a>' +
             '<nav class="site-nav" aria-label="Primary">' +
               '<a href="' + (root || './') + '#features"' + (active === 'features' ? ' aria-current="page"' : '') + '>Features</a>' +
@@ -66,7 +52,7 @@
         '<footer class="site-footer">' +
           '<div class="wrap footer-inner">' +
             '<div class="footer-brand">' +
-              '<img src="' + root + 'assets/logo-horizontal-light.png" alt="Dredge Host" class="footer-logo">' +
+              '<img src="' + root + 'assets/logo-light.png" alt="Dredge Host" class="footer-logo" width="296" height="150">' +
               '<p class="footer-blurb">Fast, honest, independent web hosting. Every limit published.</p>' +
             '</div>' +
             '<nav class="footer-links" aria-label="Footer">' +
@@ -144,62 +130,6 @@
         revealTargets.forEach(function (el) { io.observe(el); });
     } else {
         revealTargets.forEach(function (el) { el.classList.add('in'); });
-    }
-
-    /* ---- Notify form ---- */
-    var form = document.getElementById('notifyForm');
-    var status = document.getElementById('notifyStatus');
-    if (form && status) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            var input = form.querySelector('input[type="email"]');
-            var value = (input.value || '').trim();
-            var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-
-            if (!valid) {
-                status.textContent = 'That email doesn\u2019t look right \u2014 mind checking it?';
-                status.className = 'notify-status err';
-                input.focus();
-                return;
-            }
-
-            // Demo mode: no endpoint configured yet.
-            if (!NOTIFY_FORM_ID) {
-                status.textContent = 'Thanks \u2014 you\u2019re signed up.';
-                status.className = 'notify-status ok';
-                form.reset();
-                return;
-            }
-
-            // Live mode: POST to Formspree.
-            var btn = form.querySelector('button[type="submit"]');
-            var label = btn ? btn.textContent : '';
-            if (btn) { btn.disabled = true; btn.textContent = 'Sending\u2026'; }
-            status.textContent = '';
-            status.className = 'notify-status';
-
-            fetch(FORMSPREE + NOTIFY_FORM_ID, {
-                method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: new FormData(form)
-            }).then(function (res) {
-                if (res.ok) {
-                    // Prefer a dedicated thank-you page if present.
-                    window.location.href = root + 'thanks.html';
-                } else {
-                    return res.json().then(function (data) {
-                        var msg = (data && data.errors && data.errors.length)
-                            ? data.errors.map(function (x) { return x.message; }).join(', ')
-                            : 'Something went wrong. Please try again, or email support@dredgehost.com.';
-                        throw new Error(msg);
-                    });
-                }
-            }).catch(function (err) {
-                status.textContent = err.message || 'Network error \u2014 please try again.';
-                status.className = 'notify-status err';
-                if (btn) { btn.disabled = false; btn.textContent = label; }
-            });
-        });
     }
 
     /* ---- FAQ accordion ---- */

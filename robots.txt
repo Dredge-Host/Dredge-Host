@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /thanks.html
 Disallow: /404.html
 
 Sitemap: https://dredgehost.com/sitemap.xml

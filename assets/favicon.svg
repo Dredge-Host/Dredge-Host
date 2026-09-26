@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Dredge">
+  <title>Dredge favicon</title>
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="#0f5c58"/>
+  <g transform="translate(7,5)">
+    <path d="M1 2 L17 2 L15 22 L3 22 Z" fill="#ffffff"/>
+    <rect x="4" y="7" width="10" height="2.6" rx="1" fill="#0f5c58"/>
+    <rect x="4" y="12" width="9" height="2.6" rx="1" fill="#0f5c58"/>
+    <path d="M9 24 C7 27 7 30 9 31.5 C11 30 11 27 9 24 Z" fill="#ffffff"/>
+  </g>
+</svg>
