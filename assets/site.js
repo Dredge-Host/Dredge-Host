@@ -54,7 +54,7 @@
           '<div class="wrap footer-inner">' +
             '<div class="footer-brand">' +
               '<img src="' + root + 'assets/logo-light.png" alt="Dredge Host" class="footer-logo" width="296" height="150">' +
-              '<p class="footer-blurb">Fast, honest, independent web hosting. Every limit published.</p>' +
+              '<p class="footer-blurb">Fast, honest, independent web hosting.</p>' +
             '</div>' +
             '<nav class="footer-links" aria-label="Footer">' +
               '<div class="footer-col">' +
