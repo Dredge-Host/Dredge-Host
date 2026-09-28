@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy a domain from Porkbun or Namecheap and connect it | Dredge Host Guides</title>
+    <meta name="description" content="Register a domain at Porkbun or Namecheap and point it at your Dredge account.">
+    <link rel="canonical" href="https://dredgehost.com/guides/connect-domain.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Buy a domain from Porkbun or Namecheap and connect it | Dredge Host Guides">
+    <meta property="og:description" content="Register a domain at Porkbun or Namecheap and point it at your Dredge account.">
+    <meta property="og:url" content="https://dredgehost.com/guides/connect-domain.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Buy a domain from Porkbun or Namecheap and connect it",
+          "item": "https://dredgehost.com/guides/connect-domain.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Domains</p>
+                <p class="eyebrow">Domains &middot; 6 min read</p>
+                <h1>Buy a domain from Porkbun or Namecheap and connect it</h1>
+                <p class="lede">Your domain lives at a registrar and your site lives on Dredge. Connecting them takes about five minutes of clicking and up to 48 hours to spread across the internet.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <p>You connect them by changing the domain's <strong>nameservers</strong>, which tells the
+                rest of the internet to send your visitors (and your email) to Dredge.</p>
+
+                <h2>Before you start</h2>
+                <ul>
+                    <li>A Dredge plan. If you don't have one yet, <a href="../pricing.html">pick a plan</a>
+                    and, when checkout asks about a domain, choose the option to <strong>use a domain
+                    you already own</strong> and type in the domain you're about to buy (or already have).</li>
+                    <li>Your Dredge nameservers. They're in the <strong>welcome email</strong> we send
+                    when your account is set up, and in your client area at
+                    <a href="https://my.dredgehost.com">my.dredgehost.com</a> under your hosting service.
+                    There are two of them and they look like <code>ns1.example.com</code>.</li>
+                </ul>
+
+                <h2>Step 1: Buy the domain</h2>
+                <ol>
+                    <li>Go to <a href="https://porkbun.com" rel="noopener">porkbun.com</a> or
+                    <a href="https://www.namecheap.com" rel="noopener">namecheap.com</a> and search for the name you want.</li>
+                    <li>Add it to your cart. Keep <strong>WHOIS privacy</strong> switched on (both include
+                    it free). You can skip any hosting, email, or website-builder add-ons; Dredge covers those.</li>
+                    <li>Check out and confirm the verification email the registrar sends you. ICANN
+                    requires this, and an unverified domain can be suspended after 15 days.</li>
+                </ol>
+
+                <h2>Step 2a: Change the nameservers at Porkbun</h2>
+                <ol>
+                    <li>Log in and open <strong>Account &rarr; Domain Management</strong>.</li>
+                    <li>Find your domain and hover over or click it to show its <strong>Details</strong>.</li>
+                    <li>Next to <strong>Authoritative Nameservers</strong>, click <strong>Edit</strong>.</li>
+                    <li>Delete the Porkbun nameservers that are there and paste in your two Dredge
+                    nameservers, one per line.</li>
+                    <li>Click <strong>Submit</strong>.</li>
+                </ol>
+
+                <h2>Step 2b: Change the nameservers at Namecheap</h2>
+                <ol>
+                    <li>Log in and open <strong>Domain List</strong> from the left-hand menu.</li>
+                    <li>Click <strong>Manage</strong> next to your domain.</li>
+                    <li>In the <strong>Nameservers</strong> section, change the dropdown from
+                    &ldquo;Namecheap BasicDNS&rdquo; to <strong>Custom DNS</strong>.</li>
+                    <li>Enter your two Dredge nameservers, one in each box.</li>
+                    <li>Click the green <strong>checkmark</strong> to save.</li>
+                </ol>
+
+                <h2>Step 3: Wait, then check</h2>
+                <p>Nameserver changes usually show up within an hour or two, but can take up to
+                48 hours. Once they do:</p>
+                <ul>
+                    <li>Visiting your domain shows your Dredge site (or the default cPanel page if you
+                    haven't uploaded anything yet).</li>
+                    <li>Free HTTPS kicks in by itself. cPanel's AutoSSL checks for newly pointed domains
+                    a few times a day and issues a certificate. If it hasn't after a day, see
+                    <a href="https-everywhere.html">Turn on HTTPS everywhere</a>.</li>
+                </ul>
+
+                <h2>Adding a second domain to the same account</h2>
+                <p>On Channel and Harbor you can host more than one site. Point the extra domain's
+                nameservers at Dredge exactly as above, then in cPanel open
+                <strong>Domains &rarr; Create A New Domain</strong>, enter the domain, and untick
+                &ldquo;Share document root&rdquo; so it gets its own folder. Anything you put in that
+                folder is what the new domain shows.</p>
+
+                <p class="muted-note">Want to keep DNS at your registrar instead? You can, but then
+                you're responsible for keeping the records in sync with us, including the ones email
+                needs. Changing nameservers is simpler and is what we support by default. If you have
+                a reason to do it the other way, <a href="../contact.html">get in touch</a> and we'll send
+                you the exact records.</p>
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <p class="section-eyebrow">Keep going</p>
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="add-subdomain.html" data-cat="domains">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v5H4zM8 14h12v5H8z"/><path d="M6 10v6.5h2"/></svg></span>
+                        <span class="doc-cat">Domains</span>
+                        <h3>Add a subdomain like blog.yourdomain.com</h3>
+                        <p>Run a separate site or app on a subdomain, with its own folder and its own HTTPS certificate.</p>
+                        <span class="guide-meta">3 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="email-on-your-domain.html" data-cat="email">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>
+                        <span class="doc-cat">Email</span>
+                        <h3>Set up email on your domain</h3>
+                        <p>Create a you@yourdomain.com mailbox and use it on your phone and computer.</p>
+                        <span class="guide-meta">6 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="https-everywhere.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Turn on HTTPS everywhere</h3>
+                        <p>Get the padlock on every page and send visitors to the secure version of your site automatically.</p>
+                        <span class="guide-meta">4 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section ink">
+            <div class="wrap" style="text-align:center;max-width:640px;">
+                <h2 class="section-title light" style="margin:0 auto 1rem;">Still stuck?</h2>
+                <p style="color:var(--paper);opacity:0.85;margin-bottom:1.5rem;">Email us and a real person who runs the platform will help.</p>
+                <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+                    <a class="btn btn-primary" href="../contact.html" style="background:var(--paper);color:var(--teal);">Contact us</a>
+                    <a class="btn btn-ghost" href="../pricing.html" style="color:var(--paper);border-color:rgba(255,255,255,0.55);">See the plans</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

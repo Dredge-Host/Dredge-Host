@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back up and restore your site | Dredge Host Guides</title>
+    <meta name="description" content="Download your own copy of your files, databases, and email, and know how to get them back.">
+    <link rel="canonical" href="https://dredgehost.com/guides/backups.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Back up and restore your site | Dredge Host Guides">
+    <meta property="og:description" content="Download your own copy of your files, databases, and email, and know how to get them back.">
+    <meta property="og:url" content="https://dredgehost.com/guides/backups.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Back up and restore your site",
+          "item": "https://dredgehost.com/guides/backups.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="eyebrow">Your site &middot; 5 min read</p>
+                <h1>Back up and restore your site</h1>
+                <p class="lede">The platform takes weekly backups, but the only backup you fully control is one you&#x27;ve downloaded yourself. Here&#x27;s how.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>What's already backed up</h2>
+                <p>Dredge takes a weekly backup of every account. If something goes badly wrong, email
+                <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we can restore from it.
+                But a week is a long time for a busy site, so keep your own copies too.</p>
+
+                <h2>Download a backup</h2>
+                <p>In cPanel, open <strong>Backup</strong>. You'll see two kinds:</p>
+                <ul>
+                    <li><strong>Partial backups</strong> are what you want day to day. Download your
+                    <strong>Home Directory</strong> (all your files) and each <strong>MySQL Database</strong>
+                    separately. They're quick and you can restore them yourself.</li>
+                    <li><strong>Full Account Backup</strong> bundles everything, including email and settings,
+                    into one file. It's mainly for moving to another host, and it can only be restored by us.</li>
+                </ul>
+                <p>Store your downloads somewhere other than your computer as well, such as an external
+                drive or cloud storage.</p>
+
+                <h2>Restore from your own backup</h2>
+                <ol>
+                    <li>In cPanel, open <strong>Backup</strong>.</li>
+                    <li>Under <strong>Restore a Home Directory Backup</strong> or <strong>Restore a MySQL
+                    Database</strong>, choose the file you downloaded and click <strong>Upload</strong>.</li>
+                </ol>
+                <p>A restore overwrites what's there now. If you only need one lost file, it's safer to open
+                the backup on your computer and upload just that file with File Manager.</p>
+
+                <h2>Mind your storage</h2>
+                <p>A Full Account Backup is created inside your account before you download it, so it
+                counts toward your plan's storage. If you're near your limit, it may fail. Stick to partial
+                backups, and delete any backup file left in your home folder once it's downloaded.</p>
+
+                <h2>For WordPress sites</h2>
+                <p>WordPress Manager in cPanel can take and restore backups of a single WordPress site
+                with one click, and can schedule them automatically. Download a copy now and then so
+                you're not relying only on copies stored in the same account.</p>
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <p class="section-eyebrow">Keep going</p>
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="move-wordpress.html" data-cat="wordpress">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h11M11 3l4 4-4 4M20 17H9M13 13l-4 4 4 4"/></svg></span>
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Move a WordPress site to Dredge</h3>
+                        <p>Bring an existing WordPress site over from another host without losing anything.</p>
+                        <span class="guide-meta">12 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="upload-website.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Upload a website with File Manager or FTP</h3>
+                        <p>Put an HTML site, or one exported from a site builder, live on your domain.</p>
+                        <span class="guide-meta">5 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="client-area-and-cpanel.html" data-cat="start">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+                        <span class="doc-cat">Getting started</span>
+                        <h3>Find your way around your client area and cPanel</h3>
+                        <p>Where to pay invoices, change plans, and log in to cPanel, the control panel for your site.</p>
+                        <span class="guide-meta">4 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section ink">
+            <div class="wrap" style="text-align:center;max-width:640px;">
+                <h2 class="section-title light" style="margin:0 auto 1rem;">Still stuck?</h2>
+                <p style="color:var(--paper);opacity:0.85;margin-bottom:1.5rem;">Email us and a real person who runs the platform will help.</p>
+                <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+                    <a class="btn btn-primary" href="../contact.html" style="background:var(--paper);color:var(--teal);">Contact us</a>
+                    <a class="btn btn-ghost" href="../pricing.html" style="color:var(--paper);border-color:rgba(255,255,255,0.55);">See the plans</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

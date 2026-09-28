@@ -40,7 +40,7 @@
               '<a href="' + root + 'about.html"' + (active === 'about' ? ' aria-current="page"' : '') + '>About</a>' +
               '<a href="' + root + 'guides.html"' + (active === 'guides' ? ' aria-current="page"' : '') + '>Guides</a>' +
               '<a href="' + root + 'status.html"' + (active === 'status' ? ' aria-current="page"' : '') + '>Status</a>' +
-              '<a class="nav-cta" href="' + (root || './') + '#get-started">Get started</a>' +
+              '<a class="nav-cta" href="' + root + 'pricing.html">Get started</a>' +
             '</nav>' +
             '<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">' +
               '<span></span><span></span><span></span>' +
@@ -63,7 +63,7 @@
                 '<a href="' + root + 'pricing.html">Pricing</a>' +
                 '<a href="' + root + 'status.html">Status</a>' +
                 '<a href="' + root + 'guides.html">Guides</a>' +
-                '<a href="' + (root || './') + '#get-started">Get started</a>' +
+                '<a href="' + root + 'pricing.html">Get started</a>' +
               '</div>' +
               '<div class="footer-col">' +
                 '<span class="footer-head">Company</span>' +

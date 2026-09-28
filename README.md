@@ -1,12 +1,39 @@
-# Dredge Host | A Web Hosting Company
+# Dredge Host
 
-**Dredge Host** delivers high-performance infrastructure solutions designed to deploy, scale, and secure modern digital experiences. 
+The website for [Dredge Host](https://dredgehost.com), a small, independent cPanel web hosting company.
 
----
+Every plan includes cPanel, SSD storage, free HTTPS certificates, email on your own domain, one-click WordPress, and support from the people who run the platform.
 
-## ⚡ Core Infrastructure Features
+| Plan | Price | Sites | SSD storage | Transfer / month |
+|------|-------|-------|-------------|------------------|
+| Silt | $5/mo | 1 | 2 GB | 50 GB |
+| Channel | $12/mo | 5 | 6 GB | 150 GB |
+| Harbor | $25/mo | 15 | 15 GB | 300 GB |
 
-* **Instant Provisioning:** Deploy bare-metal or cloud instances in under 60 seconds.
-* **NVMe Storage Arrays:** Maximize I/O performance with enterprise-grade solid-state arrays.
-* **Global Edge Network:** Minimize latency with localized caching layers across major global hubs.
-* **DDoS Protection:** Real-time scrubbing layers mitigate malicious traffic automatically.
+Sign up and manage your account at [my.dredgehost.com](https://my.dredgehost.com). Questions go to [support@dredgehost.com](mailto:support@dredgehost.com).
+
+## Guides
+
+Step-by-step help for new customers lives at [dredgehost.com/guides.html](https://dredgehost.com/guides.html):
+
+- Find your way around your client area and cPanel
+- Buy a domain from Porkbun or Namecheap and connect it
+- Add a subdomain
+- Install WordPress in one click
+- Move a WordPress site to Dredge
+- Set up email on your domain
+- Upload a website with File Manager or FTP
+- Turn on HTTPS everywhere
+- Back up and restore your site
+
+## How the site is built
+
+Plain HTML and CSS with no build step, served by GitHub Pages from the `main` branch.
+
+- `*.html`: top-level pages (home, pricing, about, guides, status, contact, and legal pages)
+- `guides/`: one page per guide
+- `style.css`: the whole stylesheet
+- `assets/site.js`: injects the shared header and footer, and runs the mobile menu, scroll reveals, and FAQ accordions. Each page sets `data-active` on `<body>` to highlight its nav link, and `data-root="../"` for pages inside a subfolder.
+- `assets/`: logo, favicons, and social preview image
+
+To preview locally, run `python3 -m http.server` in this folder and open http://localhost:8000.

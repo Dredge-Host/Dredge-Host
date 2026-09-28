@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload a website with File Manager or FTP | Dredge Host Guides</title>
+    <meta name="description" content="Put an HTML site, or one exported from a site builder, live on your domain.">
+    <link rel="canonical" href="https://dredgehost.com/guides/upload-website.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Upload a website with File Manager or FTP | Dredge Host Guides">
+    <meta property="og:description" content="Put an HTML site, or one exported from a site builder, live on your domain.">
+    <meta property="og:url" content="https://dredgehost.com/guides/upload-website.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Upload a website with File Manager or FTP",
+          "item": "https://dredgehost.com/guides/upload-website.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="eyebrow">Your site &middot; 5 min read</p>
+                <h1>Upload a website with File Manager or FTP</h1>
+                <p class="lede">If your site is a folder of files, such as HTML, CSS, and images, uploading it is all it takes to put it live.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Where your files go</h2>
+                <p>Your main domain serves whatever is inside the <code>public_html</code> folder. Extra
+                domains and subdomains each have their own folder, which you chose when you added them.
+                The page visitors see first must be called <code>index.html</code> (or <code>index.php</code>)
+                and sit directly inside that folder.</p>
+
+                <h2>Option 1: File Manager (easiest)</h2>
+                <ol>
+                    <li>On your computer, compress your site folder into a <code>.zip</code> file.</li>
+                    <li>In cPanel, open <strong>File Manager</strong> and double-click <code>public_html</code>.</li>
+                    <li>Click <strong>Upload</strong>, choose your <code>.zip</code>, and wait for it to finish.</li>
+                    <li>Back in File Manager, right-click the <code>.zip</code> and choose <strong>Extract</strong>.</li>
+                    <li>If the files landed inside an extra folder (for example
+                    <code>public_html/my-site/index.html</code>), open that folder, select everything,
+                    and <strong>Move</strong> it up into <code>public_html</code>.</li>
+                    <li>Delete the <code>.zip</code> so it doesn't use up your storage.</li>
+                </ol>
+
+                <h2>Option 2: FTP (better for frequent updates)</h2>
+                <ol>
+                    <li>In cPanel, open <strong>FTP Accounts</strong> and create an account. Set its
+                    <strong>Directory</strong> to <code>public_html</code> so it can't touch anything else.</li>
+                    <li>Install an FTP app such as <a href="https://filezilla-project.org" rel="noopener">FileZilla</a>.</li>
+                    <li>Connect using the settings under <strong>Configure FTP Client</strong> next to the
+                    account. Use <strong>FTP over TLS</strong> (FileZilla calls it &ldquo;Require explicit
+                    FTP over TLS&rdquo;) so your password isn't sent in the clear.</li>
+                    <li>Drag your site's files from the left-hand pane (your computer) to the right-hand pane
+                    (Dredge).</li>
+                </ol>
+
+                <h2>Check it</h2>
+                <p>Visit your domain. If you still see an old page, your browser may have cached it; try a
+                private window. If you see a list of files instead of your site, the <code>index.html</code>
+                isn't directly inside the folder.</p>
+
+                <p class="muted-note">File and folder names are case-sensitive on Dredge. A link to
+                <code>Photo.JPG</code> won't find <code>photo.jpg</code>, even if it worked on your computer.</p>
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <p class="section-eyebrow">Keep going</p>
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="https-everywhere.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Turn on HTTPS everywhere</h3>
+                        <p>Get the padlock on every page and send visitors to the secure version of your site automatically.</p>
+                        <span class="guide-meta">4 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="add-subdomain.html" data-cat="domains">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v5H4zM8 14h12v5H8z"/><path d="M6 10v6.5h2"/></svg></span>
+                        <span class="doc-cat">Domains</span>
+                        <h3>Add a subdomain like blog.yourdomain.com</h3>
+                        <p>Run a separate site or app on a subdomain, with its own folder and its own HTTPS certificate.</p>
+                        <span class="guide-meta">3 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="backups.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Back up and restore your site</h3>
+                        <p>Download your own copy of your files, databases, and email, and know how to get them back.</p>
+                        <span class="guide-meta">5 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section ink">
+            <div class="wrap" style="text-align:center;max-width:640px;">
+                <h2 class="section-title light" style="margin:0 auto 1rem;">Still stuck?</h2>
+                <p style="color:var(--paper);opacity:0.85;margin-bottom:1.5rem;">Email us and a real person who runs the platform will help.</p>
+                <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+                    <a class="btn btn-primary" href="../contact.html" style="background:var(--paper);color:var(--teal);">Contact us</a>
+                    <a class="btn btn-ghost" href="../pricing.html" style="color:var(--paper);border-color:rgba(255,255,255,0.55);">See the plans</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set up email on your domain | Dredge Host Guides</title>
+    <meta name="description" content="Create a you@yourdomain.com mailbox and use it on your phone and computer.">
+    <link rel="canonical" href="https://dredgehost.com/guides/email-on-your-domain.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Set up email on your domain | Dredge Host Guides">
+    <meta property="og:description" content="Create a you@yourdomain.com mailbox and use it on your phone and computer.">
+    <meta property="og:url" content="https://dredgehost.com/guides/email-on-your-domain.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Set up email on your domain",
+          "item": "https://dredgehost.com/guides/email-on-your-domain.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Email</p>
+                <p class="eyebrow">Email &middot; 6 min read</p>
+                <h1>Set up email on your domain</h1>
+                <p class="lede">Every Dredge plan includes mailboxes on your own domain, like you@yourdomain.com. Here&#x27;s how to create one and get it on all your devices.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <p>This works once your domain's nameservers point at Dredge (see
+                <a href="connect-domain.html">Connect a domain</a>), because that's what tells the rest of
+                the internet to deliver your mail to us.</p>
+
+                <h2>Step 1: Create a mailbox</h2>
+                <ol>
+                    <li>In cPanel, open <strong>Email Accounts</strong> and click <strong>Create</strong>.</li>
+                    <li>Pick the domain, type the part before the <code>@</code>, and set a strong password.</li>
+                    <li>Set the storage limit. Mail counts toward your plan's disk space, so give each
+                    mailbox a sensible cap rather than &ldquo;Unlimited&rdquo;.</li>
+                    <li>Click <strong>Create</strong>.</li>
+                </ol>
+
+                <h2>Step 2: Read it in your browser</h2>
+                <p>Go to <code>https://yourdomain.com/webmail</code> and log in with the
+                <strong>full email address</strong> and its password. That's all you need to send and
+                receive from anywhere.</p>
+
+                <h2>Step 3: Add it to your phone or computer</h2>
+                <p>In cPanel, next to the mailbox in <strong>Email Accounts</strong>, click
+                <strong>Connect Devices</strong>. It shows the exact server names for your account, and
+                can generate automatic setup files for Apple Mail, iPhone, and Outlook. If you'd rather
+                enter it by hand, most apps want:</p>
+                <div class="compare-wrap">
+                <table class="compare-table">
+                    <thead>
+                        <tr><th>Setting</th><th>Value</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Username</td><td>Your full email address</td></tr>
+                        <tr><td>Incoming (IMAP)</td><td>Server from Connect Devices, port 993, SSL/TLS</td></tr>
+                        <tr><td>Outgoing (SMTP)</td><td>Same server, port 465, SSL/TLS, authentication on</td></tr>
+                        <tr><td>Password</td><td>The mailbox password</td></tr>
+                    </tbody>
+                </table>
+                </div>
+                <p>Choose <strong>IMAP</strong> over POP3 so your mail stays in sync between your phone,
+                laptop, and webmail.</p>
+
+                <h2>Step 4: Make sure your mail isn't marked as spam</h2>
+                <p>In cPanel, open <strong>Email Deliverability</strong>. If it shows problems next to
+                your domain, click <strong>Repair</strong>. That sets up SPF and DKIM, the records that
+                prove your mail really came from you. Then send a test message to a Gmail or Outlook
+                address and check it arrives in the inbox.</p>
+
+                <h2>Handy extras</h2>
+                <ul>
+                    <li><strong>Forwarders</strong> send mail for one address to another, such as
+                    <code>hello@</code> to your personal inbox, without a separate mailbox.</li>
+                    <li><strong>Autoresponders</strong> send an automatic reply while you're away.</li>
+                    <li><strong>Spam Filters</strong> can move likely spam to a folder instead of your inbox.</li>
+                </ul>
+                <p class="muted-note">Outgoing email has an hourly cap on every plan to protect the
+                server's reputation. It's plenty for everyday mail and site notifications, but not for
+                newsletters. For bulk mail, use a dedicated service and keep your Dredge mailbox for
+                one-to-one mail.</p>
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <p class="section-eyebrow">Keep going</p>
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="connect-domain.html" data-cat="domains">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="client-area-and-cpanel.html" data-cat="start">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+                        <span class="doc-cat">Getting started</span>
+                        <h3>Find your way around your client area and cPanel</h3>
+                        <p>Where to pay invoices, change plans, and log in to cPanel, the control panel for your site.</p>
+                        <span class="guide-meta">4 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="backups.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Back up and restore your site</h3>
+                        <p>Download your own copy of your files, databases, and email, and know how to get them back.</p>
+                        <span class="guide-meta">5 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section ink">
+            <div class="wrap" style="text-align:center;max-width:640px;">
+                <h2 class="section-title light" style="margin:0 auto 1rem;">Still stuck?</h2>
+                <p style="color:var(--paper);opacity:0.85;margin-bottom:1.5rem;">Email us and a real person who runs the platform will help.</p>
+                <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+                    <a class="btn btn-primary" href="../contact.html" style="background:var(--paper);color:var(--teal);">Contact us</a>
+                    <a class="btn btn-ghost" href="../pricing.html" style="color:var(--paper);border-color:rgba(255,255,255,0.55);">See the plans</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

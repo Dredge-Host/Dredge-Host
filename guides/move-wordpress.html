@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move a WordPress site to Dredge | Dredge Host Guides</title>
+    <meta name="description" content="Bring an existing WordPress site over from another host without losing anything.">
+    <link rel="canonical" href="https://dredgehost.com/guides/move-wordpress.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Move a WordPress site to Dredge | Dredge Host Guides">
+    <meta property="og:description" content="Bring an existing WordPress site over from another host without losing anything.">
+    <meta property="og:url" content="https://dredgehost.com/guides/move-wordpress.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Move a WordPress site to Dredge",
+          "item": "https://dredgehost.com/guides/move-wordpress.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / WordPress</p>
+                <p class="eyebrow">WordPress &middot; 12 min read</p>
+                <h1>Move a WordPress site to Dredge</h1>
+                <p class="lede">Moving WordPress means copying two things: the files (your theme, plugins, and uploads) and the database (your posts, pages, and settings). Here are two ways to do it.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <p>Try the plugin method first. Use the manual method if your site is large or the
+                plugin struggles.</p>
+
+                <h2>Before you start</h2>
+                <ul>
+                    <li><strong>Don't cancel your old host yet.</strong> Keep it running until the site
+                    is live on Dredge and you've checked it for a few days.</li>
+                    <li>Take a full backup on your old host, even if you think you won't need it.</li>
+                    <li>Check the size of the site against your plan's storage on the
+                    <a href="../pricing.html">pricing page</a>.</li>
+                </ul>
+
+                <h2>Method 1: With a migration plugin</h2>
+                <ol>
+                    <li><strong>Install a fresh WordPress on Dredge</strong> by following
+                    <a href="install-wordpress.html">Install WordPress in one click</a>.</li>
+                    <li><strong>Export from the old site.</strong> On the old site's dashboard, go to
+                    <strong>Plugins &rarr; Add New</strong>, install <strong>All-in-One WP Migration</strong>,
+                    then open it and choose <strong>Export &rarr; File</strong>. Download the
+                    <code>.wpress</code> file it creates.</li>
+                    <li><strong>Import on Dredge.</strong> Log in to the new WordPress on Dredge, install
+                    the same plugin, choose <strong>Import</strong>, and upload the file. Confirm that it
+                    will overwrite the fresh install.</li>
+                    <li><strong>Log in again</strong> with your <em>old</em> site's username and password,
+                    since the import brought your users over. Then go to <strong>Settings &rarr;
+                    Permalinks</strong> and click <strong>Save</strong> twice to rebuild your links.</li>
+                </ol>
+                <p class="muted-note">The free version of the plugin limits how big an import can be.
+                If your export is over the limit, use Method 2 below rather than paying for an
+                extension.</p>
+
+                <h2>Method 2: By hand</h2>
+                <ol>
+                    <li><strong>Download the files.</strong> On your old host, use its file manager or
+                    an FTP app such as FileZilla to download the whole WordPress folder, usually
+                    <code>public_html</code>. If the file manager can compress it to a <code>.zip</code>
+                    first, do that; it's much faster.</li>
+                    <li><strong>Export the database.</strong> On the old host, open
+                    <strong>phpMyAdmin</strong>, select your WordPress database, click
+                    <strong>Export</strong>, leave it on &ldquo;Quick&rdquo; and &ldquo;SQL&rdquo;, and
+                    download the file. Not sure which database? Open <code>wp-config.php</code> and look
+                    for <code>DB_NAME</code>.</li>
+                    <li><strong>Create a database on Dredge.</strong> In cPanel, open
+                    <strong>Database Wizard</strong>. Create a database, create a user with a strong
+                    password, and give that user <strong>All Privileges</strong>. Write down all three
+                    names and the password.</li>
+                    <li><strong>Import the database.</strong> In cPanel, open <strong>phpMyAdmin</strong>,
+                    click your new database on the left, choose <strong>Import</strong>, and upload the
+                    <code>.sql</code> file.</li>
+                    <li><strong>Upload the files.</strong> In cPanel, open <strong>File Manager</strong>,
+                    go to <code>public_html</code> (or your extra domain's folder), upload the
+                    <code>.zip</code>, then right-click it and choose <strong>Extract</strong>. Make sure
+                    <code>wp-config.php</code> ends up directly inside the folder, not in a subfolder.</li>
+                    <li><strong>Point WordPress at the new database.</strong> Edit
+                    <code>wp-config.php</code> and update these three lines with what you wrote down in
+                    step 3:
+<pre><code>define( 'DB_NAME', 'youraccount_wpdb' );
+                define( 'DB_USER', 'youraccount_wpuser' );
+                define( 'DB_PASSWORD', 'the-password-you-chose' );</code></pre>
+                    Leave <code>DB_HOST</code> as <code>localhost</code>.</li>
+                </ol>
+
+                <h2>Preview it before you switch</h2>
+                <p>Your domain still points at the old host at this point, which is good: visitors
+                see nothing change while you check the copy. To look at the Dredge copy yourself,
+                add a line to your computer's <strong>hosts file</strong> with your Dredge server's IP
+                address (shown in cPanel under <strong>Server Information</strong>) followed by your
+                domain, for example:</p>
+<pre><code>203.0.113.10  yourdomain.com www.yourdomain.com</code></pre>
+                <p>On Windows the file is <code>C:\Windows\System32\drivers\etc\hosts</code>; on Mac
+                and Linux it's <code>/etc/hosts</code>. Browse the site, log in, and click around. Remove
+                the line when you're done.</p>
+
+                <h2>Go live</h2>
+                <ol>
+                    <li>Change your domain's nameservers to Dredge, as in
+                    <a href="connect-domain.html">Connect a domain</a>.</li>
+                    <li>Once the change has spread and AutoSSL has issued your certificate, check that
+                    the site loads over <code>https://</code> and that images, forms, and logins work.</li>
+                    <li>If the domain name itself changed during the move, install the
+                    <strong>Better Search Replace</strong> plugin and replace the old address with the new
+                    one across all tables.</li>
+                    <li>Give it a few days, take one last backup from the old host, and then cancel it.</li>
+                </ol>
+
+                <p class="muted-note">Stuck partway through? Email
+                <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> with your domain and
+                where you got to. The people who run the servers will pick it up.</p>
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <p class="section-eyebrow">Keep going</p>
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="install-wordpress.html" data-cat="wordpress">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 8.5 2.8 8 2.2-6 2.2 6 2.8-8"/></svg></span>
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Install WordPress in one click</h3>
+                        <p>Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.</p>
+                        <span class="guide-meta">3 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="connect-domain.html" data-cat="domains">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="backups.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Back up and restore your site</h3>
+                        <p>Download your own copy of your files, databases, and email, and know how to get them back.</p>
+                        <span class="guide-meta">5 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section ink">
+            <div class="wrap" style="text-align:center;max-width:640px;">
+                <h2 class="section-title light" style="margin:0 auto 1rem;">Still stuck?</h2>
+                <p style="color:var(--paper);opacity:0.85;margin-bottom:1.5rem;">Email us and a real person who runs the platform will help.</p>
+                <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+                    <a class="btn btn-primary" href="../contact.html" style="background:var(--paper);color:var(--teal);">Contact us</a>
+                    <a class="btn btn-ghost" href="../pricing.html" style="color:var(--paper);border-color:rgba(255,255,255,0.55);">See the plans</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

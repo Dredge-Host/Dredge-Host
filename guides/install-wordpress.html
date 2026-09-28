@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install WordPress in one click | Dredge Host Guides</title>
+    <meta name="description" content="Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.">
+    <link rel="canonical" href="https://dredgehost.com/guides/install-wordpress.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Install WordPress in one click | Dredge Host Guides">
+    <meta property="og:description" content="Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.">
+    <meta property="og:url" content="https://dredgehost.com/guides/install-wordpress.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Install WordPress in one click",
+          "item": "https://dredgehost.com/guides/install-wordpress.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / WordPress</p>
+                <p class="eyebrow">WordPress &middot; 3 min read</p>
+                <h1>Install WordPress in one click</h1>
+                <p class="lede">cPanel&#x27;s installer sets up WordPress, its database, and your admin login in one go. You&#x27;ll be writing your first post a couple of minutes from now.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Before you start</h2>
+                <p>You can install before your domain points at Dredge, but you won't be able to see the
+                site until it does. If you haven't connected it yet, start with
+                <a href="connect-domain.html">Connect a domain</a>.</p>
+
+                <h2>Install it</h2>
+                <ol>
+                    <li>In cPanel, open <strong>WordPress Manager</strong> (or <strong>Softaculous Apps
+                    Installer</strong> and choose WordPress) and click <strong>Install</strong>.</li>
+                    <li><strong>Choose Protocol:</strong> pick <code>https://</code>.</li>
+                    <li><strong>Choose Domain:</strong> pick your domain or subdomain.</li>
+                    <li><strong>In Directory:</strong> leave this empty so the site is at the top of the
+                    domain, not at <code>yourdomain.com/wp</code>.</li>
+                    <li><strong>Site Name</strong> and <strong>Site Description:</strong> anything; you can
+                    change them later.</li>
+                    <li><strong>Admin Username:</strong> pick something other than <code>admin</code>, which is
+                    the first name attackers try. Use a long password and an email address you check.</li>
+                    <li>Click <strong>Install</strong> and wait for the confirmation.</li>
+                </ol>
+
+                <h2>Log in</h2>
+                <p>Go to <code>https://yourdomain.com/wp-admin</code> and sign in with the admin username and
+                password you just chose. WordPress Manager in cPanel also has a one-click login button.</p>
+
+                <h2>First things to do</h2>
+                <ul>
+                    <li><strong>Settings &rarr; General:</strong> set your time zone and check both addresses
+                    start with <code>https://</code>.</li>
+                    <li><strong>Settings &rarr; Permalinks:</strong> choose <strong>Post name</strong> for clean
+                    links like <code>/about-us/</code>.</li>
+                    <li>Delete the sample post, page, and any themes and plugins you won't use. Fewer plugins
+                    means fewer things to update and fewer ways in.</li>
+                    <li>Keep WordPress, themes, and plugins updated. WordPress Manager can turn on automatic updates.</li>
+                </ul>
+
+                <p class="muted-note">Moving an existing WordPress site instead of starting fresh? Follow
+                <a href="move-wordpress.html">Move a WordPress site to Dredge</a>.</p>
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <p class="section-eyebrow">Keep going</p>
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="move-wordpress.html" data-cat="wordpress">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h11M11 3l4 4-4 4M20 17H9M13 13l-4 4 4 4"/></svg></span>
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Move a WordPress site to Dredge</h3>
+                        <p>Bring an existing WordPress site over from another host without losing anything.</p>
+                        <span class="guide-meta">12 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="https-everywhere.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Turn on HTTPS everywhere</h3>
+                        <p>Get the padlock on every page and send visitors to the secure version of your site automatically.</p>
+                        <span class="guide-meta">4 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="backups.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Back up and restore your site</h3>
+                        <p>Download your own copy of your files, databases, and email, and know how to get them back.</p>
+                        <span class="guide-meta">5 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section ink">
+            <div class="wrap" style="text-align:center;max-width:640px;">
+                <h2 class="section-title light" style="margin:0 auto 1rem;">Still stuck?</h2>
+                <p style="color:var(--paper);opacity:0.85;margin-bottom:1.5rem;">Email us and a real person who runs the platform will help.</p>
+                <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+                    <a class="btn btn-primary" href="../contact.html" style="background:var(--paper);color:var(--teal);">Contact us</a>
+                    <a class="btn btn-ghost" href="../pricing.html" style="color:var(--paper);border-color:rgba(255,255,255,0.55);">See the plans</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a subdomain like blog.yourdomain.com | Dredge Host Guides</title>
+    <meta name="description" content="Run a separate site or app on a subdomain, with its own folder and its own HTTPS certificate.">
+    <link rel="canonical" href="https://dredgehost.com/guides/add-subdomain.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Add a subdomain like blog.yourdomain.com | Dredge Host Guides">
+    <meta property="og:description" content="Run a separate site or app on a subdomain, with its own folder and its own HTTPS certificate.">
+    <meta property="og:url" content="https://dredgehost.com/guides/add-subdomain.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Add a subdomain like blog.yourdomain.com",
+          "item": "https://dredgehost.com/guides/add-subdomain.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Domains</p>
+                <p class="eyebrow">Domains &middot; 3 min read</p>
+                <h1>Add a subdomain like blog.yourdomain.com</h1>
+                <p class="lede">A subdomain is an address in front of your main domain, like blog.yourdomain.com or shop.yourdomain.com. Each one can hold a completely separate site.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Before you start</h2>
+                <p>Your main domain needs to point at Dredge already (see
+                <a href="connect-domain.html">Connect a domain</a>). Because Dredge runs your DNS, any
+                subdomain you create here works straight away; there's nothing to change at your registrar.</p>
+
+                <h2>Create the subdomain</h2>
+                <ol>
+                    <li>In cPanel, open <strong>Domains</strong> and click <strong>Create A New Domain</strong>.</li>
+                    <li>Type the full subdomain, for example <code>blog.yourdomain.com</code>.</li>
+                    <li>Untick <strong>Share document root</strong>. cPanel suggests a folder such as
+                    <code>blog.yourdomain.com</code>; that's where this subdomain's files will live.</li>
+                    <li>Click <strong>Submit</strong>.</li>
+                </ol>
+
+                <h2>Put something on it</h2>
+                <ul>
+                    <li><strong>A WordPress site:</strong> follow <a href="install-wordpress.html">Install
+                    WordPress</a> and choose the subdomain from the domain list.</li>
+                    <li><strong>Your own files:</strong> follow <a href="upload-website.html">Upload a
+                    website</a> and upload into the subdomain's folder instead of <code>public_html</code>.</li>
+                </ul>
+
+                <h2>HTTPS</h2>
+                <p>AutoSSL picks up new subdomains on its next run, usually within a few hours. To speed it
+                up, open <strong>SSL/TLS Status</strong> in cPanel and click <strong>Run AutoSSL</strong>.</p>
+
+                <p class="muted-note">Removing a subdomain later, from <strong>Domains</strong>, doesn't
+                delete its folder. Delete the folder in File Manager too if you no longer need the files.</p>
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <p class="section-eyebrow">Keep going</p>
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="connect-domain.html" data-cat="domains">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="install-wordpress.html" data-cat="wordpress">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 8.5 2.8 8 2.2-6 2.2 6 2.8-8"/></svg></span>
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Install WordPress in one click</h3>
+                        <p>Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.</p>
+                        <span class="guide-meta">3 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="https-everywhere.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Turn on HTTPS everywhere</h3>
+                        <p>Get the padlock on every page and send visitors to the secure version of your site automatically.</p>
+                        <span class="guide-meta">4 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section ink">
+            <div class="wrap" style="text-align:center;max-width:640px;">
+                <h2 class="section-title light" style="margin:0 auto 1rem;">Still stuck?</h2>
+                <p style="color:var(--paper);opacity:0.85;margin-bottom:1.5rem;">Email us and a real person who runs the platform will help.</p>
+                <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+                    <a class="btn btn-primary" href="../contact.html" style="background:var(--paper);color:var(--teal);">Contact us</a>
+                    <a class="btn btn-ghost" href="../pricing.html" style="color:var(--paper);border-color:rgba(255,255,255,0.55);">See the plans</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

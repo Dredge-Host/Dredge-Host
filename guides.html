@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guides | Dredge Host</title>
-    <meta name="description" content="Step-by-step guides for Dredge Host: connect a domain from Porkbun or Namecheap, move a WordPress site, and set up email on your domain.">
+    <meta name="description" content="Step-by-step guides for Dredge Host: connect a domain, install or move WordPress, set up email, upload a site, turn on HTTPS, and back up your account.">
     <link rel="canonical" href="https://dredgehost.com/guides.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Dredge Host">
     <meta property="og:title" content="Guides | Dredge Host">
-    <meta property="og:description" content="Connect your domain, move a WordPress site, and set up email on Dredge Host.">
+    <meta property="og:description" content="Step-by-step guides for Dredge Host: connect a domain, install or move WordPress, set up email, upload a site, turn on HTTPS, and back up your account.">
     <meta property="og:url" content="https://dredgehost.com/guides.html">
     <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -51,280 +51,92 @@
                 <p class="crumb"><a href="./">Home</a> / Guides</p>
                 <p class="eyebrow">Guides</p>
                 <h1>Get your site on Dredge, step by step.</h1>
-                <p class="lede">Plain walkthroughs for the three things almost everyone does in
-                their first week: point a domain at Dredge, bring a WordPress site over, and
-                set up email on your own domain.</p>
+                <p class="lede">Plain walkthroughs for connecting your domain, getting WordPress
+                running, setting up email, and keeping your site safe. Pick one to get started.</p>
             </div>
         </section>
 
         <section class="section tint">
             <div class="wrap">
-                <div class="doc-grid">
-                    <a class="doc-card" href="#domain">
-                        <span class="doc-cat">Domains</span>
-                        <h3>Buy a domain and connect it</h3>
-                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                <div class="guide-filter" role="group" aria-label="Filter guides by topic">
+                    <button type="button" class="active" data-filter="all" aria-pressed="true">All guides</button>
+                    <button type="button" data-filter="start" aria-pressed="false">Getting started</button>
+                    <button type="button" data-filter="domains" aria-pressed="false">Domains</button>
+                    <button type="button" data-filter="wordpress" aria-pressed="false">WordPress</button>
+                    <button type="button" data-filter="email" aria-pressed="false">Email</button>
+                    <button type="button" data-filter="site" aria-pressed="false">Your site</button>
+                </div>
+                <div class="doc-grid guide-gallery">
+                    <a class="doc-card guide-card" href="guides/client-area-and-cpanel.html" data-cat="start">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+                        <span class="doc-cat">Getting started</span>
+                        <h3>Find your way around your client area and cPanel</h3>
+                        <p>Where to pay invoices, change plans, and log in to cPanel, the control panel for your site.</p>
+                        <span class="guide-meta">4 min read <span aria-hidden="true">&rarr;</span></span>
                     </a>
-                    <a class="doc-card" href="#wordpress">
+                    <a class="doc-card guide-card" href="guides/connect-domain.html" data-cat="domains">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="guides/add-subdomain.html" data-cat="domains">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v5H4zM8 14h12v5H8z"/><path d="M6 10v6.5h2"/></svg></span>
+                        <span class="doc-cat">Domains</span>
+                        <h3>Add a subdomain like blog.yourdomain.com</h3>
+                        <p>Run a separate site or app on a subdomain, with its own folder and its own HTTPS certificate.</p>
+                        <span class="guide-meta">3 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="guides/install-wordpress.html" data-cat="wordpress">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 8.5 2.8 8 2.2-6 2.2 6 2.8-8"/></svg></span>
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Install WordPress in one click</h3>
+                        <p>Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.</p>
+                        <span class="guide-meta">3 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="guides/move-wordpress.html" data-cat="wordpress">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h11M11 3l4 4-4 4M20 17H9M13 13l-4 4 4 4"/></svg></span>
                         <span class="doc-cat">WordPress</span>
                         <h3>Move a WordPress site to Dredge</h3>
                         <p>Bring an existing WordPress site over from another host without losing anything.</p>
+                        <span class="guide-meta">12 min read <span aria-hidden="true">&rarr;</span></span>
                     </a>
-                    <a class="doc-card" href="#email">
+                    <a class="doc-card guide-card" href="guides/email-on-your-domain.html" data-cat="email">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>
                         <span class="doc-cat">Email</span>
                         <h3>Set up email on your domain</h3>
                         <p>Create a you@yourdomain.com mailbox and use it on your phone and computer.</p>
+                        <span class="guide-meta">6 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="guides/upload-website.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Upload a website with File Manager or FTP</h3>
+                        <p>Put an HTML site, or one exported from a site builder, live on your domain.</p>
+                        <span class="guide-meta">5 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="guides/https-everywhere.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Turn on HTTPS everywhere</h3>
+                        <p>Get the padlock on every page and send visitors to the secure version of your site automatically.</p>
+                        <span class="guide-meta">4 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="guides/backups.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Back up and restore your site</h3>
+                        <p>Download your own copy of your files, databases, and email, and know how to get them back.</p>
+                        <span class="guide-meta">5 min read <span aria-hidden="true">&rarr;</span></span>
                     </a>
                 </div>
-            </div>
-        </section>
-
-        <!-- ============ Guide 1: Domains ============ -->
-        <section class="section guide" id="domain">
-            <div class="wrap prose">
-                <p class="section-eyebrow">Guide 1 &middot; Domains</p>
-                <h2>Buy a domain from Porkbun or Namecheap and connect it to Dredge</h2>
-                <p>Your domain lives at a registrar, your site lives on Dredge. Connecting them
-                means telling the registrar to send visitors to us, which you do by changing the
-                domain's <strong>nameservers</strong>. It takes about five minutes of clicking and
-                up to 48 hours for the change to spread across the internet.</p>
-
-                <h3>Before you start</h3>
-                <ul>
-                    <li>A Dredge plan. If you don't have one yet, <a href="pricing.html">pick a plan</a>
-                    and, when checkout asks about a domain, choose the option to <strong>use a domain
-                    you already own</strong> and type in the domain you're about to buy (or already have).</li>
-                    <li>Your Dredge nameservers. They're in the <strong>welcome email</strong> we send
-                    when your account is set up, and in your client area at
-                    <a href="https://my.dredgehost.com">my.dredgehost.com</a> under your hosting service.
-                    There are two of them and they look like <code>ns1.example.com</code>.</li>
-                </ul>
-
-                <h3>Step 1: Buy the domain</h3>
-                <ol>
-                    <li>Go to <a href="https://porkbun.com" rel="noopener">porkbun.com</a> or
-                    <a href="https://www.namecheap.com" rel="noopener">namecheap.com</a> and search for the name you want.</li>
-                    <li>Add it to your cart. Keep <strong>WHOIS privacy</strong> switched on (both include
-                    it free). You can skip any hosting, email, or website-builder add-ons; Dredge covers those.</li>
-                    <li>Check out and confirm the verification email the registrar sends you. ICANN
-                    requires this, and an unverified domain can be suspended after 15 days.</li>
-                </ol>
-
-                <h3>Step 2a: Change the nameservers at Porkbun</h3>
-                <ol>
-                    <li>Log in and open <strong>Account &rarr; Domain Management</strong>.</li>
-                    <li>Find your domain and hover over or click it to show its <strong>Details</strong>.</li>
-                    <li>Next to <strong>Authoritative Nameservers</strong>, click <strong>Edit</strong>.</li>
-                    <li>Delete the Porkbun nameservers that are there and paste in your two Dredge
-                    nameservers, one per line.</li>
-                    <li>Click <strong>Submit</strong>.</li>
-                </ol>
-
-                <h3>Step 2b: Change the nameservers at Namecheap</h3>
-                <ol>
-                    <li>Log in and open <strong>Domain List</strong> from the left-hand menu.</li>
-                    <li>Click <strong>Manage</strong> next to your domain.</li>
-                    <li>In the <strong>Nameservers</strong> section, change the dropdown from
-                    &ldquo;Namecheap BasicDNS&rdquo; to <strong>Custom DNS</strong>.</li>
-                    <li>Enter your two Dredge nameservers, one in each box.</li>
-                    <li>Click the green <strong>checkmark</strong> to save.</li>
-                </ol>
-
-                <h3>Step 3: Wait, then check</h3>
-                <p>Nameserver changes usually show up within an hour or two, but can take up to
-                48 hours. Once they do:</p>
-                <ul>
-                    <li>Visiting your domain shows your Dredge site (or the default cPanel page if you
-                    haven't uploaded anything yet).</li>
-                    <li>Free TLS kicks in by itself. cPanel's AutoSSL checks for newly pointed domains
-                    a few times a day and issues a certificate, so <code>https://</code> starts working
-                    without you doing anything. If it hasn't after a day, open <strong>SSL/TLS Status</strong>
-                    in cPanel and click <strong>Run AutoSSL</strong>.</li>
-                </ul>
-
-                <h3>Adding a second domain to the same account</h3>
-                <p>On Channel and Harbor you can host more than one site. Point the extra domain's
-                nameservers at Dredge exactly as above, then in cPanel open
-                <strong>Domains &rarr; Create A New Domain</strong>, enter the domain, and untick
-                &ldquo;Share document root&rdquo; so it gets its own folder. Anything you put in that
-                folder is what the new domain shows.</p>
-
-                <p class="muted-note">Want to keep DNS at your registrar instead? You can, but then
-                you're responsible for keeping the records in sync with us, including the ones email
-                needs. Changing nameservers is simpler and is what we support by default. If you have
-                a reason to do it the other way, <a href="contact.html">get in touch</a> and we'll send
-                you the exact records.</p>
-            </div>
-        </section>
-
-        <!-- ============ Guide 2: WordPress ============ -->
-        <section class="section tint guide" id="wordpress">
-            <div class="wrap prose">
-                <p class="section-eyebrow">Guide 2 &middot; WordPress</p>
-                <h2>Move a WordPress site to Dredge</h2>
-                <p>Moving WordPress means copying two things: the <strong>files</strong> (your theme,
-                plugins, and uploaded images) and the <strong>database</strong> (your posts, pages,
-                and settings). There are two ways to do it. Try the plugin method first; use the
-                manual method if your site is large or the plugin struggles.</p>
-
-                <h3>Before you start</h3>
-                <ul>
-                    <li><strong>Don't cancel your old host yet.</strong> Keep it running until the site
-                    is live on Dredge and you've checked it for a few days.</li>
-                    <li>Take a full backup on your old host, even if you think you won't need it.</li>
-                    <li>Check the size of the site against your plan's storage on the
-                    <a href="pricing.html">pricing page</a>.</li>
-                </ul>
-
-                <h3>Method 1: With a migration plugin</h3>
-                <ol>
-                    <li><strong>Install a fresh WordPress on Dredge.</strong> In cPanel, open
-                    <strong>WordPress Manager</strong> (or <strong>Softaculous Apps Installer</strong>),
-                    choose WordPress, pick your domain, and install. Leave the directory field empty so
-                    it installs at the top of the domain.</li>
-                    <li><strong>Export from the old site.</strong> On the old site's dashboard, go to
-                    <strong>Plugins &rarr; Add New</strong>, install <strong>All-in-One WP Migration</strong>,
-                    then open it and choose <strong>Export &rarr; File</strong>. Download the
-                    <code>.wpress</code> file it creates.</li>
-                    <li><strong>Import on Dredge.</strong> Log in to the new WordPress on Dredge, install
-                    the same plugin, choose <strong>Import</strong>, and upload the file. Confirm that it
-                    will overwrite the fresh install.</li>
-                    <li><strong>Log in again</strong> with your <em>old</em> site's username and password,
-                    since the import brought your users over. Then go to <strong>Settings &rarr;
-                    Permalinks</strong> and click <strong>Save</strong> twice to rebuild your links.</li>
-                </ol>
-                <p class="muted-note">The free version of the plugin limits how big an import can be.
-                If your export is over the limit, use Method 2 below rather than paying for an
-                extension.</p>
-
-                <h3>Method 2: By hand</h3>
-                <ol>
-                    <li><strong>Download the files.</strong> On your old host, use its file manager or
-                    an FTP app such as FileZilla to download the whole WordPress folder, usually
-                    <code>public_html</code>. If the file manager can compress it to a <code>.zip</code>
-                    first, do that; it's much faster.</li>
-                    <li><strong>Export the database.</strong> On the old host, open
-                    <strong>phpMyAdmin</strong>, select your WordPress database, click
-                    <strong>Export</strong>, leave it on &ldquo;Quick&rdquo; and &ldquo;SQL&rdquo;, and
-                    download the file. Not sure which database? Open <code>wp-config.php</code> and look
-                    for <code>DB_NAME</code>.</li>
-                    <li><strong>Create a database on Dredge.</strong> In cPanel, open
-                    <strong>Database Wizard</strong>. Create a database, create a user with a strong
-                    password, and give that user <strong>All Privileges</strong>. Write down all three
-                    names and the password.</li>
-                    <li><strong>Import the database.</strong> In cPanel, open <strong>phpMyAdmin</strong>,
-                    click your new database on the left, choose <strong>Import</strong>, and upload the
-                    <code>.sql</code> file.</li>
-                    <li><strong>Upload the files.</strong> In cPanel, open <strong>File Manager</strong>,
-                    go to <code>public_html</code> (or your extra domain's folder), upload the
-                    <code>.zip</code>, then right-click it and choose <strong>Extract</strong>. Make sure
-                    <code>wp-config.php</code> ends up directly inside the folder, not in a subfolder.</li>
-                    <li><strong>Point WordPress at the new database.</strong> Edit
-                    <code>wp-config.php</code> and update these three lines with what you wrote down in
-                    step 3:
-<pre><code>define( 'DB_NAME', 'youraccount_wpdb' );
-define( 'DB_USER', 'youraccount_wpuser' );
-define( 'DB_PASSWORD', 'the-password-you-chose' );</code></pre>
-                    Leave <code>DB_HOST</code> as <code>localhost</code>.</li>
-                </ol>
-
-                <h3>Preview it before you switch</h3>
-                <p>Your domain still points at the old host at this point, which is good: visitors
-                see nothing change while you check the copy. To look at the Dredge copy yourself,
-                add a line to your computer's <strong>hosts file</strong> with your Dredge server's IP
-                address (shown in cPanel under <strong>Server Information</strong>) followed by your
-                domain, for example:</p>
-<pre><code>203.0.113.10  yourdomain.com www.yourdomain.com</code></pre>
-                <p>On Windows the file is <code>C:\Windows\System32\drivers\etc\hosts</code>; on Mac
-                and Linux it's <code>/etc/hosts</code>. Browse the site, log in, and click around. Remove
-                the line when you're done.</p>
-
-                <h3>Go live</h3>
-                <ol>
-                    <li>Change your domain's nameservers to Dredge, as in
-                    <a href="#domain">Guide 1</a>.</li>
-                    <li>Once the change has spread and AutoSSL has issued your certificate, check that
-                    the site loads over <code>https://</code> and that images, forms, and logins work.</li>
-                    <li>If the domain name itself changed during the move, install the
-                    <strong>Better Search Replace</strong> plugin and replace the old address with the new
-                    one across all tables.</li>
-                    <li>Give it a few days, take one last backup from the old host, and then cancel it.</li>
-                </ol>
-
-                <p class="muted-note">Stuck partway through? Email
-                <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> with your domain and
-                where you got to. The people who run the servers will pick it up.</p>
-            </div>
-        </section>
-
-        <!-- ============ Guide 3: Email ============ -->
-        <section class="section guide" id="email">
-            <div class="wrap prose">
-                <p class="section-eyebrow">Guide 3 &middot; Email</p>
-                <h2>Set up email on your domain</h2>
-                <p>Every Dredge plan includes mailboxes on your own domain, like
-                <code>you@yourdomain.com</code>. This works once your domain's nameservers point at
-                Dredge (see <a href="#domain">Guide 1</a>), because that's what tells the rest of the
-                internet to deliver your mail to us.</p>
-
-                <h3>Step 1: Create a mailbox</h3>
-                <ol>
-                    <li>In cPanel, open <strong>Email Accounts</strong> and click <strong>Create</strong>.</li>
-                    <li>Pick the domain, type the part before the <code>@</code>, and set a strong password.</li>
-                    <li>Set the storage limit. Mail counts toward your plan's disk space, so give each
-                    mailbox a sensible cap rather than &ldquo;Unlimited&rdquo;.</li>
-                    <li>Click <strong>Create</strong>.</li>
-                </ol>
-
-                <h3>Step 2: Read it in your browser</h3>
-                <p>Go to <code>https://yourdomain.com/webmail</code> and log in with the
-                <strong>full email address</strong> and its password. That's all you need to send and
-                receive from anywhere.</p>
-
-                <h3>Step 3: Add it to your phone or computer</h3>
-                <p>In cPanel, next to the mailbox in <strong>Email Accounts</strong>, click
-                <strong>Connect Devices</strong>. It shows the exact server names for your account, and
-                can generate automatic setup files for Apple Mail, iPhone, and Outlook. If you'd rather
-                enter it by hand, most apps want:</p>
-                <div class="compare-wrap">
-                <table class="compare-table">
-                    <thead>
-                        <tr><th>Setting</th><th>Value</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Username</td><td>Your full email address</td></tr>
-                        <tr><td>Incoming (IMAP)</td><td>Server from Connect Devices, port 993, SSL/TLS</td></tr>
-                        <tr><td>Outgoing (SMTP)</td><td>Same server, port 465, SSL/TLS, authentication on</td></tr>
-                        <tr><td>Password</td><td>The mailbox password</td></tr>
-                    </tbody>
-                </table>
-                </div>
-                <p>Choose <strong>IMAP</strong> over POP3 so your mail stays in sync between your phone,
-                laptop, and webmail.</p>
-
-                <h3>Step 4: Make sure your mail isn't marked as spam</h3>
-                <p>In cPanel, open <strong>Email Deliverability</strong>. If it shows problems next to
-                your domain, click <strong>Repair</strong>. That sets up SPF and DKIM, the records that
-                prove your mail really came from you. Then send a test message to a Gmail or Outlook
-                address and check it arrives in the inbox.</p>
-
-                <h3>Handy extras</h3>
-                <ul>
-                    <li><strong>Forwarders</strong> send mail for one address to another, such as
-                    <code>hello@</code> to your personal inbox, without a separate mailbox.</li>
-                    <li><strong>Autoresponders</strong> send an automatic reply while you're away.</li>
-                    <li><strong>Spam Filters</strong> can move likely spam to a folder instead of your inbox.</li>
-                </ul>
-                <p class="muted-note">Outgoing email has an hourly cap on every plan to protect the
-                server's reputation. It's plenty for everyday mail and site notifications, but not for
-                newsletters. For bulk mail, use a dedicated service and keep your Dredge mailbox for
-                one-to-one mail.</p>
             </div>
         </section>
 
         <section class="section ink">
             <div class="wrap" style="text-align:center;max-width:640px;">
-                <h2 class="section-title light" style="margin:0 auto 1rem;">Still stuck?</h2>
+                <h2 class="section-title light" style="margin:0 auto 1rem;">Can't find what you need?</h2>
                 <p style="color:var(--paper);opacity:0.85;margin-bottom:1.5rem;">Email us and a real person who runs the platform will help.</p>
                 <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
                     <a class="btn btn-primary" href="contact.html" style="background:var(--paper);color:var(--teal);">Contact us</a>
@@ -335,5 +147,26 @@ define( 'DB_PASSWORD', 'the-password-you-chose' );</code></pre>
     </main>
     <div id="site-footer"></div>
     <script src="assets/site.js"></script>
+    <script>
+    (function () {
+        var buttons = document.querySelectorAll('.guide-filter button');
+        var cards = document.querySelectorAll('.guide-card');
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var f = btn.getAttribute('data-filter');
+                buttons.forEach(function (b) {
+                    var on = b === btn;
+                    b.classList.toggle('active', on);
+                    b.setAttribute('aria-pressed', String(on));
+                });
+                cards.forEach(function (c) {
+                    var show = f === 'all' || c.getAttribute('data-cat') === f;
+                    c.hidden = !show;
+                    if (show) c.classList.add('in');
+                });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>

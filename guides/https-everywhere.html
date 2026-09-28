@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn on HTTPS everywhere | Dredge Host Guides</title>
+    <meta name="description" content="Get the padlock on every page and send visitors to the secure version of your site automatically.">
+    <link rel="canonical" href="https://dredgehost.com/guides/https-everywhere.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Turn on HTTPS everywhere | Dredge Host Guides">
+    <meta property="og:description" content="Get the padlock on every page and send visitors to the secure version of your site automatically.">
+    <meta property="og:url" content="https://dredgehost.com/guides/https-everywhere.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Turn on HTTPS everywhere",
+          "item": "https://dredgehost.com/guides/https-everywhere.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="eyebrow">Your site &middot; 4 min read</p>
+                <h1>Turn on HTTPS everywhere</h1>
+                <p class="lede">Every domain on Dredge gets a free certificate automatically. This guide makes sure every visitor actually uses it.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Step 1: Check your certificate</h2>
+                <p>In cPanel, open <strong>SSL/TLS Status</strong>. Each domain should show a green
+                padlock. If one doesn't:</p>
+                <ul>
+                    <li>Make sure the domain points at Dredge (see <a href="connect-domain.html">Connect a
+                    domain</a>). Certificates can only be issued for domains that point here.</li>
+                    <li>Click <strong>Run AutoSSL</strong> and give it a few minutes.</li>
+                    <li>Still red? The row explains why. Email us the message and we'll sort it out.</li>
+                </ul>
+                <p>Certificates renew on their own. You never need to buy or install one.</p>
+
+                <h2>Step 2: Redirect everyone to HTTPS</h2>
+                <ol>
+                    <li>In cPanel, open <strong>Domains</strong>.</li>
+                    <li>Switch on <strong>Force HTTPS Redirect</strong> next to each domain.</li>
+                </ol>
+                <p>Now anyone who types <code>http://yourdomain.com</code> lands on
+                <code>https://yourdomain.com</code>.</p>
+
+                <h2>Step 3: For WordPress sites</h2>
+                <ol>
+                    <li>Go to <strong>Settings &rarr; General</strong> and make sure both
+                    <strong>WordPress Address</strong> and <strong>Site Address</strong> start with
+                    <code>https://</code>.</li>
+                    <li>If some pages show a padlock with a warning, they have &ldquo;mixed content&rdquo;:
+                    images or scripts still loading over <code>http://</code>. Install
+                    <strong>Better Search Replace</strong> and replace <code>http://yourdomain.com</code> with
+                    <code>https://yourdomain.com</code> across all tables.</li>
+                </ol>
+
+                <p class="muted-note">Hard-coded links in themes or custom code aren't covered by the
+                search-and-replace. Your browser's developer tools (Console tab) list any file still
+                loading over <code>http://</code>.</p>
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <p class="section-eyebrow">Keep going</p>
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="connect-domain.html" data-cat="domains">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="install-wordpress.html" data-cat="wordpress">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 8.5 2.8 8 2.2-6 2.2 6 2.8-8"/></svg></span>
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Install WordPress in one click</h3>
+                        <p>Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.</p>
+                        <span class="guide-meta">3 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                    <a class="doc-card guide-card" href="upload-website.html" data-cat="site">
+                        <span class="guide-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg></span>
+                        <span class="doc-cat">Your site</span>
+                        <h3>Upload a website with File Manager or FTP</h3>
+                        <p>Put an HTML site, or one exported from a site builder, live on your domain.</p>
+                        <span class="guide-meta">5 min read <span aria-hidden="true">&rarr;</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section ink">
+            <div class="wrap" style="text-align:center;max-width:640px;">
+                <h2 class="section-title light" style="margin:0 auto 1rem;">Still stuck?</h2>
+                <p style="color:var(--paper);opacity:0.85;margin-bottom:1.5rem;">Email us and a real person who runs the platform will help.</p>
+                <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+                    <a class="btn btn-primary" href="../contact.html" style="background:var(--paper);color:var(--teal);">Contact us</a>
+                    <a class="btn btn-ghost" href="../pricing.html" style="color:var(--paper);border-color:rgba(255,255,255,0.55);">See the plans</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>
