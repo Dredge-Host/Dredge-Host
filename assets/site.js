@@ -38,6 +38,7 @@
               '<a href="' + (root || './') + '#features"' + (active === 'features' ? ' aria-current="page"' : '') + '>Features</a>' +
               '<a href="' + root + 'pricing.html"' + (active === 'pricing' ? ' aria-current="page"' : '') + '>Pricing</a>' +
               '<a href="' + root + 'about.html"' + (active === 'about' ? ' aria-current="page"' : '') + '>About</a>' +
+              '<a href="' + root + 'guides.html"' + (active === 'guides' ? ' aria-current="page"' : '') + '>Guides</a>' +
               '<a href="' + root + 'status.html"' + (active === 'status' ? ' aria-current="page"' : '') + '>Status</a>' +
               '<a class="nav-cta" href="' + (root || './') + '#get-started">Get started</a>' +
             '</nav>' +
@@ -61,6 +62,7 @@
                 '<a href="' + (root || './') + '#features">Features</a>' +
                 '<a href="' + root + 'pricing.html">Pricing</a>' +
                 '<a href="' + root + 'status.html">Status</a>' +
+                '<a href="' + root + 'guides.html">Guides</a>' +
                 '<a href="' + (root || './') + '#get-started">Get started</a>' +
               '</div>' +
               '<div class="footer-col">' +
