@@ -1,7 +1,7 @@
 /* ============================================================
    Dredge Host — shared site script
-   Injects the header + footer on every page, wires up nav,
-   scroll reveals, the FAQ accordion, and the current year.
+   Injects the header + footer on every page, and wires up the
+   mobile nav and the FAQ accordion.
    Pages set data-active on <body> to highlight the right nav link.
    Use data-root="" for root pages and data-root="../" for pages
    in subfolders so links and asset paths stay correct.
@@ -54,7 +54,7 @@
           '<div class="wrap footer-inner">' +
             '<div class="footer-brand">' +
               '<img src="' + root + 'assets/logo-light.png" alt="Dredge Host" class="footer-logo" width="296" height="150">' +
-              '<p class="footer-blurb">Fast, honest, independent web hosting.</p>' +
+              '<p class="footer-blurb">Independent cPanel hosting.</p>' +
             '</div>' +
             '<nav class="footer-links" aria-label="Footer">' +
               '<div class="footer-col">' +
@@ -63,7 +63,6 @@
                 '<a href="' + root + 'pricing.html">Pricing</a>' +
                 '<a href="' + root + 'status.html">Status</a>' +
                 '<a href="' + root + 'guides.html">Guides</a>' +
-                '<a href="' + root + 'pricing.html">Get started</a>' +
               '</div>' +
               '<div class="footer-col">' +
                 '<span class="footer-head">Company</span>' +
@@ -80,14 +79,13 @@
               '<div class="footer-col">' +
                 '<span class="footer-head">Connect</span>' +
                 '<a href="mailto:support@dredgehost.com">Email</a>' +
-                '<a href="https://dredgehost.com/">Website</a>' +
                 '<a href="https://github.com/Dredge-Host" rel="noopener">GitHub</a>' +
               '</div>' +
             '</nav>' +
           '</div>' +
           '<div class="wrap footer-bottom">' +
-            '<p>&copy; ' + year + ' Dredge Host. All rights reserved.</p>' +
-            '<p class="footer-status"><span class="dot"></span> <a href="' + root + 'status.html" style="color:inherit;">All systems operational</a></p>' +
+            '<p>&copy; ' + year + ' Dredge Host</p>' +
+            '<p><a href="mailto:support@dredgehost.com">support@dredgehost.com</a></p>' +
           '</div>' +
         '</footer>';
 
@@ -111,27 +109,6 @@
                 toggle.setAttribute('aria-expanded', 'false');
             }
         });
-    }
-
-    /* ---- Scroll reveal ---- */
-    var revealTargets = document.querySelectorAll(
-        '.feature, .plan-card, .about-copy, .section-title, .notify-inner, ' +
-        '.reveal-me, .doc-card, .post-card, .faq-item, .status-row, .value-card'
-    );
-    revealTargets.forEach(function (el) { el.classList.add('reveal'); });
-
-    if ('IntersectionObserver' in window && revealTargets.length) {
-        var io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in');
-                    io.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12 });
-        revealTargets.forEach(function (el) { io.observe(el); });
-    } else {
-        revealTargets.forEach(function (el) { el.classList.add('in'); });
     }
 
     /* ---- FAQ accordion ---- */

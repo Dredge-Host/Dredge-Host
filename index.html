@@ -20,7 +20,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
     {
@@ -57,75 +57,66 @@
         <section class="hero" id="top">
             <div class="wrap hero-inner">
                 <div class="hero-copy">
-                    <p class="eyebrow">A Web Hosting Company</p>
-                    <h1 class="hero-title">Hosting that gets out of your way.</h1>
+                    <h1 class="hero-title">Plain cPanel hosting, from $5 a month.</h1>
                     <p class="hero-sub">
-                        Fast, secure cPanel hosting for your website, blog, or business.
-                        Free SSL, email on your domain, one-click WordPress, and a real
-                        person on the other end whenever you need a hand.
+                        SSD storage, free HTTPS, email on your own domain, and one-click
+                        WordPress. Dredge is a small, independent host, and the people who
+                        run the servers are the ones who answer your support email.
                     </p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="pricing.html">Get started</a>
-                        <a class="btn btn-ghost" href="pricing.html">See the plans</a>
+                        <a class="btn btn-primary" href="pricing.html">See plans</a>
+                        <a class="btn btn-ghost" href="guides.html">Read the setup guides</a>
                     </div>
-                    <p class="hero-note">Independent hosting &middot; plans from $5/mo</p>
                 </div>
 
-                <div class="hero-mark" aria-hidden="true">
-                    <div class="tumbler">
-                        <img src="assets/dredge-app-tile-512.png" alt="" class="tumbler-img">
-                    </div>
-                </div>
-            </div>
-            <div class="marquee" aria-hidden="true">
-                <div class="marquee-track">
-                    <span>FAST&nbsp;&middot;&nbsp;HONEST&nbsp;&middot;&nbsp;INDEPENDENT&nbsp;&middot;&nbsp;DREDGE&nbsp;HOSTING&nbsp;&middot;&nbsp;</span>
-                    <span>FAST&nbsp;&middot;&nbsp;HONEST&nbsp;&middot;&nbsp;INDEPENDENT&nbsp;&middot;&nbsp;DREDGE&nbsp;HOSTING&nbsp;&middot;&nbsp;</span>
-                </div>
+                <table class="hero-specs">
+                    <caption class="visually-hidden">Plans at a glance</caption>
+                    <thead>
+                        <tr><th scope="col">Plan</th><th scope="col">Sites</th><th scope="col">Storage</th><th scope="col">Price</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Silt</th><td>1</td><td>2&nbsp;GB</td><td>$5/mo</td></tr>
+                        <tr><th scope="row">Channel</th><td>5</td><td>6&nbsp;GB</td><td>$12/mo</td></tr>
+                        <tr><th scope="row">Harbor</th><td>15</td><td>15&nbsp;GB</td><td>$25/mo</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
         <section class="features" id="features">
             <div class="wrap">
-                <p class="section-eyebrow">What you get</p>
-                <h2 class="section-title">Built on the boring stuff that matters.</h2>
+                <h2 class="section-title">What every plan includes</h2>
                 <div class="feature-grid">
                     <article class="feature">
-                        <span class="feature-num">01</span>
                         <h3>SSD storage</h3>
-                        <p>Every account sits on solid-state storage in a US datacenter.
-                        Your database queries and page loads aren't waiting on a spinning disk.</p>
+                        <p>Every account sits on solid-state storage in a US datacenter,
+                        so database queries and page loads aren't waiting on a spinning disk.</p>
                     </article>
                     <article class="feature">
-                        <span class="feature-num">02</span>
                         <h3>Your own cPanel</h3>
-                        <p>A real control panel per account: file manager, MySQL, phpMyAdmin,
-                        cron jobs, PHP version switching, and SFTP. No proprietary dashboard
-                        to learn and nothing to unlearn if you leave.</p>
+                        <p>File Manager, MySQL, phpMyAdmin, cron jobs, PHP version switching,
+                        and SFTP. It's the standard control panel, so there's nothing
+                        proprietary to learn and nothing to unlearn if you leave.</p>
                     </article>
                     <article class="feature">
-                        <span class="feature-num">03</span>
                         <h3>One-click installs</h3>
-                        <p>Launch WordPress, Joomla, Drupal, and a few hundred other apps from
-                        Softaculous in a couple of clicks. No manual setup, no config files.</p>
+                        <p>Install WordPress, Joomla, Drupal, and a few hundred other apps
+                        from Softaculous without touching a config file.</p>
                     </article>
                     <article class="feature">
-                        <span class="feature-num">04</span>
-                        <h3>Free TLS, always</h3>
-                        <p>Automatic HTTPS on every domain and subdomain you add.
-                        Certificates renew themselves. You never think about it.</p>
+                        <h3>Free HTTPS</h3>
+                        <p>Certificates are issued automatically for every domain and
+                        subdomain you add, and they renew on their own.</p>
                     </article>
                     <article class="feature">
-                        <span class="feature-num">05</span>
                         <h3>Email on your domain</h3>
                         <p>Mailboxes, forwarders, and webmail for every domain on your
-                        account, included. Use them or point your MX somewhere else, your call.</p>
+                        account. Or point your MX records somewhere else; that's up to you.</p>
                     </article>
                     <article class="feature">
-                        <span class="feature-num">06</span>
-                        <h3>Human support</h3>
-                        <p>Email a person who runs the platform, not a chatbot funnel.
-                        The people who run the platform answer every email.</p>
+                        <h3>Support by email</h3>
+                        <p>No chatbot and no outsourced first line. Your email goes to the
+                        people who built and run the platform.</p>
                     </article>
                 </div>
             </div>
@@ -133,15 +124,13 @@
 
         <section class="plans" id="plans">
             <div class="wrap">
-                <p class="section-eyebrow">Plans</p>
-                <h2 class="section-title">Pick a size. Change it whenever.</h2>
-                <p class="plans-lead">Three sizes that cover most projects, every one with cPanel,
-                    free TLS, and email included. See the
-                    <a href="pricing.html" style="color:var(--teal);text-decoration:underline;text-underline-offset:2px;">full pricing breakdown</a>.</p>
+                <h2 class="section-title">Plans</h2>
+                <p class="plans-lead">Three sizes, each with cPanel, free HTTPS, and email.
+                    Change plans whenever you like. The <a href="pricing.html">pricing page</a>
+                    has the full comparison.</p>
 
                 <div class="plan-grid">
                     <article class="plan-card">
-                        <span class="plan-badge">Best value</span>
                         <h3 class="plan-name">Silt</h3>
                         <p class="plan-tag">For a personal site or portfolio</p>
                         <p class="plan-price"><span class="amount">$5</span><span class="per">/mo</span></p>
@@ -152,11 +141,10 @@
                             <li>cPanel + free TLS</li>
                             <li>Email support</li>
                         </ul>
-                        <a class="btn btn-ghost plan-btn" href="https://my.dredgehost.com/index.php?rp=/store/web-hosting/silt">Get started</a>
+                        <a class="btn btn-ghost plan-btn" href="https://my.dredgehost.com/index.php?rp=/store/web-hosting/silt">Order Silt</a>
                     </article>
 
                     <article class="plan-card plan-featured">
-                        <span class="plan-badge">Most popular</span>
                         <h3 class="plan-name">Channel</h3>
                         <p class="plan-tag">For a small business or a few side projects</p>
                         <p class="plan-price"><span class="amount">$12</span><span class="per">/mo</span></p>
@@ -167,7 +155,7 @@
                             <li>cPanel + free TLS</li>
                             <li>Priority email support</li>
                         </ul>
-                        <a class="btn btn-primary plan-btn" href="https://my.dredgehost.com/index.php?rp=/store/web-hosting/channel">Get started</a>
+                        <a class="btn btn-primary plan-btn" href="https://my.dredgehost.com/index.php?rp=/store/web-hosting/channel">Order Channel</a>
                     </article>
 
                     <article class="plan-card">
@@ -181,7 +169,7 @@
                             <li>cPanel + free TLS</li>
                             <li>Direct line to the team</li>
                         </ul>
-                        <a class="btn btn-ghost plan-btn" href="https://my.dredgehost.com/index.php?rp=/store/web-hosting/harbor">Get started</a>
+                        <a class="btn btn-ghost plan-btn" href="https://my.dredgehost.com/index.php?rp=/store/web-hosting/harbor">Order Harbor</a>
                     </article>
                 </div>
             </div>
@@ -190,45 +178,28 @@
         <section class="about" id="about">
             <div class="wrap about-inner">
                 <div class="about-copy">
-                    <p class="section-eyebrow light">About</p>
                     <h2 class="section-title light">Why "Dredge"?</h2>
-                    <p>A dredge clears the channel so everything downstream can move.
-                        That's the job: pull the muck out of the way, the slow disks,
-                        the surprise invoices, the support mazes, so your site has a
-                        clear path to the people who need it.</p>
-                    <p>We're a small independent shop, not a hyperscaler. We run a
-                        managed cPanel platform in a US datacenter and look after every
-                        account on it ourselves, so there's always a real person who
-                        knows your setup.
-                        <a href="about.html" style="color:var(--paper);text-decoration:underline;text-underline-offset:2px;">Read our story</a>.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-num">100%</span>
-                            <span class="stat-label">independently run</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-num">$5</span>
-                            <span class="stat-label">plans from, per month</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-num">1:1</span>
-                            <span class="stat-label">support, human to human</span>
-                        </div>
-                    </div>
+                    <p>A dredge clears a channel so everything downstream can move.
+                        That's the job here: get the slow disks, surprise invoices, and
+                        support mazes out of the way so your site can get on with it.</p>
+                    <p>We're a small independent company. We run a managed cPanel platform
+                        in a US datacenter and look after every account on it ourselves,
+                        so whoever answers your email knows how your account is set up.
+                        <a href="about.html">More about us</a>.</p>
                 </div>
             </div>
         </section>
 
         <section class="notify" id="get-started">
             <div class="wrap notify-inner">
-                <h2 class="notify-title">Get your site on Dredge.</h2>
-                <p class="notify-sub">Pick a plan, point your domain, and deploy. cPanel,
-                    free TLS, email, and human support come standard on every plan.</p>
-                <div class="hero-actions" style="justify-content:center;">
-                    <a class="btn btn-primary" href="contact.html">Request an account</a>
-                    <a class="btn btn-ghost" href="pricing.html" style="color:var(--teal);border-color:var(--teal);">Compare plans</a>
+                <h2 class="notify-title">Questions before you sign up?</h2>
+                <p class="notify-sub">Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a>
+                    and ask. If you're ready, pick a plan and you'll be set up in the client area
+                    at my.dredgehost.com.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="pricing.html">Compare plans</a>
+                    <a class="btn btn-ghost" href="contact.html">Contact us</a>
                 </div>
-                <p class="notify-fineprint" style="margin-top:1.25rem;">Questions first? <a href="contact.html" style="color:var(--teal);text-decoration:underline;text-underline-offset:2px;">Talk to us</a> &mdash; a real person answers.</p>
             </div>
         </section>
     </main>

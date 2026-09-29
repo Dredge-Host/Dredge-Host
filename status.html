@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status | Dredge Host</title>
-    <meta name="description" content="Dredge Host system status. Real-time service health and incident history.">
+    <meta name="description" content="Dredge Host system status. Current service status and incident history.">
     <link rel="canonical" href="https://dredgehost.com/status.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Dredge Host">
     <meta property="og:title" content="Status | Dredge Host">
-    <meta property="og:description" content="Real-time service health for Dredge Host.">
+    <meta property="og:description" content="Current service status for Dredge Host.">
     <meta property="og:url" content="https://dredgehost.com/status.html">
     <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -20,7 +20,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
     {
@@ -49,20 +49,19 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="./">Home</a> / Status</p>
-                <p class="eyebrow">System status</p>
-                <h1>Honest uptime, in plain sight.</h1>
-                <p class="lede">Live service health for the Dredge Host platform, updated continuously.
-                When something breaks, you'll see it here first.</p>
+                <h1>Service status</h1>
+                <p class="lede">We update this page by hand when something on the platform is
+                wrong, and post a short write-up once it's fixed.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap" style="max-width:820px;">
+            <div class="wrap narrow">
                 <div class="status-banner">
                     <span class="big-dot"></span>
                     <div>
                         <strong>All systems operational</strong>
-                        <div style="font-size:0.9rem;color:var(--muted);">All services normal</div>
+                        <div class="status-sub">No known issues</div>
                     </div>
                 </div>
 
@@ -97,7 +96,7 @@
                     </div>
                 </div>
 
-                <div class="prose" style="margin-top:2.5rem;">
+                <div class="prose status-history">
                     <h2>Incident history</h2>
                     <p>No incidents to report. When something does go wrong, we'll post what
                     happened, when, and what we changed so it doesn't happen again, in plain
