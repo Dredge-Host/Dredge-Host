@@ -33,7 +33,7 @@ Plain HTML and CSS with no build step, served by GitHub Pages from the `main` br
 - `*.html`: top-level pages (home, pricing, about, guides, status, contact, and legal pages)
 - `guides/`: one page per guide
 - `style.css`: the whole stylesheet
-- `assets/site.js`: injects the shared header and footer, and runs the mobile menu, scroll reveals, and FAQ accordions. Each page sets `data-active` on `<body>` to highlight its nav link, and `data-root="../"` for pages inside a subfolder.
+- `assets/site.js`: injects the shared header and footer, and runs the mobile menu and FAQ accordions. Each page sets `data-active` on `<body>` to highlight its nav link, and `data-root="../"` for pages inside a subfolder.
 - `assets/`: logo, favicons, and social preview image
 
 To preview locally, run `python3 -m http.server` in this folder and open http://localhost:8000.
