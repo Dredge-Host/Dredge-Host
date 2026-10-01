@@ -507,3 +507,27 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nowrap { white-space: nowrap; }
+
+/* ---------- Promo banner ---------- */
+.promo-banner {
+    background: var(--ink); color: var(--paper); text-align: center;
+    padding: 0.65rem 2.5rem 0.65rem 1.5rem; font-size: 0.92rem;
+    position: relative;
+}
+.promo-banner a { color: var(--paper); }
+.promo-banner .promo-code {
+    font-family: var(--mono); font-weight: 500;
+    background: var(--teal); padding: 0.15em 0.5em; border-radius: var(--radius);
+    letter-spacing: 0.04em; margin: 0 0.15em;
+}
+.promo-banner .promo-cta {
+    text-decoration: underline; text-underline-offset: 2px;
+    margin-left: 0.4em; opacity: 0.85;
+}
+.promo-banner .promo-cta:hover { opacity: 1; }
+.promo-close {
+    position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%);
+    background: none; border: 0; color: var(--paper); opacity: 0.5;
+    cursor: pointer; font-size: 1.2rem; line-height: 1; padding: 0.25rem;
+}
+.promo-close:hover { opacity: 1; }

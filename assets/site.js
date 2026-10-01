@@ -89,10 +89,24 @@
           '</div>' +
         '</footer>';
 
+    /* ---- Promo banner ---- */
+    var promoHTML = '';
+    var promoDismissed = false;
+    try { promoDismissed = localStorage.getItem('promo_early35') === '1'; } catch (e) {}
+    if (!promoDismissed) {
+        promoHTML =
+            '<div class="promo-banner" role="status">' +
+              '35% off your first month — use code ' +
+              '<span class="promo-code">EARLY35</span> at checkout.' +
+              ' <a class="promo-cta" href="' + root + 'pricing.html">See plans &rarr;</a>' +
+              '<button class="promo-close" aria-label="Dismiss">&times;</button>' +
+            '</div>';
+    }
+
     /* ---- Inject ---- */
     var headerMount = document.getElementById('site-header');
     var footerMount = document.getElementById('site-footer');
-    if (headerMount) headerMount.outerHTML = headerHTML;
+    if (headerMount) headerMount.outerHTML = headerHTML + promoHTML;
     if (footerMount) footerMount.outerHTML = footerHTML;
 
     /* ---- Mobile nav toggle ---- */
@@ -108,6 +122,16 @@
                 nav.classList.remove('open');
                 toggle.setAttribute('aria-expanded', 'false');
             }
+        });
+    }
+
+    /* ---- Promo dismiss ---- */
+    var promoClose = document.querySelector('.promo-close');
+    if (promoClose) {
+        promoClose.addEventListener('click', function () {
+            var banner = document.querySelector('.promo-banner');
+            if (banner) banner.remove();
+            try { localStorage.setItem('promo_early35', '1'); } catch (e) {}
         });
     }
 
