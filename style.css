@@ -201,6 +201,8 @@ a { color: inherit; text-decoration: none; }
 }
 .about-facts dt { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); padding-top: 0.1rem; }
 .about-facts dd { color: var(--ink); }
+.about-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; grid-column: 1 / -1; margin-top: 1rem; }
+.about-badges img { height: 56px; width: auto; display: block; }
 
 /* ---------- Notify ---------- */
 .notify { padding: clamp(3.5rem, 8vw, 5rem) 0; background: var(--paper); border-top: 1px solid var(--line); }
