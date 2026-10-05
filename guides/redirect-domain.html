@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect a domain or page | Dredge Host Guides</title>
+    <meta name="description" content="Set up redirects in cPanel to send visitors from an old URL to a new one, or redirect www to non-www.">
+    <link rel="canonical" href="https://dredgehost.com/guides/redirect-domain.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Redirect a domain or page | Dredge Host Guides">
+    <meta property="og:description" content="Set up redirects in cPanel to send visitors from an old URL to a new one, or redirect www to non-www.">
+    <meta property="og:url" content="https://dredgehost.com/guides/redirect-domain.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Redirect a domain or page",
+          "item": "https://dredgehost.com/guides/redirect-domain.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Domains</p>
+                <p class="page-meta">3 min read</p>
+                <h1>Redirect a domain or page</h1>
+                <p class="lede">Send visitors from one address to another &mdash; an old page to a new one, www to non-www, or an entire domain to a different site.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Use the Redirects tool</h2>
+                <ol>
+                    <li>In cPanel, open <strong>Redirects</strong>.</li>
+                    <li>Choose a redirect type:
+                        <ul>
+                            <li><strong>Permanent (301)</strong> &mdash; tells search engines the move is final. Use this for most cases.</li>
+                            <li><strong>Temporary (302)</strong> &mdash; keeps the original URL in search results. Use this for short-term changes.</li>
+                        </ul>
+                    </li>
+                    <li>Select the domain from the dropdown, and type the path you want to redirect (e.g. <code>/old-page</code>). Leave the path blank to redirect the entire domain.</li>
+                    <li>Enter the full destination URL, including <code>https://</code>.</li>
+                    <li>Click <strong>Add</strong>.</li>
+                </ol>
+
+                <h2>Redirect www to non-www (or vice versa)</h2>
+                <p>The easiest way is with an <code>.htaccess</code> rule. Open <strong>File Manager</strong>,
+                navigate to <code>public_html</code>, and edit <code>.htaccess</code>. Add one of these
+                blocks at the top:</p>
+                <p><strong>Non-www to www:</strong></p>
+                <pre><code>RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]</code></pre>
+                <p><strong>www to non-www:</strong></p>
+                <pre><code>RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]</code></pre>
+
+                <h2>Remove a redirect</h2>
+                <p>Back in <strong>Redirects</strong>, your existing redirects are listed at the bottom.
+                Click <strong>Delete</strong> next to the one you want to remove.</p>
+
+                <p class="muted-note">If you're redirecting to keep search rankings, a 301 is almost always what you
+                want. Search engines transfer most of the original page's ranking to the new URL.</p>
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="connect-domain.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="domain-aliases.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Point multiple domains to one site</h3>
+                        <p>Make two or more domain names show the same website using aliases in cPanel.</p>
+                        <span class="guide-meta">3 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="manage-dns.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Manage DNS records</h3>
+                        <p>Add or edit A, CNAME, MX, and TXT records in cPanel's Zone Editor.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

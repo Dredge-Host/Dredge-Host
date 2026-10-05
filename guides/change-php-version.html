@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change your PHP version | Dredge Host Guides</title>
+    <meta name="description" content="Switch between PHP versions in cPanel when a plugin or framework needs a newer or older release.">
+    <link rel="canonical" href="https://dredgehost.com/guides/change-php-version.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Change your PHP version | Dredge Host Guides">
+    <meta property="og:description" content="Switch between PHP versions in cPanel when a plugin or framework needs a newer or older release.">
+    <meta property="og:url" content="https://dredgehost.com/guides/change-php-version.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Change your PHP version",
+          "item": "https://dredgehost.com/guides/change-php-version.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="page-meta">2 min read</p>
+                <h1>Change your PHP version</h1>
+                <p class="lede">Some plugins, themes, or frameworks need a specific PHP version. You can switch in about thirty seconds.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Switch the version</h2>
+                <ol>
+                    <li>In cPanel, open <strong>MultiPHP Manager</strong>.</li>
+                    <li>Tick the checkbox next to the domain you want to change.</li>
+                    <li>Pick a version from the <strong>PHP Version</strong> dropdown on the right.</li>
+                    <li>Click <strong>Apply</strong>.</li>
+                </ol>
+                <p>The change takes effect immediately. Refresh your site to confirm it's working.</p>
+
+                <h2>Check which version you're running</h2>
+                <p>The <strong>MultiPHP Manager</strong> page shows the current version next to
+                each domain. You can also create a file called <code>info.php</code> in your
+                site's root with this content:</p>
+                <pre><code>&lt;?php phpinfo();</code></pre>
+                <p>Visit <code>yourdomain.com/info.php</code> in a browser. Delete the file
+                when you're done &mdash; it exposes server details you don't want public.</p>
+
+                <h2>Change PHP settings</h2>
+                <p>If you need to adjust values like <code>upload_max_filesize</code>,
+                <code>max_execution_time</code>, or <code>memory_limit</code>:</p>
+                <ol>
+                    <li>Open <strong>MultiPHP INI Editor</strong> in cPanel.</li>
+                    <li>Select your domain from the dropdown.</li>
+                    <li>Change the values you need and click <strong>Apply</strong>.</li>
+                </ol>
+
+                <h2>Which version to pick</h2>
+                <p>As a rule of thumb, use the newest version your site supports. WordPress
+                currently recommends PHP 8.1 or newer. If you're unsure, try the latest
+                version &mdash; if something breaks, you can switch back in the same way.</p>
+
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="install-wordpress.html" data-cat="wordpress">
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Install WordPress in one click</h3>
+                        <p>Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.</p>
+                        <span class="guide-meta">3 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="fix-500-error.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Fix a 500 Internal Server Error</h3>
+                        <p>Track down the cause of a blank page or "Internal Server Error" using error logs and common fixes.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="cron-jobs.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Set up a cron job</h3>
+                        <p>Schedule a script or command to run automatically at regular intervals.</p>
+                        <span class="guide-meta">3 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix "Your connection is not private" errors | Dredge Host Guides</title>
+    <meta name="description" content="Troubleshoot SSL certificate errors that show a warning page instead of your site.">
+    <link rel="canonical" href="https://dredgehost.com/guides/fix-ssl-errors.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Fix &quot;Your connection is not private&quot; errors | Dredge Host Guides">
+    <meta property="og:description" content="Troubleshoot SSL certificate errors that show a warning page instead of your site.">
+    <meta property="og:url" content="https://dredgehost.com/guides/fix-ssl-errors.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Fix SSL errors",
+          "item": "https://dredgehost.com/guides/fix-ssl-errors.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="page-meta">4 min read</p>
+                <h1>Fix "Your connection is not private" errors</h1>
+                <p class="lede">When a browser shows this warning instead of your site, the SSL certificate is missing, expired, or doesn't match your domain. Here's how to fix it.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Check your certificate status</h2>
+                <ol>
+                    <li>In cPanel, open <strong>SSL/TLS Status</strong>.</li>
+                    <li>Look for your domain in the list. A green padlock means the certificate is
+                    active. A red or yellow icon means there's a problem.</li>
+                </ol>
+
+                <h2>Run AutoSSL</h2>
+                <p>Dredge issues free certificates automatically through AutoSSL. If your certificate
+                is missing or expired, click <strong>Run AutoSSL</strong> at the top of the
+                SSL/TLS Status page. It usually completes within a few minutes.</p>
+
+                <h2>Common reasons AutoSSL fails</h2>
+                <ul>
+                    <li><strong>Domain doesn't point here yet.</strong> AutoSSL needs to verify the
+                    domain resolves to your Dredge account. Make sure you've followed the
+                    <a href="connect-domain.html">Connect a domain</a> guide and DNS has had time
+                    to propagate.</li>
+                    <li><strong>A .htaccess redirect is blocking validation.</strong> If you have
+                    rules that redirect all traffic (e.g. to another domain), AutoSSL can't
+                    reach the validation file. Temporarily remove or comment out those rules
+                    and run AutoSSL again.</li>
+                    <li><strong>The www version isn't set up.</strong> If your domain is
+                    <code>yourdomain.com</code> but <code>www.yourdomain.com</code> doesn't
+                    resolve here, AutoSSL may fail for the www variant. Add the www version
+                    in <strong>Domains</strong> or point it in your DNS.</li>
+                </ul>
+
+                <h2>Mixed content warnings</h2>
+                <p>If your site loads but the padlock is missing or shows a warning, your page
+                is loading some resources (images, scripts, stylesheets) over <code>http://</code>
+                instead of <code>https://</code>. Fix the URLs in your site's code or database
+                to use <code>https://</code>. For WordPress, the
+                <a href="https-everywhere.html">HTTPS everywhere</a> guide covers this.</p>
+
+                <h2>Still not working?</h2>
+                <p>Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> with
+                your domain name and we'll check the certificate from our side.</p>
+
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="https-everywhere.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Turn on HTTPS everywhere</h3>
+                        <p>Get the padlock on every page and send visitors to the secure version of your site automatically.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="connect-domain.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="fix-500-error.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Fix a 500 Internal Server Error</h3>
+                        <p>Track down the cause of a blank page or "Internal Server Error" using error logs and common fixes.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

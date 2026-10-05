@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a MySQL database | Dredge Host Guides</title>
+    <meta name="description" content="Set up a MySQL database and user in cPanel so your app or CMS can store data.">
+    <link rel="canonical" href="https://dredgehost.com/guides/create-mysql-database.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Create a MySQL database | Dredge Host Guides">
+    <meta property="og:description" content="Set up a MySQL database and user in cPanel so your app or CMS can store data.">
+    <meta property="og:url" content="https://dredgehost.com/guides/create-mysql-database.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Create a MySQL database",
+          "item": "https://dredgehost.com/guides/create-mysql-database.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="page-meta">3 min read</p>
+                <h1>Create a MySQL database</h1>
+                <p class="lede">Most web apps need a database. This guide walks through creating one in cPanel and connecting a user to it.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>When you need this</h2>
+                <p>If you installed WordPress or another app through Softaculous, the database was
+                created for you automatically. This guide is for when you're setting up a custom
+                PHP app, a framework like Laravel, or anything else that needs its own database.</p>
+
+                <h2>Create the database</h2>
+                <ol>
+                    <li>In cPanel, open <strong>MySQL Databases</strong>.</li>
+                    <li>Under <strong>Create New Database</strong>, type a name (cPanel prefixes it with your account name, so <code>myapp</code> becomes something like <code>username_myapp</code>).</li>
+                    <li>Click <strong>Create Database</strong>.</li>
+                </ol>
+
+                <h2>Create a database user</h2>
+                <ol>
+                    <li>On the same page, scroll to <strong>MySQL Users &gt; Add New User</strong>.</li>
+                    <li>Choose a username and a strong password. Use the password generator if you like.</li>
+                    <li>Click <strong>Create User</strong>.</li>
+                </ol>
+
+                <h2>Connect user to database</h2>
+                <ol>
+                    <li>Scroll to <strong>Add User To Database</strong>.</li>
+                    <li>Select the user and the database you just created.</li>
+                    <li>Click <strong>Add</strong>.</li>
+                    <li>On the privileges screen, tick <strong>ALL PRIVILEGES</strong> and click <strong>Make Changes</strong>.</li>
+                </ol>
+
+                <h2>Use it in your app</h2>
+                <p>Your app's config will ask for four things:</p>
+                <ul>
+                    <li><strong>Host:</strong> <code>localhost</code></li>
+                    <li><strong>Database:</strong> the full prefixed name, e.g. <code>username_myapp</code></li>
+                    <li><strong>Username:</strong> the full prefixed username</li>
+                    <li><strong>Password:</strong> the password you set above</li>
+                </ul>
+
+                <h2>Browse your data</h2>
+                <p>Open <strong>phpMyAdmin</strong> from cPanel to view tables, run queries, and
+                import or export data.</p>
+
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="install-wordpress.html" data-cat="wordpress">
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Install WordPress in one click</h3>
+                        <p>Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.</p>
+                        <span class="guide-meta">3 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="backups.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Back up and restore your site</h3>
+                        <p>Download your own copy of your files, databases, and email, and know how to get them back.</p>
+                        <span class="guide-meta">5 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="upload-website.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Upload a website with File Manager or FTP</h3>
+                        <p>Put an HTML site, or one exported from a site builder, live on your domain.</p>
+                        <span class="guide-meta">5 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

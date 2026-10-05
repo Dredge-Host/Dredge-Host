@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point multiple domains to one site | Dredge Host Guides</title>
+    <meta name="description" content="Make two or more domain names show the same website using aliases in cPanel.">
+    <link rel="canonical" href="https://dredgehost.com/guides/domain-aliases.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Point multiple domains to one site | Dredge Host Guides">
+    <meta property="og:description" content="Make two or more domain names show the same website using aliases in cPanel.">
+    <meta property="og:url" content="https://dredgehost.com/guides/domain-aliases.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Point multiple domains to one site",
+          "item": "https://dredgehost.com/guides/domain-aliases.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Domains</p>
+                <p class="page-meta">3 min read</p>
+                <h1>Point multiple domains to one site</h1>
+                <p class="lede">Own more than one domain name? You can make them all show the same website, or redirect the extras to your main domain.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Option 1: Domain alias (same content, both URLs work)</h2>
+                <ol>
+                    <li>Point the extra domain's nameservers at Dredge, just like you did for your
+                    main domain (see <a href="connect-domain.html">Connect a domain</a>).</li>
+                    <li>In cPanel, open <strong>Domains</strong> and click <strong>Create A New Domain</strong>.</li>
+                    <li>Type the extra domain name.</li>
+                    <li>Make sure <strong>Share document root</strong> is ticked and the path points to
+                    <code>public_html</code> (your main site's folder).</li>
+                    <li>Click <strong>Submit</strong>.</li>
+                </ol>
+                <p>Both domains now serve the same files. AutoSSL will issue a certificate for the
+                new domain on its next run.</p>
+
+                <h2>Option 2: Redirect the extras (better for SEO)</h2>
+                <p>If you'd rather have one canonical URL and redirect the others, set up the alias
+                as above, then add a redirect using the <a href="redirect-domain.html">Redirect a
+                domain</a> guide. A 301 redirect tells search engines that the main domain is the
+                real one.</p>
+
+                <h2>Email on alias domains</h2>
+                <p>An alias domain can receive email too. Create mailboxes or forwarders for it
+                in cPanel the same way you would for your main domain.</p>
+
+                <h2>Remove an alias</h2>
+                <p>In <strong>Domains</strong>, click <strong>Manage</strong> next to the alias
+                domain and then <strong>Remove Domain</strong>. This doesn't delete any files
+                since the alias shared the same folder.</p>
+
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="connect-domain.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="redirect-domain.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Redirect a domain or page</h3>
+                        <p>Send visitors from an old URL to a new one, or redirect www to non-www.</p>
+                        <span class="guide-meta">3 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="manage-dns.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Manage DNS records</h3>
+                        <p>Add or edit A, CNAME, MX, and TXT records in cPanel's Zone Editor.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

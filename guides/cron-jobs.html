@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set up a cron job | Dredge Host Guides</title>
+    <meta name="description" content="Schedule a script or command to run automatically at regular intervals using cPanel's cron job manager.">
+    <link rel="canonical" href="https://dredgehost.com/guides/cron-jobs.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Set up a cron job | Dredge Host Guides">
+    <meta property="og:description" content="Schedule a script or command to run automatically at regular intervals using cPanel's cron job manager.">
+    <meta property="og:url" content="https://dredgehost.com/guides/cron-jobs.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Set up a cron job",
+          "item": "https://dredgehost.com/guides/cron-jobs.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="page-meta">3 min read</p>
+                <h1>Set up a cron job</h1>
+                <p class="lede">A cron job runs a command on a schedule, like clearing a cache every night or sending a daily email digest.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Open the cron editor</h2>
+                <p>In cPanel, open <strong>Cron Jobs</strong>. At the top you can set an email address
+                to receive the output of every cron run. Leave it blank if you don't want
+                notifications.</p>
+
+                <h2>Add a cron job</h2>
+                <ol>
+                    <li>Under <strong>Add New Cron Job</strong>, pick a schedule from the
+                    <strong>Common Settings</strong> dropdown, or fill in the five time fields
+                    yourself (minute, hour, day, month, weekday).</li>
+                    <li>In the <strong>Command</strong> field, type the full path to your script. For
+                    a PHP script:<br>
+                    <code>/usr/local/bin/php /home/username/public_html/cron.php</code></li>
+                    <li>Click <strong>Add New Cron Job</strong>.</li>
+                </ol>
+
+                <h2>Common schedules</h2>
+                <div class="compare-wrap">
+                <table class="compare-table">
+                    <thead><tr><th>Schedule</th><th>Cron expression</th></tr></thead>
+                    <tbody>
+                        <tr><td>Every 15 minutes</td><td><code>*/15 * * * *</code></td></tr>
+                        <tr><td>Once per hour</td><td><code>0 * * * *</code></td></tr>
+                        <tr><td>Once per day (midnight)</td><td><code>0 0 * * *</code></td></tr>
+                        <tr><td>Once per week (Sunday)</td><td><code>0 0 * * 0</code></td></tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <h2>Silence the output</h2>
+                <p>If you don't need email notifications for a specific job, add
+                <code>&gt;/dev/null 2&gt;&amp;1</code> to the end of the command.</p>
+
+                <h2>Edit or delete</h2>
+                <p>Your existing cron jobs are listed at the bottom of the same page. Click
+                <strong>Edit</strong> to change the schedule or command, or <strong>Delete</strong>
+                to remove one.</p>
+
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="client-area-and-cpanel.html" data-cat="start">
+                        <span class="doc-cat">Getting started</span>
+                        <h3>Find your way around your client area and cPanel</h3>
+                        <p>Where to pay invoices, change plans, and log in to cPanel, the control panel for your site.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="change-php-version.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Change your PHP version</h3>
+                        <p>Switch between PHP versions when a plugin or framework needs a newer or older release.</p>
+                        <span class="guide-meta">2 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="create-mysql-database.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Create a MySQL database</h3>
+                        <p>Set up a MySQL database and user in cPanel so your app or CMS can store data.</p>
+                        <span class="guide-meta">3 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>

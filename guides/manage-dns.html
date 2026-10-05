@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage DNS records | Dredge Host Guides</title>
+    <meta name="description" content="Add or edit A, CNAME, MX, and TXT records in cPanel's Zone Editor.">
+    <link rel="canonical" href="https://dredgehost.com/guides/manage-dns.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Manage DNS records | Dredge Host Guides">
+    <meta property="og:description" content="Add or edit A, CNAME, MX, and TXT records in cPanel's Zone Editor.">
+    <meta property="og:url" content="https://dredgehost.com/guides/manage-dns.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Manage DNS records",
+          "item": "https://dredgehost.com/guides/manage-dns.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Domains</p>
+                <p class="page-meta">4 min read</p>
+                <h1>Manage DNS records</h1>
+                <p class="lede">Add or edit A, CNAME, MX, and TXT records in cPanel's Zone Editor &mdash; for things like domain verification, external email, or pointing a subdomain at another service.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>When you need this</h2>
+                <p>If your domain's nameservers point to Dredge (the default setup from the
+                <a href="connect-domain.html">Connect a domain</a> guide), then cPanel manages
+                your DNS. You'll need the Zone Editor when:</p>
+                <ul>
+                    <li>A third-party service asks you to add a TXT record for verification (Google Search Console, Mailgun, etc.).</li>
+                    <li>You want to point a subdomain at an external service with a CNAME.</li>
+                    <li>You're switching email to an external provider and need to change MX records.</li>
+                </ul>
+
+                <h2>Open the Zone Editor</h2>
+                <p>In cPanel, open <strong>Zone Editor</strong>. Click <strong>Manage</strong> next
+                to the domain you want to edit.</p>
+
+                <h2>Add a record</h2>
+                <ol>
+                    <li>Click <strong>Add Record</strong> and choose the type.</li>
+                    <li>Fill in the fields the service gave you. Common types:</li>
+                </ol>
+                <div class="compare-wrap">
+                <table class="compare-table">
+                    <thead><tr><th>Type</th><th>What it does</th><th>Example use</th></tr></thead>
+                    <tbody>
+                        <tr><td>A</td><td>Points a name to an IPv4 address</td><td>Pointing your domain at a server</td></tr>
+                        <tr><td>CNAME</td><td>Points a name to another name</td><td>Pointing <code>shop.yourdomain.com</code> at Shopify</td></tr>
+                        <tr><td>MX</td><td>Tells email where to go</td><td>Routing email through Google Workspace</td></tr>
+                        <tr><td>TXT</td><td>Holds text data</td><td>Domain verification, SPF, DKIM, DMARC</td></tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <h2>Edit or delete a record</h2>
+                <p>Find the record in the list and click <strong>Edit</strong> or <strong>Delete</strong>.
+                Be careful with records you didn't create yourself &mdash; some are needed for your
+                site and email to work.</p>
+
+                <h2>How long changes take</h2>
+                <p>Changes made here usually take effect within a few minutes, but some ISPs cache
+                DNS for up to 24 hours. If you're testing, try flushing your local DNS cache or
+                using a different network.</p>
+
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="connect-domain.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="email-on-your-domain.html" data-cat="email">
+                        <span class="doc-cat">Email</span>
+                        <h3>Set up email on your domain</h3>
+                        <p>Create a you@yourdomain.com mailbox and use it on your phone and computer.</p>
+                        <span class="guide-meta">6 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="redirect-domain.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Redirect a domain or page</h3>
+                        <p>Send visitors from an old URL to a new one, or redirect www to non-www.</p>
+                        <span class="guide-meta">3 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>
