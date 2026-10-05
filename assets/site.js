@@ -81,9 +81,12 @@
                 '<a href="mailto:support@dredgehost.com">Email</a>' +
                 '<a href="https://github.com/Dredge-Host" rel="noopener">GitHub</a>' +
                 '<a href="https://x.com/DredgeHost" rel="noopener">X (Twitter)</a>' +
-                '<a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium</a>' +
+                '<a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium Support</a>' +
               '</div>' +
             '</nav>' +
+          '</div>' +
+          '<div class="wrap footer-payment">' +
+            '<p>We accept Visa, Mastercard, Amex, Discover, Apple Pay &amp; Google Pay via Stripe.</p>' +
           '</div>' +
           '<div class="wrap footer-bottom">' +
             '<p>&copy; ' + year + ' Dredge Host</p>' +
