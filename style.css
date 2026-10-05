@@ -160,6 +160,7 @@ a { color: inherit; text-decoration: none; }
 .plans.plain { background: var(--paper); }
 .plans-lead { max-width: 56ch; color: var(--muted); margin: -1.25rem 0 2.25rem; }
 .plans-lead a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+.plans-note { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 1.5rem; }
 .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; align-items: stretch; }
 .plan-card {
     background: var(--paper); border: 1px solid var(--line);
