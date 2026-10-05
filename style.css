@@ -533,7 +533,7 @@ a { color: inherit; text-decoration: none; }
     font-size: 0.88rem; font-family: var(--mono); color: var(--ink);
     border: 1px solid var(--line); border-radius: 6px; padding: 0.35rem 0.75rem;
 }
-.payment-list svg { width: 32px; height: 22px; flex-shrink: 0; }
+.payment-list img { height: 22px; width: auto; flex-shrink: 0; }
 
 /* ---------- Promo banner ---------- */
 .promo-banner {
