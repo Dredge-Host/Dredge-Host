@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with an FTP client | Dredge Host Guides</title>
+    <meta name="description" content="Use FileZilla or another FTP client to upload and manage files on your Dredge account over a secure connection.">
+    <link rel="canonical" href="https://dredgehost.com/guides/connect-with-ftp.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Connect with an FTP client | Dredge Host Guides">
+    <meta property="og:description" content="Use FileZilla or another FTP client to upload and manage files on your Dredge account over a secure connection.">
+    <meta property="og:url" content="https://dredgehost.com/guides/connect-with-ftp.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Connect with an FTP client",
+          "item": "https://dredgehost.com/guides/connect-with-ftp.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="../" data-active="guides">
+    <div id="site-header"></div>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="page-meta">3 min read</p>
+                <h1>Connect with an FTP client</h1>
+                <p class="lede">Use FileZilla or another FTP client to upload and manage your site's files over a secure connection.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2>Find your FTP details</h2>
+                <ol>
+                    <li>In cPanel, open <strong>FTP Accounts</strong>.</li>
+                    <li>Your main FTP account is listed at the bottom under <strong>Special FTP Accounts</strong>. Click <strong>Configure FTP Client</strong> next to it.</li>
+                    <li>You'll see four details you need:
+                        <ul>
+                            <li><strong>Host:</strong> your server hostname (e.g. <code>yourdomain.com</code> or the server name shown)</li>
+                            <li><strong>Username:</strong> your cPanel username</li>
+                            <li><strong>Password:</strong> your cPanel password</li>
+                            <li><strong>Port:</strong> <code>21</code> for FTP, or <code>22</code> for SFTP</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2>Connect with FileZilla</h2>
+                <ol>
+                    <li>Open FileZilla and go to <strong>File &gt; Site Manager</strong>.</li>
+                    <li>Click <strong>New Site</strong> and give it a name.</li>
+                    <li>Set <strong>Protocol</strong> to <strong>SFTP &ndash; SSH File Transfer Protocol</strong> (recommended) or <strong>FTP &ndash; File Transfer Protocol</strong>.</li>
+                    <li>Enter your host, username, and password from the step above.</li>
+                    <li>Click <strong>Connect</strong>.</li>
+                </ol>
+                <p>Once connected, your site's files are on the right side. Your local files are on the left. Drag files between them to upload or download.</p>
+
+                <h2>Where to put your files</h2>
+                <p>Your site's public files live in <code>public_html</code>. If you have multiple
+                domains or subdomains, each one has its own folder inside your home directory.</p>
+
+                <h2>SFTP vs. FTP</h2>
+                <p>Always use <strong>SFTP</strong> (port 22) when you can. It encrypts your
+                connection, including your password. Plain FTP (port 21) sends everything
+                unencrypted. Both work on Dredge, but SFTP is the better choice.</p>
+
+                <h2>Create an additional FTP account</h2>
+                <p>If you need to give someone access to only one folder (like a developer working
+                on a subdomain):</p>
+                <ol>
+                    <li>In <strong>FTP Accounts</strong>, fill in a username, password, and directory.</li>
+                    <li>Click <strong>Create FTP Account</strong>.</li>
+                </ol>
+                <p>That account can only see the folder you specified and anything inside it.</p>
+
+                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="upload-website.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Upload a website with File Manager or FTP</h3>
+                        <p>Put an HTML site, or one exported from a site builder, live on your domain.</p>
+                        <span class="guide-meta">5 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="client-area-and-cpanel.html" data-cat="start">
+                        <span class="doc-cat">Getting started</span>
+                        <h3>Find your way around your client area and cPanel</h3>
+                        <p>Where to pay invoices, change plans, and log in to cPanel, the control panel for your site.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="add-subdomain.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Add a subdomain like blog.yourdomain.com</h3>
+                        <p>Run a separate site or app on a subdomain, with its own folder and its own HTTPS certificate.</p>
+                        <span class="guide-meta">3 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+            </div>
+        </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../assets/site.js"></script>
+</body>
+</html>
