@@ -58,6 +58,8 @@
 
         <section class="section tint">
             <div class="wrap">
+                <label class="visually-hidden" for="guide-search">Search guides</label>
+                <input class="guide-search" id="guide-search" type="search" placeholder="Search guides, e.g. DNS, email, WordPress" autocomplete="off">
                 <div class="guide-filter" role="group" aria-label="Filter guides by topic">
                     <button type="button" class="active" data-filter="all" aria-pressed="true">All guides</button>
                     <button type="button" data-filter="start" aria-pressed="false">Getting started</button>
@@ -195,6 +197,7 @@
                         <span class="guide-meta">4 min read</span>
                     </a>
                 </div>
+                <p class="guide-empty" id="guide-empty" role="status" hidden>No guides match that search. Try another word, or email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help.</p>
             </div>
         </section>
 
@@ -210,20 +213,35 @@
     (function () {
         var buttons = document.querySelectorAll('.guide-filter button');
         var cards = document.querySelectorAll('.guide-card');
+        var search = document.getElementById('guide-search');
+        var empty = document.getElementById('guide-empty');
+        var filter = 'all';
+
+        function update() {
+            var words = search.value.toLowerCase().split(/\s+/).filter(Boolean);
+            var shown = 0;
+            cards.forEach(function (c) {
+                var text = c.textContent.toLowerCase();
+                var show = (filter === 'all' || c.getAttribute('data-cat') === filter) &&
+                    words.every(function (w) { return text.indexOf(w) !== -1; });
+                c.hidden = !show;
+                if (show) shown++;
+            });
+            empty.hidden = shown !== 0;
+        }
+
         buttons.forEach(function (btn) {
             btn.addEventListener('click', function () {
-                var f = btn.getAttribute('data-filter');
+                filter = btn.getAttribute('data-filter');
                 buttons.forEach(function (b) {
                     var on = b === btn;
                     b.classList.toggle('active', on);
                     b.setAttribute('aria-pressed', String(on));
                 });
-                cards.forEach(function (c) {
-                    var show = f === 'all' || c.getAttribute('data-cat') === f;
-                    c.hidden = !show;
-                });
+                update();
             });
         });
+        search.addEventListener('input', update);
     })();
     </script>
 </body>

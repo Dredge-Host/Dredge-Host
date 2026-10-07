@@ -470,6 +470,15 @@ a { color: inherit; text-decoration: none; }
 .prose .compare-table { margin-bottom: 1rem; }
 
 /* Guide gallery */
+.guide-search {
+    display: block; width: 100%; max-width: 28rem; margin-bottom: 1rem;
+    font-family: var(--display); font-size: 1rem; color: var(--ink);
+    padding: 0.6rem 0.85rem; border-radius: var(--radius);
+    background: var(--paper); border: 1px solid var(--line);
+}
+.guide-search:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+.guide-empty { color: var(--muted); }
+.guide-empty a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 .guide-filter {
     display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;
 }

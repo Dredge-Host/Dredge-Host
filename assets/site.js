@@ -24,13 +24,14 @@
 
     /* ---- Promo banner ---- */
     var promoHTML = '';
+    var promoEnds = new Date('2027-01-01T00:00:00-05:00');
     var promoDismissed = false;
     try { promoDismissed = localStorage.getItem('promo_early35') === '1'; } catch (e) {}
-    if (!promoDismissed) {
+    if (!promoDismissed && new Date() < promoEnds) {
         promoHTML =
             '<div class="promo-banner" role="status">' +
               '35% off your first month — use code ' +
-              '<span class="promo-code">EARLY35</span> at checkout.' +
+              '<span class="promo-code">EARLY35</span> at checkout. Ends Dec&nbsp;31.' +
               ' <a class="promo-cta" href="' + root + 'pricing.html">See plans &rarr;</a>' +
               '<button class="promo-close" aria-label="Dismiss">&times;</button>' +
             '</div>';

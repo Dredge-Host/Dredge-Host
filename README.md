@@ -34,6 +34,7 @@ Plain HTML and CSS with no build step, served by GitHub Pages from the `main` br
 - `guides/`: one page per guide
 - `style.css`: the whole stylesheet
 - `scripts/sync-layout.py`: the shared header and footer. Every page has a copy between `<!-- site-header:start -->` / `<!-- site-footer:start -->` markers, so edit the script and run `python3 scripts/sync-layout.py` to update them all. Each page sets `data-active` on `<body>` to highlight its nav link, and `data-root="../"` for pages inside a subfolder.
+- `scripts/make-guide-images.py`: renders each guide's share image into `assets/og/guides/` (needs Chromium). Run it after adding or renaming a guide.
 - `assets/site.js`: adds the promo banner, keeps the footer year current, and runs the mobile menu and FAQ accordions.
 - `assets/`: logo, favicons, and social preview image
 
