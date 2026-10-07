@@ -72,7 +72,7 @@
                             <li><strong>Host:</strong> your server hostname (e.g. <code>yourdomain.com</code> or the server name shown)</li>
                             <li><strong>Username:</strong> your cPanel username</li>
                             <li><strong>Password:</strong> your cPanel password</li>
-                            <li><strong>Port:</strong> <code>21</code> for FTP, or <code>22</code> for SFTP</li>
+                            <li><strong>Port:</strong> <code>21</code></li>
                         </ul>
                     </li>
                 </ol>
@@ -81,8 +81,9 @@
                 <ol>
                     <li>Open FileZilla and go to <strong>File &gt; Site Manager</strong>.</li>
                     <li>Click <strong>New Site</strong> and give it a name.</li>
-                    <li>Set <strong>Protocol</strong> to <strong>SFTP &ndash; SSH File Transfer Protocol</strong> (recommended) or <strong>FTP &ndash; File Transfer Protocol</strong>.</li>
-                    <li>Enter your host, username, and password from the step above.</li>
+                    <li>Set <strong>Protocol</strong> to <strong>FTP &ndash; File Transfer Protocol</strong>.</li>
+                    <li>Set <strong>Encryption</strong> to <strong>Require explicit FTP over TLS</strong>.</li>
+                    <li>Set <strong>Logon Type</strong> to <strong>Normal</strong>, then enter your host, username, and password from the step above.</li>
                     <li>Click <strong>Connect</strong>.</li>
                 </ol>
                 <p>Once connected, your site's files are on the right side. Your local files are on the left. Drag files between them to upload or download.</p>
@@ -91,10 +92,11 @@
                 <p>Your site's public files live in <code>public_html</code>. If you have multiple
                 domains or subdomains, each one has its own folder inside your home directory.</p>
 
-                <h2>SFTP vs. FTP</h2>
-                <p>Always use <strong>SFTP</strong> (port 22) when you can. It encrypts your
-                connection, including your password. Plain FTP (port 21) sends everything
-                unencrypted. Both work on Dredge, but SFTP is the better choice.</p>
+                <h2>Why FTP over TLS</h2>
+                <p>Plain FTP sends your password and files unencrypted. Choosing
+                <strong>Require explicit FTP over TLS</strong> encrypts the whole connection.
+                The first time you connect, FileZilla asks you to trust the server's certificate;
+                tick <strong>Always trust this certificate</strong> and click <strong>OK</strong>.</p>
 
                 <h2>Create an additional FTP account</h2>
                 <p>If you need to give someone access to only one folder (like a developer working
