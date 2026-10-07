@@ -67,6 +67,7 @@
               '<div class="footer-col">' +
                 '<span class="footer-head">Company</span>' +
                 '<a href="' + root + 'about.html">About</a>' +
+                '<a href="' + root + 'why-dredge.html">Why Dredge</a>' +
                 '<a href="' + root + 'contact.html">Contact</a>' +
               '</div>' +
               '<div class="footer-col">' +
