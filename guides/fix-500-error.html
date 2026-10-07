@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Fix a 500 Internal Server Error",
+  "description": "Track down the cause of a blank page or 'Internal Server Error' using error logs and common fixes.",
+  "image": "https://dredgehost.com/assets/og/guides/fix-500-error.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/fix-500-error.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,22 +81,22 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Troubleshooting</p>
-                <p class="page-meta">4 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">4 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Fix a 500 Internal Server Error</h1>
                 <p class="lede">A 500 error means something went wrong on the server, but the error message itself doesn't say what. Here's how to find and fix the cause.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Step 1: Check the error log</h2>
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#step-1-check-the-error-log">Step 1: Check the error log</a></li><li><a href="#step-2-check-htaccess">Step 2: Check .htaccess</a></li><li><a href="#step-3-check-php-errors">Step 3: Check PHP errors</a></li><li><a href="#step-4-check-file-permissions">Step 4: Check file permissions</a></li><li><a href="#still-stuck">Still stuck?</a></li></ol></nav><!-- toc:end -->
+                <h2 id="step-1-check-the-error-log">Step 1: Check the error log</h2>
                 <ol>
                     <li>In cPanel, open <strong>Errors</strong> (under Metrics).</li>
                     <li>Look at the most recent entries. The log usually names the file and line
                     number where things went wrong, and often includes a plain-English reason.</li>
                 </ol>
 
-                <h2>Step 2: Check .htaccess</h2>
+                <h2 id="step-2-check-htaccess">Step 2: Check .htaccess</h2>
                 <p>A bad rule in <code>.htaccess</code> is the most common cause of a 500 error.</p>
                 <ol>
                     <li>Open <strong>File Manager</strong>, navigate to <code>public_html</code>,
@@ -84,7 +110,7 @@
                 <strong>Settings &gt; Permalinks</strong> in your dashboard and clicking
                 <strong>Save Changes</strong>.</p>
 
-                <h2>Step 3: Check PHP errors</h2>
+                <h2 id="step-3-check-php-errors">Step 3: Check PHP errors</h2>
                 <p>If the error log mentions a PHP fatal error:</p>
                 <ul>
                     <li><strong>Plugin or theme conflict:</strong> rename the plugin or theme folder in
@@ -96,7 +122,7 @@
                     increase <code>memory_limit</code> in <strong>MultiPHP INI Editor</strong>.</li>
                 </ul>
 
-                <h2>Step 4: Check file permissions</h2>
+                <h2 id="step-4-check-file-permissions">Step 4: Check file permissions</h2>
                 <p>Incorrect permissions can cause a 500 error. The standard settings are:</p>
                 <ul>
                     <li>Folders: <code>755</code></li>
@@ -105,12 +131,13 @@
                 <p>In File Manager, right-click a file or folder and choose
                 <strong>Change Permissions</strong> to check and fix.</p>
 
-                <h2>Still stuck?</h2>
+                <h2 id="still-stuck">Still stuck?</h2>
                 <p>Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> with
                 your domain name and the last few lines from your error log. We can usually spot
                 the problem quickly from there.</p>
 
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="fix-ssl-errors.html"><span class="pager-label">&larr; Previous</span>Fix "Your connection is not private" errors</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

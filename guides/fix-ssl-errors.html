@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Fix \"Your connection is not private\" errors",
+  "description": "Troubleshoot SSL certificate errors that show a warning page instead of your site.",
+  "image": "https://dredgehost.com/assets/og/guides/fix-ssl-errors.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/fix-ssl-errors.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,27 +81,27 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Troubleshooting</p>
-                <p class="page-meta">4 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">4 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Fix "Your connection is not private" errors</h1>
                 <p class="lede">When a browser shows this warning instead of your site, the SSL certificate is missing, expired, or doesn't match your domain. Here's how to fix it.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Check your certificate status</h2>
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#check-your-certificate-status">Check your certificate status</a></li><li><a href="#run-autossl">Run AutoSSL</a></li><li><a href="#common-reasons-autossl-fails">Common reasons AutoSSL fails</a></li><li><a href="#mixed-content-warnings">Mixed content warnings</a></li><li><a href="#still-not-working">Still not working?</a></li></ol></nav><!-- toc:end -->
+                <h2 id="check-your-certificate-status">Check your certificate status</h2>
                 <ol>
                     <li>In cPanel, open <strong>SSL/TLS Status</strong>.</li>
                     <li>Look for your domain in the list. A green padlock means the certificate is
                     active. A red or yellow icon means there's a problem.</li>
                 </ol>
 
-                <h2>Run AutoSSL</h2>
+                <h2 id="run-autossl">Run AutoSSL</h2>
                 <p>Dredge issues free certificates automatically through AutoSSL. If your certificate
                 is missing or expired, click <strong>Run AutoSSL</strong> at the top of the
                 SSL/TLS Status page. It usually completes within a few minutes.</p>
 
-                <h2>Common reasons AutoSSL fails</h2>
+                <h2 id="common-reasons-autossl-fails">Common reasons AutoSSL fails</h2>
                 <ul>
                     <li><strong>Domain doesn't point here yet.</strong> AutoSSL needs to verify the
                     domain resolves to your Dredge account. Make sure you've followed the
@@ -91,18 +117,19 @@
                     in <strong>Domains</strong> or point it in your DNS.</li>
                 </ul>
 
-                <h2>Mixed content warnings</h2>
+                <h2 id="mixed-content-warnings">Mixed content warnings</h2>
                 <p>If your site loads but the padlock is missing or shows a warning, your page
                 is loading some resources (images, scripts, stylesheets) over <code>http://</code>
                 instead of <code>https://</code>. Fix the URLs in your site's code or database
                 to use <code>https://</code>. For WordPress, the
                 <a href="https-everywhere.html">HTTPS everywhere</a> guide covers this.</p>
 
-                <h2>Still not working?</h2>
+                <h2 id="still-not-working">Still not working?</h2>
                 <p>Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> with
                 your domain name and we'll check the certificate from our side.</p>
 
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-next" href="fix-500-error.html"><span class="pager-label">Next &rarr;</span>Fix a 500 Internal Server Error</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

@@ -69,6 +69,27 @@
         });
     }
 
+    /* ---- Copy buttons on code blocks ---- */
+    if (navigator.clipboard) {
+        document.querySelectorAll('.prose pre').forEach(function (pre) {
+            var wrap = document.createElement('div');
+            wrap.className = 'code-block';
+            pre.parentNode.insertBefore(wrap, pre);
+            wrap.appendChild(pre);
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'copy-btn';
+            btn.textContent = 'Copy';
+            btn.addEventListener('click', function () {
+                navigator.clipboard.writeText(pre.textContent).then(function () {
+                    btn.textContent = 'Copied';
+                    setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+                });
+            });
+            wrap.appendChild(btn);
+        });
+    }
+
     /* ---- FAQ accordion ---- */
     var faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(function (item) {

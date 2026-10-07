@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web hosting glossary | Dredge Host</title>
+    <meta name="description" content="Plain-English definitions of web hosting terms: nameservers, DNS records, SSL, SPF and DKIM, FTP, cPanel, cron jobs, and more.">
+    <link rel="canonical" href="https://dredgehost.com/glossary.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Web hosting glossary | Dredge Host">
+    <meta property="og:description" content="Plain-English definitions of web hosting terms, from nameservers to DKIM.">
+    <meta property="og:url" content="https://dredgehost.com/glossary.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Glossary",
+          "item": "https://dredgehost.com/glossary.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-root="" data-active="guides">
+    <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="./" aria-label="Dredge Host home"><img src="assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="./#features">Features</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="guides.html" aria-current="page">Guides</a><a href="status.html">Status</a><a class="nav-cta" href="pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="./">Home</a> / <a href="guides.html">Guides</a> / Glossary</p>
+                <h1>Web hosting glossary</h1>
+                <p class="lede">Hosting comes with a lot of jargon. Here's what the words mean, in
+                plain English, with a link to the guide that puts each one to use.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose">
+                <h2 id="account">Your account</h2>
+                <dl class="glossary">
+                    <dt id="client-area">Client area</dt>
+                    <dd>Your account dashboard at my.dredgehost.com, for invoices, payment cards, plan changes, and support tickets. <a href="guides/client-area-and-cpanel.html">Tour</a></dd>
+                    <dt id="cpanel">cPanel</dt>
+                    <dd>The control panel for your hosting itself: files, email accounts, databases, domains, and certificates. You open it from the client area. <a href="guides/client-area-and-cpanel.html">Tour</a></dd>
+                    <dt id="ssd-storage">SSD storage</dt>
+                    <dd>The disk space your files, databases, and email use. SSDs are solid-state drives, much faster than older spinning disks.</dd>
+                    <dt id="transfer">Transfer (bandwidth)</dt>
+                    <dd>The total amount of data your sites send to visitors each month. Every page view, image, and download counts toward it.</dd>
+                    <dt id="two-factor">Two-factor authentication (2FA)</dt>
+                    <dd>A second step at login, usually a code from an app on your phone, so a stolen password alone can't get anyone into your account.</dd>
+                </dl>
+
+                <h2 id="domains-dns">Domains and DNS</h2>
+                <dl class="glossary">
+                    <dt id="domain">Domain</dt>
+                    <dd>Your site's address, like yourdomain.com. You rent it yearly from a registrar.</dd>
+                    <dt id="registrar">Registrar</dt>
+                    <dd>The company you bought your domain from, such as Porkbun or Namecheap. It's where you change your nameservers. <a href="guides/connect-domain.html">Connect a domain</a></dd>
+                    <dt id="dns">DNS</dt>
+                    <dd>The internet's address book. It turns a name like yourdomain.com into the address of the server that holds your site and email.</dd>
+                    <dt id="nameservers">Nameservers</dt>
+                    <dd>The servers that answer DNS questions for your domain. Pointing your nameservers at Dredge lets cPanel manage all your DNS for you. <a href="guides/connect-domain.html">Connect a domain</a></dd>
+                    <dt id="dns-record">DNS record</dt>
+                    <dd>One entry in your domain's DNS. The common types are A, CNAME, MX, and TXT. <a href="guides/manage-dns.html">Manage DNS records</a></dd>
+                    <dt id="a-record">A record</dt>
+                    <dd>Points a name at a server's IP address.</dd>
+                    <dt id="cname">CNAME record</dt>
+                    <dd>Points a name at another name, for example shop.yourdomain.com at an online store provider.</dd>
+                    <dt id="mx-record">MX record</dt>
+                    <dd>Tells other mail servers where to deliver email for your domain.</dd>
+                    <dt id="txt-record">TXT record</dt>
+                    <dd>Holds text that other services read, such as domain verification codes and SPF, DKIM, and DMARC settings.</dd>
+                    <dt id="propagation">Propagation</dt>
+                    <dd>The delay while DNS changes spread across the internet. Most changes show up within minutes, but some networks hold old answers for up to a day or two.</dd>
+                    <dt id="subdomain">Subdomain</dt>
+                    <dd>An address in front of your domain, like blog.yourdomain.com, that can hold a separate site. <a href="guides/add-subdomain.html">Add a subdomain</a></dd>
+                    <dt id="alias">Domain alias</dt>
+                    <dd>An extra domain that shows the same site as your main one. <a href="guides/domain-aliases.html">Point multiple domains to one site</a></dd>
+                    <dt id="redirect">Redirect (301 and 302)</dt>
+                    <dd>Sends visitors from one address to another. A 301 is permanent and passes search ranking to the new address; a 302 is temporary. <a href="guides/redirect-domain.html">Redirect a domain or page</a></dd>
+                </dl>
+
+                <h2 id="security">Security and HTTPS</h2>
+                <dl class="glossary">
+                    <dt id="https">HTTPS</dt>
+                    <dd>The secure version of a web address, shown by the padlock in the browser. Traffic between visitors and your site is encrypted. <a href="guides/https-everywhere.html">Turn on HTTPS everywhere</a></dd>
+                    <dt id="ssl">SSL/TLS certificate</dt>
+                    <dd>The file that makes HTTPS work. SSL is the old name; TLS is the current one, and people use both.</dd>
+                    <dt id="autossl">AutoSSL</dt>
+                    <dd>The cPanel feature that issues and renews free certificates for every domain on your account automatically. <a href="guides/fix-ssl-errors.html">Fix certificate errors</a></dd>
+                    <dt id="mixed-content">Mixed content</dt>
+                    <dd>A secure page that loads some images or scripts over plain http://, which makes browsers drop or warn about the padlock.</dd>
+                </dl>
+
+                <h2 id="email">Email</h2>
+                <dl class="glossary">
+                    <dt id="mailbox">Mailbox</dt>
+                    <dd>An email account on your domain, like you@yourdomain.com, with its own password and storage. <a href="guides/email-on-your-domain.html">Set up email</a></dd>
+                    <dt id="forwarder">Forwarder</dt>
+                    <dd>An address that passes mail on to another inbox without storing it. <a href="guides/email-forwarding.html">Set up forwarding</a></dd>
+                    <dt id="webmail">Webmail</dt>
+                    <dd>Reading and sending your email in a browser, without setting up a mail app.</dd>
+                    <dt id="imap">IMAP</dt>
+                    <dd>The way phone and desktop mail apps connect to your mailbox so messages stay in sync across all your devices.</dd>
+                    <dt id="spf">SPF</dt>
+                    <dd>A DNS record listing the servers allowed to send mail for your domain. <a href="guides/email-deliverability.html">Stop email going to spam</a></dd>
+                    <dt id="dkim">DKIM</dt>
+                    <dd>A signature added to each message you send, so receivers can check it really came from your domain.</dd>
+                    <dt id="dmarc">DMARC</dt>
+                    <dd>A DNS record telling receivers what to do with mail that fails SPF or DKIM, and where to send reports about it.</dd>
+                </dl>
+
+                <h2 id="files-sites">Files and sites</h2>
+                <dl class="glossary">
+                    <dt id="public-html">public_html</dt>
+                    <dd>The folder that holds your main site's public files. Whatever is in it is what visitors see. <a href="guides/upload-website.html">Upload a website</a></dd>
+                    <dt id="file-manager">File Manager</dt>
+                    <dd>The cPanel tool for uploading, editing, and moving files in your browser.</dd>
+                    <dt id="ftp">FTP and FTP over TLS</dt>
+                    <dd>A way to move files between your computer and the server with an app like FileZilla. FTP over TLS is the encrypted version, which you should always use. <a href="guides/connect-with-ftp.html">Connect with an FTP client</a></dd>
+                    <dt id="htaccess">.htaccess</dt>
+                    <dd>A settings file in your site's folders that controls redirects, access rules, and more. A typo in it is a common cause of 500 errors.</dd>
+                    <dt id="permissions">File permissions</dt>
+                    <dd>Rules for who can read, change, or run a file. Folders are normally 755 and files 644.</dd>
+                    <dt id="softaculous">Softaculous</dt>
+                    <dd>The cPanel app installer that sets up WordPress and hundreds of other apps in one click. <a href="guides/install-wordpress.html">Install WordPress</a></dd>
+                    <dt id="site-builder">Sitejet Builder</dt>
+                    <dd>The drag-and-drop site builder included in cPanel, for building a site visually without code.</dd>
+                    <dt id="backup">Backup</dt>
+                    <dd>A copy of your files, databases, and email you can restore from if something goes wrong. <a href="guides/backups.html">Back up and restore</a></dd>
+                    <dt id="codeguard">CodeGuard</dt>
+                    <dd>The optional add-on that takes daily automatic off-site backups of your site, with one-click restore.</dd>
+                </dl>
+
+                <h2 id="code-servers">Code and servers</h2>
+                <dl class="glossary">
+                    <dt id="php">PHP</dt>
+                    <dd>The programming language WordPress and many other apps run on. You can switch versions per domain. <a href="guides/change-php-version.html">Change your PHP version</a></dd>
+                    <dt id="mysql">MySQL database</dt>
+                    <dd>Where apps like WordPress store posts, settings, and users. <a href="guides/create-mysql-database.html">Create a database</a></dd>
+                    <dt id="phpmyadmin">phpMyAdmin</dt>
+                    <dd>A browser tool in cPanel for looking inside your databases.</dd>
+                    <dt id="cron">Cron job</dt>
+                    <dd>A command the server runs for you on a schedule, like every hour or every night. <a href="guides/cron-jobs.html">Set up a cron job</a></dd>
+                    <dt id="error-500">500 Internal Server Error</dt>
+                    <dd>A general "something broke on the server" message. The error log usually says exactly what. <a href="guides/fix-500-error.html">Fix a 500 error</a></dd>
+                    <dt id="shared-hosting">Shared hosting</dt>
+                    <dd>Many accounts sharing one carefully managed server, each with its own limits. It's what Dredge provides.</dd>
+                    <dt id="vps">VPS</dt>
+                    <dd>A virtual private server: your own slice of a server with full control, which also means you maintain it yourself.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Missing a word? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll add it.</p>
+            </div>
+        </section>
+    </main>
+    <!-- site-footer:start --><footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="assets/logo-light.png" alt="Dredge Host" class="footer-logo" width="296" height="150"><p class="footer-blurb">Independent cPanel hosting.</p></div><nav class="footer-links" aria-label="Footer"><div class="footer-col"><span class="footer-head">Product</span><a href="./#features">Features</a><a href="pricing.html">Pricing</a><a href="status.html">Status</a><a href="guides.html">Guides</a></div><div class="footer-col"><span class="footer-head">Company</span><a href="about.html">About</a><a href="why-dredge.html">Why Dredge</a><a href="contact.html">Contact</a></div><div class="footer-col"><span class="footer-head">Legal</span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="aup.html">Acceptable Use</a><a href="refunds.html">Refunds</a></div><div class="footer-col"><span class="footer-head">Connect</span><a href="mailto:support@dredgehost.com">Email</a><a href="https://github.com/Dredge-Host" rel="noopener">GitHub</a><a href="https://x.com/DredgeHost" rel="noopener">X (Twitter)</a><a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium Support</a></div></nav></div><div class="wrap footer-payment"><p>We accept Visa, Mastercard, Amex, Discover, Apple&nbsp;Pay &amp; Google&nbsp;Pay via Stripe.</p></div><div class="wrap footer-bottom"><p>&copy; <span class="footer-year">2026</span> Dredge Host</p><p><a href="mailto:support@dredgehost.com">support@dredgehost.com</a></p></div></footer><!-- site-footer:end -->
+    <script src="assets/site.js"></script>
+</body>
+</html>

@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a MySQL database | Dredge Host Guides</title>
-    <meta name="description" content="Set up a MySQL database and user in cPanel so your app or CMS can store data.">
-    <link rel="canonical" href="https://dredgehost.com/guides/create-mysql-database.html">
+    <title>Sitejet Builder or WordPress: which should you use? | Dredge Host Guides</title>
+    <meta name="description" content="Both come with every Dredge plan. Compare the drag-and-drop Sitejet Builder with WordPress to pick the right one for your site.">
+    <link rel="canonical" href="https://dredgehost.com/guides/sitejet-vs-wordpress.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Dredge Host">
-    <meta property="og:title" content="Create a MySQL database | Dredge Host Guides">
-    <meta property="og:description" content="Set up a MySQL database and user in cPanel so your app or CMS can store data.">
-    <meta property="og:url" content="https://dredgehost.com/guides/create-mysql-database.html">
-    <meta property="og:image" content="https://dredgehost.com/assets/og/guides/create-mysql-database.png">
+    <meta property="og:title" content="Sitejet Builder or WordPress: which should you use? | Dredge Host Guides">
+    <meta property="og:description" content="Both come with every Dredge plan. Compare the drag-and-drop Sitejet Builder with WordPress to pick the right one for your site.">
+    <meta property="og:url" content="https://dredgehost.com/guides/sitejet-vs-wordpress.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og/guides/sitejet-vs-wordpress.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0f5c58">
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -42,8 +42,8 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Create a MySQL database",
-          "item": "https://dredgehost.com/guides/create-mysql-database.html"
+          "name": "Sitejet Builder or WordPress: which should you use?",
+          "item": "https://dredgehost.com/guides/sitejet-vs-wordpress.html"
         }
       ]
     }
@@ -53,10 +53,10 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Create a MySQL database",
-  "description": "Set up a MySQL database and user in cPanel so your app or CMS can store data.",
-  "image": "https://dredgehost.com/assets/og/guides/create-mysql-database.png",
-  "mainEntityOfPage": "https://dredgehost.com/guides/create-mysql-database.html",
+  "headline": "Sitejet Builder or WordPress: which should you use?",
+  "description": "Both come with every Dredge plan. Compare the drag-and-drop Sitejet Builder with WordPress to pick the right one for your site.",
+  "image": "https://dredgehost.com/assets/og/guides/sitejet-vs-wordpress.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/sitejet-vs-wordpress.html",
   "dateModified": "2026-10-07",
   "author": {
     "@type": "Organization",
@@ -80,56 +80,54 @@
     <main id="main">
         <section class="page-hero">
             <div class="wrap">
-                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Choosing hosting</p>
                 <p class="page-meta">3 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
-                <h1>Create a MySQL database</h1>
-                <p class="lede">Most web apps need a database. This guide walks through creating one in cPanel and connecting a user to it.</p>
+                <h1>Sitejet Builder or WordPress: which should you use?</h1>
+                <p class="lede">Every Dredge plan includes a drag-and-drop site builder and one-click WordPress. Here's how to choose between them.</p>
             </div>
         </section>
 
         <section class="section">
             <div class="wrap prose"><!-- toc:start --><!-- toc:end -->
-                <h2 id="when-you-need-this">When you need this</h2>
-                <p>If you installed WordPress or another app through Softaculous, the database was
-                created for you automatically. This guide is for when you're setting up a custom
-                PHP app, a framework like Laravel, or anything else that needs its own database.</p>
+                <h2 id="the-short-version">The short version</h2>
+                <p>Every Dredge plan includes both. Sitejet Builder is a drag-and-drop editor for
+                building a site visually. WordPress is a full content management system with
+                thousands of plugins. The right one depends on what your site needs to do.</p>
 
-                <h2 id="create-the-database">Create the database</h2>
-                <ol>
-                    <li>In cPanel, open <strong>MySQL Databases</strong>.</li>
-                    <li>Under <strong>Create New Database</strong>, type a name (cPanel prefixes it with your account name, so <code>myapp</code> becomes something like <code>username_myapp</code>).</li>
-                    <li>Click <strong>Create Database</strong>.</li>
-                </ol>
+                <h2 id="how-they-compare">How they compare</h2>
+                <div class="compare-wrap">
+                <table class="compare-table">
+                    <thead><tr><th>&nbsp;</th><th>Sitejet Builder</th><th>WordPress</th></tr></thead>
+                    <tbody>
+                        <tr><td>How you build</td><td>Pick a template and edit it on the page</td><td>Choose a theme, then add pages and posts in an editor</td></tr>
+                        <tr><td>Learning curve</td><td>Gentle</td><td>Moderate</td></tr>
+                        <tr><td>Extra features</td><td>What the builder includes</td><td>Thousands of plugins: shops, bookings, memberships, forms</td></tr>
+                        <tr><td>Blogging</td><td>Basic</td><td>Excellent</td></tr>
+                        <tr><td>Upkeep</td><td>Very little</td><td>Regular updates to WordPress, plugins, and themes</td></tr>
+                    </tbody>
+                </table>
+                </div>
 
-                <h2 id="create-a-database-user">Create a database user</h2>
-                <ol>
-                    <li>On the same page, scroll to <strong>MySQL Users &gt; Add New User</strong>.</li>
-                    <li>Choose a username and a strong password. Use the password generator if you like.</li>
-                    <li>Click <strong>Create User</strong>.</li>
-                </ol>
-
-                <h2 id="connect-user-to-database">Connect user to database</h2>
-                <ol>
-                    <li>Scroll to <strong>Add User To Database</strong>.</li>
-                    <li>Select the user and the database you just created.</li>
-                    <li>Click <strong>Add</strong>.</li>
-                    <li>On the privileges screen, tick <strong>ALL PRIVILEGES</strong> and click <strong>Make Changes</strong>.</li>
-                </ol>
-
-                <h2 id="use-it-in-your-app">Use it in your app</h2>
-                <p>Your app's config will ask for four things:</p>
+                <h2 id="choose-sitejet-builder-if">Choose Sitejet Builder if</h2>
                 <ul>
-                    <li><strong>Host:</strong> <code>localhost</code></li>
-                    <li><strong>Database:</strong> the full prefixed name, e.g. <code>username_myapp</code></li>
-                    <li><strong>Username:</strong> the full prefixed username</li>
-                    <li><strong>Password:</strong> the password you set above</li>
+                    <li>You want a good-looking brochure site, portfolio, or landing page quickly.</li>
+                    <li>You'd rather not manage updates or plugins.</li>
+                    <li>Your site won't grow much beyond a handful of pages.</li>
                 </ul>
 
-                <h2 id="browse-your-data">Browse your data</h2>
-                <p>Open <strong>phpMyAdmin</strong> from cPanel to view tables, run queries, and
-                import or export data.</p>
+                <h2 id="choose-wordpress-if">Choose WordPress if</h2>
+                <ul>
+                    <li>You plan to blog regularly or publish lots of content.</li>
+                    <li>You need features like a shop, bookings, or member logins.</li>
+                    <li>You want the widest choice of designs and developers who can help.</li>
+                </ul>
 
-                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="backups.html"><span class="pager-label">&larr; Previous</span>Back up and restore your site</a><a class="pager-next" href="cron-jobs.html"><span class="pager-label">Next &rarr;</span>Set up a cron job</a></nav><!-- guide-pager:end -->
+                <h2 id="how-to-start">How to start</h2>
+                <p>Open cPanel and look for <strong>Sitejet Builder</strong> to start with a template,
+                or follow <a href="install-wordpress.html">Install WordPress in one click</a>. You can
+                try one and switch later; nothing is locked in.</p>
+
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="shared-hosting-vs-vps.html"><span class="pager-label">&larr; Previous</span>Shared hosting vs. a VPS: which do you need?</a></nav><!-- guide-pager:end -->
 <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
@@ -144,17 +142,17 @@
                         <p>Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.</p>
                         <span class="guide-meta">3 min read</span>
                     </a>
-                    <a class="doc-card guide-card" href="backups.html" data-cat="site">
-                        <span class="doc-cat">Your site</span>
-                        <h3>Back up and restore your site</h3>
-                        <p>Download your own copy of your files, databases, and email, and know how to get them back.</p>
-                        <span class="guide-meta">5 min read</span>
-                    </a>
                     <a class="doc-card guide-card" href="upload-website.html" data-cat="site">
                         <span class="doc-cat">Your site</span>
                         <h3>Upload a website with File Manager or FTP</h3>
                         <p>Put an HTML site, or one exported from a site builder, live on your domain.</p>
                         <span class="guide-meta">5 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="update-wordpress.html" data-cat="wordpress">
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Update WordPress safely</h3>
+                        <p>Keep WordPress core, plugins, and themes up to date without breaking your site.</p>
+                        <span class="guide-meta">4 min read</span>
                     </a>
                 </div>
             </div>
@@ -162,7 +160,7 @@
 
         <section class="section help-line">
             <div class="wrap">
-                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+                <p>Still deciding? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll give you a straight answer.</p>
             </div>
         </section>
     </main>

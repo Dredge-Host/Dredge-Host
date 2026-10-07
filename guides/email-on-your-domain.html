@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Set up email on your domain",
+  "description": "Create a you@yourdomain.com mailbox and use it on your phone and computer.",
+  "image": "https://dredgehost.com/assets/og/guides/email-on-your-domain.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/email-on-your-domain.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,19 +81,19 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Email</p>
-                <p class="page-meta">6 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">6 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Set up email on your domain</h1>
                 <p class="lede">Every Dredge plan includes mailboxes on your own domain, like you@yourdomain.com. Here&#x27;s how to create one and get it on all your devices.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#step-1-create-a-mailbox">Step 1: Create a mailbox</a></li><li><a href="#step-2-read-it-in-your-browser">Step 2: Read it in your browser</a></li><li><a href="#step-3-add-it-to-your-phone-or-computer">Step 3: Add it to your phone or computer</a></li><li><a href="#step-4-make-sure-your-mail-isn-t-marked-as-spam">Step 4: Make sure your mail isn&#x27;t marked as spam</a></li><li><a href="#handy-extras">Handy extras</a></li></ol></nav><!-- toc:end -->
                 <p>This works once your domain's nameservers point at Dredge (see
                 <a href="connect-domain.html">Connect a domain</a>), because that's what tells the rest of
                 the internet to deliver your mail to us.</p>
 
-                <h2>Step 1: Create a mailbox</h2>
+                <h2 id="step-1-create-a-mailbox">Step 1: Create a mailbox</h2>
                 <ol>
                     <li>In cPanel, open <strong>Email Accounts</strong> and click <strong>Create</strong>.</li>
                     <li>Pick the domain, type the part before the <code>@</code>, and set a strong password.</li>
@@ -76,12 +102,12 @@
                     <li>Click <strong>Create</strong>.</li>
                 </ol>
 
-                <h2>Step 2: Read it in your browser</h2>
+                <h2 id="step-2-read-it-in-your-browser">Step 2: Read it in your browser</h2>
                 <p>Go to <code>https://yourdomain.com/webmail</code> and log in with the
                 <strong>full email address</strong> and its password. That's all you need to send and
                 receive from anywhere.</p>
 
-                <h2>Step 3: Add it to your phone or computer</h2>
+                <h2 id="step-3-add-it-to-your-phone-or-computer">Step 3: Add it to your phone or computer</h2>
                 <p>In cPanel, next to the mailbox in <strong>Email Accounts</strong>, click
                 <strong>Connect Devices</strong>. It shows the exact server names for your account, and
                 can generate automatic setup files for Apple Mail, iPhone, and Outlook. If you'd rather
@@ -102,13 +128,13 @@
                 <p>Choose <strong>IMAP</strong> over POP3 so your mail stays in sync between your phone,
                 laptop, and webmail.</p>
 
-                <h2>Step 4: Make sure your mail isn't marked as spam</h2>
+                <h2 id="step-4-make-sure-your-mail-isn-t-marked-as-spam">Step 4: Make sure your mail isn't marked as spam</h2>
                 <p>In cPanel, open <strong>Email Deliverability</strong>. If it shows problems next to
                 your domain, click <strong>Repair</strong>. That sets up SPF and DKIM, the records that
                 prove your mail really came from you. Then send a test message to a Gmail or Outlook
                 address and check it arrives in the inbox.</p>
 
-                <h2>Handy extras</h2>
+                <h2 id="handy-extras">Handy extras</h2>
                 <ul>
                     <li><strong>Forwarders</strong> send mail for one address to another, such as
                     <code>hello@</code> to your personal inbox, without a separate mailbox.</li>
@@ -119,7 +145,8 @@
                 server's reputation. It's plenty for everyday mail and site notifications, but not for
                 newsletters. For bulk mail, use a dedicated service and keep your Dredge mailbox for
                 one-to-one mail.</p>
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-next" href="email-forwarding.html"><span class="pager-label">Next &rarr;</span>Set up email forwarding</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

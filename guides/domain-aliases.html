@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Point multiple domains to one site",
+  "description": "Make two or more domain names show the same website using aliases in cPanel.",
+  "image": "https://dredgehost.com/assets/og/guides/domain-aliases.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/domain-aliases.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,15 +81,15 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Domains</p>
-                <p class="page-meta">3 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">3 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Point multiple domains to one site</h1>
                 <p class="lede">Own more than one domain name? You can make them all show the same website, or redirect the extras to your main domain.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Option 1: Domain alias (same content, both URLs work)</h2>
+            <div class="wrap prose"><!-- toc:start --><!-- toc:end -->
+                <h2 id="option-1-domain-alias-same-content-both-urls-work">Option 1: Domain alias (same content, both URLs work)</h2>
                 <ol>
                     <li>Point the extra domain's nameservers at Dredge, just like you did for your
                     main domain (see <a href="connect-domain.html">Connect a domain</a>).</li>
@@ -76,22 +102,23 @@
                 <p>Both domains now serve the same files. AutoSSL will issue a certificate for the
                 new domain on its next run.</p>
 
-                <h2>Option 2: Redirect the extras (better for SEO)</h2>
+                <h2 id="option-2-redirect-the-extras-better-for-seo">Option 2: Redirect the extras (better for SEO)</h2>
                 <p>If you'd rather have one canonical URL and redirect the others, set up the alias
                 as above, then add a redirect using the <a href="redirect-domain.html">Redirect a
                 domain</a> guide. A 301 redirect tells search engines that the main domain is the
                 real one.</p>
 
-                <h2>Email on alias domains</h2>
+                <h2 id="email-on-alias-domains">Email on alias domains</h2>
                 <p>An alias domain can receive email too. Create mailboxes or forwarders for it
                 in cPanel the same way you would for your main domain.</p>
 
-                <h2>Remove an alias</h2>
+                <h2 id="remove-an-alias">Remove an alias</h2>
                 <p>In <strong>Domains</strong>, click <strong>Manage</strong> next to the alias
                 domain and then <strong>Remove Domain</strong>. This doesn't delete any files
                 since the alias shared the same folder.</p>
 
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="redirect-domain.html"><span class="pager-label">&larr; Previous</span>Redirect a domain or page</a><a class="pager-next" href="manage-dns.html"><span class="pager-label">Next &rarr;</span>Manage DNS records</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

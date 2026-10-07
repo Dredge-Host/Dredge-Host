@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Add a subdomain like blog.yourdomain.com",
+  "description": "Run a separate site or app on a subdomain, with its own folder and its own HTTPS certificate.",
+  "image": "https://dredgehost.com/assets/og/guides/add-subdomain.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/add-subdomain.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,20 +81,20 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Domains</p>
-                <p class="page-meta">3 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">3 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Add a subdomain like blog.yourdomain.com</h1>
                 <p class="lede">A subdomain is an address in front of your main domain, like blog.yourdomain.com or shop.yourdomain.com. Each one can hold a completely separate site.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Before you start</h2>
+            <div class="wrap prose"><!-- toc:start --><!-- toc:end -->
+                <h2 id="before-you-start">Before you start</h2>
                 <p>Your main domain needs to point at Dredge already (see
                 <a href="connect-domain.html">Connect a domain</a>). Because Dredge runs your DNS, any
                 subdomain you create here works straight away; there's nothing to change at your registrar.</p>
 
-                <h2>Create the subdomain</h2>
+                <h2 id="create-the-subdomain">Create the subdomain</h2>
                 <ol>
                     <li>In cPanel, open <strong>Domains</strong> and click <strong>Create A New Domain</strong>.</li>
                     <li>Type the full subdomain, for example <code>blog.yourdomain.com</code>.</li>
@@ -77,7 +103,7 @@
                     <li>Click <strong>Submit</strong>.</li>
                 </ol>
 
-                <h2>Put something on it</h2>
+                <h2 id="put-something-on-it">Put something on it</h2>
                 <ul>
                     <li><strong>A WordPress site:</strong> follow <a href="install-wordpress.html">Install
                     WordPress</a> and choose the subdomain from the domain list.</li>
@@ -85,13 +111,14 @@
                     website</a> and upload into the subdomain's folder instead of <code>public_html</code>.</li>
                 </ul>
 
-                <h2>HTTPS</h2>
+                <h2 id="https">HTTPS</h2>
                 <p>AutoSSL picks up new subdomains on its next run, usually within a few hours. To speed it
                 up, open <strong>SSL/TLS Status</strong> in cPanel and click <strong>Run AutoSSL</strong>.</p>
 
                 <p class="muted-note">Removing a subdomain later, from <strong>Domains</strong>, doesn't
                 delete its folder. Delete the folder in File Manager too if you no longer need the files.</p>
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="connect-domain.html"><span class="pager-label">&larr; Previous</span>Buy a domain from Porkbun or Namecheap and connect it</a><a class="pager-next" href="redirect-domain.html"><span class="pager-label">Next &rarr;</span>Redirect a domain or page</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Move a WordPress site to Dredge",
+  "description": "Bring an existing WordPress site over from another host without losing anything.",
+  "image": "https://dredgehost.com/assets/og/guides/move-wordpress.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/move-wordpress.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,18 +81,18 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / WordPress</p>
-                <p class="page-meta">12 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">12 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Move a WordPress site to Dredge</h1>
                 <p class="lede">Moving WordPress means copying two things: the files (your theme, plugins, and uploads) and the database (your posts, pages, and settings). Here are two ways to do it.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#before-you-start">Before you start</a></li><li><a href="#method-1-with-a-migration-plugin">Method 1: With a migration plugin</a></li><li><a href="#method-2-by-hand">Method 2: By hand</a></li><li><a href="#preview-it-before-you-switch">Preview it before you switch</a></li><li><a href="#go-live">Go live</a></li></ol></nav><!-- toc:end -->
                 <p>Try the plugin method first. Use the manual method if your site is large or the
                 plugin struggles.</p>
 
-                <h2>Before you start</h2>
+                <h2 id="before-you-start">Before you start</h2>
                 <ul>
                     <li><strong>Don't cancel your old host yet.</strong> Keep it running until the site
                     is live on Dredge and you've checked it for a few days.</li>
@@ -75,7 +101,7 @@
                     <a href="../pricing.html">pricing page</a>.</li>
                 </ul>
 
-                <h2>Method 1: With a migration plugin</h2>
+                <h2 id="method-1-with-a-migration-plugin">Method 1: With a migration plugin</h2>
                 <ol>
                     <li><strong>Install a fresh WordPress on Dredge</strong> by following
                     <a href="install-wordpress.html">Install WordPress in one click</a>.</li>
@@ -94,7 +120,7 @@
                 If your export is over the limit, use Method 2 below rather than paying for an
                 extension.</p>
 
-                <h2>Method 2: By hand</h2>
+                <h2 id="method-2-by-hand">Method 2: By hand</h2>
                 <ol>
                     <li><strong>Download the files.</strong> On your old host, use its file manager or
                     an FTP app such as FileZilla to download the whole WordPress folder, usually
@@ -125,7 +151,7 @@ define( 'DB_PASSWORD', 'the-password-you-chose' );</code></pre>
                     Leave <code>DB_HOST</code> as <code>localhost</code>.</li>
                 </ol>
 
-                <h2>Preview it before you switch</h2>
+                <h2 id="preview-it-before-you-switch">Preview it before you switch</h2>
                 <p>Your domain still points at the old host at this point, which is good: visitors
                 see nothing change while you check the copy. To look at the Dredge copy yourself,
                 add a line to your computer's <strong>hosts file</strong> with your Dredge server's IP
@@ -136,7 +162,7 @@ define( 'DB_PASSWORD', 'the-password-you-chose' );</code></pre>
                 and Linux it's <code>/etc/hosts</code>. Browse the site, log in, and click around. Remove
                 the line when you're done.</p>
 
-                <h2>Go live</h2>
+                <h2 id="go-live">Go live</h2>
                 <ol>
                     <li>Change your domain's nameservers to Dredge, as in
                     <a href="connect-domain.html">Connect a domain</a>.</li>
@@ -151,7 +177,8 @@ define( 'DB_PASSWORD', 'the-password-you-chose' );</code></pre>
                 <p class="muted-note">Stuck partway through? Email
                 <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> with your domain and
                 where you got to. The people who run the servers will pick it up.</p>
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="install-wordpress.html"><span class="pager-label">&larr; Previous</span>Install WordPress in one click</a><a class="pager-next" href="update-wordpress.html"><span class="pager-label">Next &rarr;</span>Update WordPress safely</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

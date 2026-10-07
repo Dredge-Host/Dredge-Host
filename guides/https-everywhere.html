@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Turn on HTTPS everywhere",
+  "description": "Get the padlock on every page and send visitors to the secure version of your site automatically.",
+  "image": "https://dredgehost.com/assets/og/guides/https-everywhere.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/https-everywhere.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,15 +81,15 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
-                <p class="page-meta">4 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">4 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Turn on HTTPS everywhere</h1>
                 <p class="lede">Every domain on Dredge gets a free certificate automatically. This guide makes sure every visitor actually uses it.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Step 1: Check your certificate</h2>
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#step-1-check-your-certificate">Step 1: Check your certificate</a></li><li><a href="#step-2-redirect-everyone-to-https">Step 2: Redirect everyone to HTTPS</a></li><li><a href="#step-3-for-wordpress-sites">Step 3: For WordPress sites</a></li></ol></nav><!-- toc:end -->
+                <h2 id="step-1-check-your-certificate">Step 1: Check your certificate</h2>
                 <p>In cPanel, open <strong>SSL/TLS Status</strong>. Each domain should show a green
                 padlock. If one doesn't:</p>
                 <ul>
@@ -74,7 +100,7 @@
                 </ul>
                 <p>Certificates renew on their own. You never need to buy or install one.</p>
 
-                <h2>Step 2: Redirect everyone to HTTPS</h2>
+                <h2 id="step-2-redirect-everyone-to-https">Step 2: Redirect everyone to HTTPS</h2>
                 <ol>
                     <li>In cPanel, open <strong>Domains</strong>.</li>
                     <li>Switch on <strong>Force HTTPS Redirect</strong> next to each domain.</li>
@@ -82,7 +108,7 @@
                 <p>Now anyone who types <code>http://yourdomain.com</code> lands on
                 <code>https://yourdomain.com</code>.</p>
 
-                <h2>Step 3: For WordPress sites</h2>
+                <h2 id="step-3-for-wordpress-sites">Step 3: For WordPress sites</h2>
                 <ol>
                     <li>Go to <strong>Settings &rarr; General</strong> and make sure both
                     <strong>WordPress Address</strong> and <strong>Site Address</strong> start with
@@ -96,7 +122,8 @@
                 <p class="muted-note">Hard-coded links in themes or custom code aren't covered by the
                 search-and-replace. Your browser's developer tools (Console tab) list any file still
                 loading over <code>http://</code>.</p>
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="connect-with-ftp.html"><span class="pager-label">&larr; Previous</span>Connect with an FTP client</a><a class="pager-next" href="backups.html"><span class="pager-label">Next &rarr;</span>Back up and restore your site</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

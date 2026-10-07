@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Back up and restore your site",
+  "description": "Download backups from cPanel or add CodeGuard for daily automated off-site backups starting at $7.50/yr.",
+  "image": "https://dredgehost.com/assets/og/guides/backups.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/backups.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,15 +81,15 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
-                <p class="page-meta">5 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">5 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Back up and restore your site</h1>
                 <p class="lede">How to download your own backups from cPanel, and how to add automated daily backups with CodeGuard.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Backups are up to you</h2>
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#backups-are-up-to-you">Backups are up to you</a></li><li><a href="#download-a-backup">Download a backup</a></li><li><a href="#restore-from-your-own-backup">Restore from your own backup</a></li><li><a href="#mind-your-storage">Mind your storage</a></li><li><a href="#for-wordpress-sites">For WordPress sites</a></li></ol></nav><!-- toc:end -->
+                <h2 id="backups-are-up-to-you">Backups are up to you</h2>
                 <p>Your hosting plan doesn't include automatic backups. If you delete the wrong file, an update
                 breaks your site, or your account is hacked, the way back is a copy you've made yourself.
                 Download one regularly, and always before a big change.</p>
@@ -72,7 +98,7 @@
                 to your plan. It takes daily off-site backups of your files and databases
                 automatically, and you can restore with one click. Plans start at $7.50/yr.</p>
 
-                <h2>Download a backup</h2>
+                <h2 id="download-a-backup">Download a backup</h2>
                 <p>In cPanel, open <strong>Backup</strong>. You'll see two kinds:</p>
                 <ul>
                     <li><strong>Partial backups</strong> are what you want day to day. Download your
@@ -84,7 +110,7 @@
                 <p>Store your downloads somewhere other than your computer as well, such as an external
                 drive or cloud storage.</p>
 
-                <h2>Restore from your own backup</h2>
+                <h2 id="restore-from-your-own-backup">Restore from your own backup</h2>
                 <ol>
                     <li>In cPanel, open <strong>Backup</strong>.</li>
                     <li>Under <strong>Restore a Home Directory Backup</strong> or <strong>Restore a MySQL
@@ -93,16 +119,17 @@
                 <p>A restore overwrites what's there now. If you only need one lost file, it's safer to open
                 the backup on your computer and upload just that file with File Manager.</p>
 
-                <h2>Mind your storage</h2>
+                <h2 id="mind-your-storage">Mind your storage</h2>
                 <p>A Full Account Backup is created inside your account before you download it, so it
                 counts toward your plan's storage. If you're near your limit, it may fail. Stick to partial
                 backups, and delete any backup file left in your home folder once it's downloaded.</p>
 
-                <h2>For WordPress sites</h2>
+                <h2 id="for-wordpress-sites">For WordPress sites</h2>
                 <p>WordPress Manager in cPanel can take and restore backups of a single WordPress site
                 with one click, and can schedule them automatically. Download a copy now and then so
                 you're not relying only on copies stored in the same account.</p>
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="https-everywhere.html"><span class="pager-label">&larr; Previous</span>Turn on HTTPS everywhere</a><a class="pager-next" href="create-mysql-database.html"><span class="pager-label">Next &rarr;</span>Create a MySQL database</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

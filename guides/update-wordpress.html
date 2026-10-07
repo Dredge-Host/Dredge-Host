@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Update WordPress safely",
+  "description": "Keep WordPress core, plugins, and themes up to date without breaking your site.",
+  "image": "https://dredgehost.com/assets/og/guides/update-wordpress.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/update-wordpress.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,15 +81,15 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / WordPress</p>
-                <p class="page-meta">4 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">4 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Update WordPress safely</h1>
                 <p class="lede">Keeping WordPress, your plugins, and your theme up to date is the single most important thing you can do for security. Here's how to do it without breaking anything.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Before you update</h2>
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#before-you-update">Before you update</a></li><li><a href="#update-plugins">Update plugins</a></li><li><a href="#update-themes">Update themes</a></li><li><a href="#update-wordpress-core">Update WordPress core</a></li><li><a href="#if-an-update-breaks-your-site">If an update breaks your site</a></li></ol></nav><!-- toc:end -->
+                <h2 id="before-you-update">Before you update</h2>
                 <ol>
                     <li><strong>Back up your site.</strong> Follow the
                     <a href="backups.html">backup guide</a> or, if you have CodeGuard, confirm a
@@ -73,7 +99,7 @@
                     the new version.</li>
                 </ol>
 
-                <h2>Update plugins</h2>
+                <h2 id="update-plugins">Update plugins</h2>
                 <ol>
                     <li>In your WordPress dashboard, go to <strong>Plugins &gt; Installed Plugins</strong>.</li>
                     <li>Tick the plugins that have updates available, or click
@@ -84,7 +110,7 @@
                     the last plugin you updated to find the culprit.</li>
                 </ol>
 
-                <h2>Update themes</h2>
+                <h2 id="update-themes">Update themes</h2>
                 <ol>
                     <li>Go to <strong>Appearance &gt; Themes</strong>.</li>
                     <li>Click the theme with an update available, then click <strong>Update now</strong>.</li>
@@ -92,14 +118,14 @@
                 <p class="muted-note">If you've edited theme files directly, those changes will be
                 overwritten. Use a child theme to keep customisations safe across updates.</p>
 
-                <h2>Update WordPress core</h2>
+                <h2 id="update-wordpress-core">Update WordPress core</h2>
                 <ol>
                     <li>Go to <strong>Dashboard &gt; Updates</strong>.</li>
                     <li>Click <strong>Update to version X.X</strong>.</li>
                     <li>WordPress handles the rest. Don't close the browser tab until it's done.</li>
                 </ol>
 
-                <h2>If an update breaks your site</h2>
+                <h2 id="if-an-update-breaks-your-site">If an update breaks your site</h2>
                 <ul>
                     <li><strong>White screen or error:</strong> check the
                     <a href="fix-500-error.html">500 error guide</a> &mdash; the most common cause
@@ -112,7 +138,8 @@
                     backup you took before starting.</li>
                 </ul>
 
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="move-wordpress.html"><span class="pager-label">&larr; Previous</span>Move a WordPress site to Dredge</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

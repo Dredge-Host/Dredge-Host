@@ -52,7 +52,7 @@
                 <h1>Setup guides</h1>
                 <p class="lede">Plain walkthroughs for connecting domains and DNS, running
                 WordPress, setting up email, managing files and databases, and fixing common
-                errors.</p>
+                errors. New here? Start with the <a href="getting-started.html">getting-started checklist</a>, or look up a term in the <a href="glossary.html">glossary</a>.</p>
             </div>
         </section>
 
@@ -68,6 +68,7 @@
                     <button type="button" data-filter="email" aria-pressed="false">Email</button>
                     <button type="button" data-filter="site" aria-pressed="false">Your site</button>
                     <button type="button" data-filter="troubleshooting" aria-pressed="false">Troubleshooting</button>
+                    <button type="button" data-filter="choosing" aria-pressed="false">Choosing hosting</button>
                 </div>
                 <div class="doc-grid guide-gallery">
                     <a class="doc-card guide-card" href="guides/client-area-and-cpanel.html" data-cat="start">
@@ -160,6 +161,12 @@
                         <p>Forward mail from your domain to Gmail, Outlook, or any other address without creating a mailbox.</p>
                         <span class="guide-meta">2 min read</span>
                     </a>
+                    <a class="doc-card guide-card" href="guides/email-deliverability.html" data-cat="email">
+                        <span class="doc-cat">Email</span>
+                        <h3>Stop your email going to spam</h3>
+                        <p>Set up SPF, DKIM, and DMARC so mail from your domain lands in the inbox.</p>
+                        <span class="guide-meta">5 min read</span>
+                    </a>
                     <a class="doc-card guide-card" href="guides/create-mysql-database.html" data-cat="site">
                         <span class="doc-cat">Your site</span>
                         <h3>Create a MySQL database</h3>
@@ -195,6 +202,24 @@
                         <h3>Fix a 500 Internal Server Error</h3>
                         <p>Track down the cause of a blank page or "Internal Server Error" using error logs and common fixes.</p>
                         <span class="guide-meta">4 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="guides/wordpress-com-vs-own-hosting.html" data-cat="choosing">
+                        <span class="doc-cat">Choosing hosting</span>
+                        <h3>WordPress.com vs. WordPress on your own hosting</h3>
+                        <p>What changes when you run WordPress on your own hosting instead of WordPress.com.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="guides/shared-hosting-vs-vps.html" data-cat="choosing">
+                        <span class="doc-cat">Choosing hosting</span>
+                        <h3>Shared hosting vs. a VPS: which do you need?</h3>
+                        <p>Who runs the server, what skills you need, and when you've outgrown shared hosting.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="guides/sitejet-vs-wordpress.html" data-cat="choosing">
+                        <span class="doc-cat">Choosing hosting</span>
+                        <h3>Sitejet Builder or WordPress: which should you use?</h3>
+                        <p>Both come with every plan. How to pick the right one for your site.</p>
+                        <span class="guide-meta">3 min read</span>
                     </a>
                 </div>
                 <p class="guide-empty" id="guide-empty" role="status" hidden>No guides match that search. Try another word, or email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help.</p>
@@ -242,6 +267,9 @@
             });
         });
         search.addEventListener('input', update);
+
+        var q = new URLSearchParams(location.search).get('q');
+        if (q) { search.value = q; update(); }
     })();
     </script>
 </body>

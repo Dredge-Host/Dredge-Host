@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Change your PHP version",
+  "description": "Switch between PHP versions in cPanel when a plugin or framework needs a newer or older release.",
+  "image": "https://dredgehost.com/assets/og/guides/change-php-version.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/change-php-version.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,15 +81,15 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
-                <p class="page-meta">2 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">2 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Change your PHP version</h1>
                 <p class="lede">Some plugins, themes, or frameworks need a specific PHP version. You can switch in about thirty seconds.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Switch the version</h2>
+            <div class="wrap prose"><!-- toc:start --><!-- toc:end -->
+                <h2 id="switch-the-version">Switch the version</h2>
                 <ol>
                     <li>In cPanel, open <strong>MultiPHP Manager</strong>.</li>
                     <li>Tick the checkbox next to the domain you want to change.</li>
@@ -72,7 +98,7 @@
                 </ol>
                 <p>The change takes effect immediately. Refresh your site to confirm it's working.</p>
 
-                <h2>Check which version you're running</h2>
+                <h2 id="check-which-version-you-re-running">Check which version you're running</h2>
                 <p>The <strong>MultiPHP Manager</strong> page shows the current version next to
                 each domain. You can also create a file called <code>info.php</code> in your
                 site's root with this content:</p>
@@ -80,7 +106,7 @@
                 <p>Visit <code>yourdomain.com/info.php</code> in a browser. Delete the file
                 when you're done &mdash; it exposes server details you don't want public.</p>
 
-                <h2>Change PHP settings</h2>
+                <h2 id="change-php-settings">Change PHP settings</h2>
                 <p>If you need to adjust values like <code>upload_max_filesize</code>,
                 <code>max_execution_time</code>, or <code>memory_limit</code>:</p>
                 <ol>
@@ -89,12 +115,13 @@
                     <li>Change the values you need and click <strong>Apply</strong>.</li>
                 </ol>
 
-                <h2>Which version to pick</h2>
+                <h2 id="which-version-to-pick">Which version to pick</h2>
                 <p>As a rule of thumb, use the newest version your site supports. WordPress
                 currently recommends PHP 8.1 or newer. If you're unsure, try the latest
                 version &mdash; if something breaks, you can switch back in the same way.</p>
 
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="cron-jobs.html"><span class="pager-label">&larr; Previous</span>Set up a cron job</a><a class="pager-next" href="password-protect-directory.html"><span class="pager-label">Next &rarr;</span>Password-protect a directory</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

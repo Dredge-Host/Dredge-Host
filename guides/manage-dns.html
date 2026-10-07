@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Manage DNS records",
+  "description": "Add or edit A, CNAME, MX, and TXT records in cPanel's Zone Editor.",
+  "image": "https://dredgehost.com/assets/og/guides/manage-dns.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/manage-dns.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,15 +81,15 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Domains</p>
-                <p class="page-meta">4 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">4 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Manage DNS records</h1>
                 <p class="lede">Add or edit A, CNAME, MX, and TXT records in cPanel's Zone Editor &mdash; for things like domain verification, external email, or pointing a subdomain at another service.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>When you need this</h2>
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#when-you-need-this">When you need this</a></li><li><a href="#open-the-zone-editor">Open the Zone Editor</a></li><li><a href="#add-a-record">Add a record</a></li><li><a href="#edit-or-delete-a-record">Edit or delete a record</a></li><li><a href="#how-long-changes-take">How long changes take</a></li></ol></nav><!-- toc:end -->
+                <h2 id="when-you-need-this">When you need this</h2>
                 <p>If your domain's nameservers point to Dredge (the default setup from the
                 <a href="connect-domain.html">Connect a domain</a> guide), then cPanel manages
                 your DNS. You'll need the Zone Editor when:</p>
@@ -73,11 +99,11 @@
                     <li>You're switching email to an external provider and need to change MX records.</li>
                 </ul>
 
-                <h2>Open the Zone Editor</h2>
+                <h2 id="open-the-zone-editor">Open the Zone Editor</h2>
                 <p>In cPanel, open <strong>Zone Editor</strong>. Click <strong>Manage</strong> next
                 to the domain you want to edit.</p>
 
-                <h2>Add a record</h2>
+                <h2 id="add-a-record">Add a record</h2>
                 <ol>
                     <li>Click <strong>Add Record</strong> and choose the type.</li>
                     <li>Fill in the fields the service gave you. Common types:</li>
@@ -94,17 +120,18 @@
                 </table>
                 </div>
 
-                <h2>Edit or delete a record</h2>
+                <h2 id="edit-or-delete-a-record">Edit or delete a record</h2>
                 <p>Find the record in the list and click <strong>Edit</strong> or <strong>Delete</strong>.
                 Be careful with records you didn't create yourself &mdash; some are needed for your
                 site and email to work.</p>
 
-                <h2>How long changes take</h2>
+                <h2 id="how-long-changes-take">How long changes take</h2>
                 <p>Changes made here usually take effect within a few minutes, but some ISPs cache
                 DNS for up to 24 hours. If you're testing, try flushing your local DNS cache or
                 using a different network.</p>
 
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="domain-aliases.html"><span class="pager-label">&larr; Previous</span>Point multiple domains to one site</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

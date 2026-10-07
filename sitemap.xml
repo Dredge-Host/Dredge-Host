@@ -5,6 +5,8 @@
   <url><loc>https://dredgehost.com/about.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/why-dredge.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/guides.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://dredgehost.com/getting-started.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://dredgehost.com/glossary.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/guides/client-area-and-cpanel.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://dredgehost.com/guides/connect-domain.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://dredgehost.com/guides/add-subdomain.html</loc><lastmod>2026-09-29</lastmod></url>
@@ -18,6 +20,7 @@
   <url><loc>https://dredgehost.com/guides/domain-aliases.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/guides/manage-dns.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/guides/update-wordpress.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://dredgehost.com/guides/email-deliverability.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/guides/email-forwarding.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/guides/connect-with-ftp.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/guides/create-mysql-database.html</loc><lastmod>2026-10-07</lastmod></url>
@@ -26,6 +29,9 @@
   <url><loc>https://dredgehost.com/guides/password-protect-directory.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/guides/fix-ssl-errors.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/guides/fix-500-error.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://dredgehost.com/guides/wordpress-com-vs-own-hosting.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://dredgehost.com/guides/shared-hosting-vs-vps.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://dredgehost.com/guides/sitejet-vs-wordpress.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dredgehost.com/status.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://dredgehost.com/contact.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://dredgehost.com/terms.html</loc><lastmod>2026-09-29</lastmod></url>

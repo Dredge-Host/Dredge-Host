@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Set up a cron job | Dredge Host Guides</title>
-    <meta name="description" content="Schedule a script or command to run automatically at regular intervals using cPanel's cron job manager.">
-    <link rel="canonical" href="https://dredgehost.com/guides/cron-jobs.html">
+    <title>Shared hosting vs. a VPS: which do you need? | Dredge Host Guides</title>
+    <meta name="description" content="Compare shared hosting and a virtual private server: who runs the server, skills needed, cost, and when you&#x27;ve outgrown shared hosting.">
+    <link rel="canonical" href="https://dredgehost.com/guides/shared-hosting-vs-vps.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Dredge Host">
-    <meta property="og:title" content="Set up a cron job | Dredge Host Guides">
-    <meta property="og:description" content="Schedule a script or command to run automatically at regular intervals using cPanel's cron job manager.">
-    <meta property="og:url" content="https://dredgehost.com/guides/cron-jobs.html">
-    <meta property="og:image" content="https://dredgehost.com/assets/og/guides/cron-jobs.png">
+    <meta property="og:title" content="Shared hosting vs. a VPS: which do you need? | Dredge Host Guides">
+    <meta property="og:description" content="Compare shared hosting and a virtual private server: who runs the server, skills needed, cost, and when you&#x27;ve outgrown shared hosting.">
+    <meta property="og:url" content="https://dredgehost.com/guides/shared-hosting-vs-vps.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og/guides/shared-hosting-vs-vps.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0f5c58">
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -42,8 +42,8 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Set up a cron job",
-          "item": "https://dredgehost.com/guides/cron-jobs.html"
+          "name": "Shared hosting vs. a VPS: which do you need?",
+          "item": "https://dredgehost.com/guides/shared-hosting-vs-vps.html"
         }
       ]
     }
@@ -53,10 +53,10 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Set up a cron job",
-  "description": "Schedule a script or command to run automatically at regular intervals using cPanel's cron job manager.",
-  "image": "https://dredgehost.com/assets/og/guides/cron-jobs.png",
-  "mainEntityOfPage": "https://dredgehost.com/guides/cron-jobs.html",
+  "headline": "Shared hosting vs. a VPS: which do you need?",
+  "description": "Compare shared hosting and a virtual private server: who runs the server, skills needed, cost, and when you've outgrown shared hosting.",
+  "image": "https://dredgehost.com/assets/og/guides/shared-hosting-vs-vps.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/shared-hosting-vs-vps.html",
   "dateModified": "2026-10-07",
   "author": {
     "@type": "Organization",
@@ -80,54 +80,56 @@
     <main id="main">
         <section class="page-hero">
             <div class="wrap">
-                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
-                <p class="page-meta">3 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
-                <h1>Set up a cron job</h1>
-                <p class="lede">A cron job runs a command on a schedule, like clearing a cache every night or sending a daily email digest.</p>
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Choosing hosting</p>
+                <p class="page-meta">4 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
+                <h1>Shared hosting vs. a VPS: which do you need?</h1>
+                <p class="lede">A VPS sounds more powerful, but for most websites it's more work for little gain. Here's how to tell which one fits.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose"><!-- toc:start --><!-- toc:end -->
-                <h2 id="open-the-cron-editor">Open the cron editor</h2>
-                <p>In cPanel, open <strong>Cron Jobs</strong>. At the top you can set an email address
-                to receive the output of every cron run. Leave it blank if you don't want
-                notifications.</p>
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#the-short-version">The short version</a></li><li><a href="#how-they-compare">How they compare</a></li><li><a href="#shared-hosting-is-enough-if">Shared hosting is enough if</a></li><li><a href="#you-need-a-vps-if">You need a VPS if</a></li><li><a href="#outgrowing-shared-hosting">Outgrowing shared hosting?</a></li></ol></nav><!-- toc:end -->
+                <h2 id="the-short-version">The short version</h2>
+                <p>Shared hosting puts many accounts on one server that the host manages. A VPS
+                (virtual private server) gives you your own slice of a server with full control,
+                which also means you're responsible for running it. Most small sites are better
+                off on shared hosting.</p>
 
-                <h2 id="add-a-cron-job">Add a cron job</h2>
-                <ol>
-                    <li>Under <strong>Add New Cron Job</strong>, pick a schedule from the
-                    <strong>Common Settings</strong> dropdown, or fill in the five time fields
-                    yourself (minute, hour, day, month, weekday).</li>
-                    <li>In the <strong>Command</strong> field, type the full path to your script. For
-                    a PHP script:
-                    <pre><code>/usr/local/bin/php /home/username/public_html/cron.php</code></pre></li>
-                    <li>Click <strong>Add New Cron Job</strong>.</li>
-                </ol>
-
-                <h2 id="common-schedules">Common schedules</h2>
+                <h2 id="how-they-compare">How they compare</h2>
                 <div class="compare-wrap">
                 <table class="compare-table">
-                    <thead><tr><th>Schedule</th><th>Cron expression</th></tr></thead>
+                    <thead><tr><th>&nbsp;</th><th>Shared hosting</th><th>VPS</th></tr></thead>
                     <tbody>
-                        <tr><td>Every 15 minutes</td><td><code>*/15 * * * *</code></td></tr>
-                        <tr><td>Once per hour</td><td><code>0 * * * *</code></td></tr>
-                        <tr><td>Once per day (midnight)</td><td><code>0 0 * * *</code></td></tr>
-                        <tr><td>Once per week (Sunday)</td><td><code>0 0 * * 0</code></td></tr>
+                        <tr><td>Who runs the server</td><td>The host: updates, security, monitoring</td><td>You, unless you pay extra for management</td></tr>
+                        <tr><td>Control panel</td><td>cPanel, ready to use</td><td>Often none, or a separately licensed panel</td></tr>
+                        <tr><td>Root access</td><td>No</td><td>Yes</td></tr>
+                        <tr><td>Skills needed</td><td>None beyond following a guide</td><td>Comfort with Linux and the command line</td></tr>
+                        <tr><td>Resources</td><td>A fixed, fairly shared portion</td><td>A dedicated amount of memory and CPU</td></tr>
+                        <tr><td>Typical cost</td><td>Lower</td><td>Higher, plus your time</td></tr>
                     </tbody>
                 </table>
                 </div>
 
-                <h2 id="silence-the-output">Silence the output</h2>
-                <p>If you don't need email notifications for a specific job, add
-                <code>&gt;/dev/null 2&gt;&amp;1</code> to the end of the command.</p>
+                <h2 id="shared-hosting-is-enough-if">Shared hosting is enough if</h2>
+                <ul>
+                    <li>You're running websites, blogs, small shops, or WordPress.</li>
+                    <li>You'd rather spend your time on your site than on server maintenance.</li>
+                    <li>Your traffic fits comfortably within your plan's monthly transfer.</li>
+                </ul>
 
-                <h2 id="edit-or-delete">Edit or delete</h2>
-                <p>Your existing cron jobs are listed at the bottom of the same page. Click
-                <strong>Edit</strong> to change the schedule or command, or <strong>Delete</strong>
-                to remove one.</p>
+                <h2 id="you-need-a-vps-if">You need a VPS if</h2>
+                <ul>
+                    <li>You need root access to install your own software or change server settings.</li>
+                    <li>You're running something long-lived, like a game server, a chat bot, or a custom background service.</li>
+                    <li>You need a language or stack that shared hosting doesn't support.</li>
+                </ul>
 
-                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="create-mysql-database.html"><span class="pager-label">&larr; Previous</span>Create a MySQL database</a><a class="pager-next" href="change-php-version.html"><span class="pager-label">Next &rarr;</span>Change your PHP version</a></nav><!-- guide-pager:end -->
+                <h2 id="outgrowing-shared-hosting">Outgrowing shared hosting?</h2>
+                <p>If your sites regularly need more than 300&nbsp;GB of transfer a month, email
+                <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> before you
+                move. We can often put together a custom plan.</p>
+
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="wordpress-com-vs-own-hosting.html"><span class="pager-label">&larr; Previous</span>WordPress.com vs. WordPress on your own hosting</a><a class="pager-next" href="sitejet-vs-wordpress.html"><span class="pager-label">Next &rarr;</span>Sitejet Builder or WordPress: which should you use?</a></nav><!-- guide-pager:end -->
 <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
@@ -142,11 +144,11 @@
                         <p>Where to pay invoices, change plans, and log in to cPanel, the control panel for your site.</p>
                         <span class="guide-meta">4 min read</span>
                     </a>
-                    <a class="doc-card guide-card" href="change-php-version.html" data-cat="site">
-                        <span class="doc-cat">Your site</span>
-                        <h3>Change your PHP version</h3>
-                        <p>Switch between PHP versions when a plugin or framework needs a newer or older release.</p>
-                        <span class="guide-meta">2 min read</span>
+                    <a class="doc-card guide-card" href="install-wordpress.html" data-cat="wordpress">
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Install WordPress in one click</h3>
+                        <p>Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.</p>
+                        <span class="guide-meta">3 min read</span>
                     </a>
                     <a class="doc-card guide-card" href="create-mysql-database.html" data-cat="site">
                         <span class="doc-cat">Your site</span>
@@ -160,7 +162,7 @@
 
         <section class="section help-line">
             <div class="wrap">
-                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+                <p>Still deciding? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll give you a straight answer.</p>
             </div>
         </section>
     </main>

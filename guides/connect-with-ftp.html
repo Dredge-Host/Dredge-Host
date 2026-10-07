@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Connect with an FTP client",
+  "description": "Use FileZilla or another FTP client to upload and manage files on your Dredge account over a secure connection.",
+  "image": "https://dredgehost.com/assets/og/guides/connect-with-ftp.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/connect-with-ftp.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,15 +81,15 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
-                <p class="page-meta">3 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">3 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Connect with an FTP client</h1>
                 <p class="lede">Use FileZilla or another FTP client to upload and manage your site's files over a secure connection.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Find your FTP details</h2>
+            <div class="wrap prose"><!-- toc:start --><!-- toc:end -->
+                <h2 id="find-your-ftp-details">Find your FTP details</h2>
                 <ol>
                     <li>In cPanel, open <strong>FTP Accounts</strong>.</li>
                     <li>Your main FTP account is listed at the bottom under <strong>Special FTP Accounts</strong>. Click <strong>Configure FTP Client</strong> next to it.</li>
@@ -77,7 +103,7 @@
                     </li>
                 </ol>
 
-                <h2>Connect with FileZilla</h2>
+                <h2 id="connect-with-filezilla">Connect with FileZilla</h2>
                 <ol>
                     <li>Open FileZilla and go to <strong>File &gt; Site Manager</strong>.</li>
                     <li>Click <strong>New Site</strong> and give it a name.</li>
@@ -88,17 +114,17 @@
                 </ol>
                 <p>Once connected, your site's files are on the right side. Your local files are on the left. Drag files between them to upload or download.</p>
 
-                <h2>Where to put your files</h2>
+                <h2 id="where-to-put-your-files">Where to put your files</h2>
                 <p>Your site's public files live in <code>public_html</code>. If you have multiple
                 domains or subdomains, each one has its own folder inside your home directory.</p>
 
-                <h2>Why FTP over TLS</h2>
+                <h2 id="why-ftp-over-tls">Why FTP over TLS</h2>
                 <p>Plain FTP sends your password and files unencrypted. Choosing
                 <strong>Require explicit FTP over TLS</strong> encrypts the whole connection.
                 The first time you connect, FileZilla asks you to trust the server's certificate;
                 tick <strong>Always trust this certificate</strong> and click <strong>OK</strong>.</p>
 
-                <h2>Create an additional FTP account</h2>
+                <h2 id="create-an-additional-ftp-account">Create an additional FTP account</h2>
                 <p>If you need to give someone access to only one folder (like a developer working
                 on a subdomain):</p>
                 <ol>
@@ -107,7 +133,8 @@
                 </ol>
                 <p>That account can only see the folder you specified and anything inside it.</p>
 
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="upload-website.html"><span class="pager-label">&larr; Previous</span>Upload a website with File Manager or FTP</a><a class="pager-next" href="https-everywhere.html"><span class="pager-label">Next &rarr;</span>Turn on HTTPS everywhere</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

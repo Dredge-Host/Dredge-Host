@@ -48,6 +48,32 @@
       ]
     }
     </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Install WordPress in one click",
+  "description": "Start a brand-new WordPress site on your domain in about two minutes, no files or databases to set up.",
+  "image": "https://dredgehost.com/assets/og/guides/install-wordpress.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/install-wordpress.html",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
 </head>
 <body data-root="../" data-active="guides">
     <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../about.html">About</a><a href="../guides.html" aria-current="page">Guides</a><a href="../status.html">Status</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
@@ -55,20 +81,20 @@
         <section class="page-hero">
             <div class="wrap">
                 <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / WordPress</p>
-                <p class="page-meta">3 min read · Updated <time datetime="2026-10">October 2026</time></p>
+                <p class="page-meta">3 min read · Updated <time datetime="2026-10-07">October 2026</time></p>
                 <h1>Install WordPress in one click</h1>
                 <p class="lede">cPanel&#x27;s installer sets up WordPress, its database, and your admin login in one go. You&#x27;ll be writing your first post a couple of minutes from now.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="wrap prose">
-                <h2>Before you start</h2>
+            <div class="wrap prose"><!-- toc:start --><!-- toc:end -->
+                <h2 id="before-you-start">Before you start</h2>
                 <p>You can install before your domain points at Dredge, but you won't be able to see the
                 site until it does. If you haven't connected it yet, start with
                 <a href="connect-domain.html">Connect a domain</a>.</p>
 
-                <h2>Install it</h2>
+                <h2 id="install-it">Install it</h2>
                 <ol>
                     <li>In cPanel, open <strong>WordPress Manager</strong> (or <strong>Softaculous Apps
                     Installer</strong> and choose WordPress) and click <strong>Install</strong>.</li>
@@ -83,11 +109,11 @@
                     <li>Click <strong>Install</strong> and wait for the confirmation.</li>
                 </ol>
 
-                <h2>Log in</h2>
+                <h2 id="log-in">Log in</h2>
                 <p>Go to <code>https://yourdomain.com/wp-admin</code> and sign in with the admin username and
                 password you just chose. WordPress Manager in cPanel also has a one-click login button.</p>
 
-                <h2>First things to do</h2>
+                <h2 id="first-things-to-do">First things to do</h2>
                 <ul>
                     <li><strong>Settings &rarr; General:</strong> set your time zone and check both addresses
                     start with <code>https://</code>.</li>
@@ -100,7 +126,8 @@
 
                 <p class="muted-note">Moving an existing WordPress site instead of starting fresh? Follow
                 <a href="move-wordpress.html">Move a WordPress site to Dredge</a>.</p>
-                <p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-next" href="move-wordpress.html"><span class="pager-label">Next &rarr;</span>Move a WordPress site to Dredge</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
             </div>
         </section>
 

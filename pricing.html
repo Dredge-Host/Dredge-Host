@@ -151,6 +151,29 @@
             </div>
         </section>
 
+        <section class="section tint" id="plan-picker" hidden>
+            <div class="wrap">
+                <h2 class="section-title">Not sure which plan?</h2>
+                <form class="picker" onsubmit="return false">
+                    <fieldset>
+                        <legend>How many websites will you run?</legend>
+                        <label><input type="radio" name="sites" value="0" checked> 1</label>
+                        <label><input type="radio" name="sites" value="1"> 2 to 5</label>
+                        <label><input type="radio" name="sites" value="2"> 6 to 15</label>
+                        <label><input type="radio" name="sites" value="3"> More than 15</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>How many email accounts do you need?</legend>
+                        <label><input type="radio" name="email" value="0" checked> Up to 10</label>
+                        <label><input type="radio" name="email" value="1"> 11 to 30</label>
+                        <label><input type="radio" name="email" value="2"> 31 to 75</label>
+                        <label><input type="radio" name="email" value="3"> More than 75</label>
+                    </fieldset>
+                </form>
+                <div class="picker-result" role="status" aria-live="polite"></div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="wrap payment-methods">
                 <h2 class="section-title">Payment</h2>
@@ -202,7 +225,7 @@
                         <tr><td>One-click WordPress</td><td class="tick">Yes</td><td class="tick">Yes</td><td class="tick">Yes</td></tr>
                         <tr><td>cPanel account</td><td class="tick">Yes</td><td class="tick">Yes</td><td class="tick">Yes</td></tr>
                         <tr><td>MySQL databases</td><td>5</td><td>15</td><td>40</td></tr>
-                        <tr><td>Support</td><td>Email</td><td>Priority email</td><td>Priority email, same-day replies</td></tr>
+                        <tr><td>Support</td><td>Email, replies within 48 hours</td><td>Priority email, replies within 24 hours</td><td>Priority email, same-day replies</td></tr>
                     </tbody>
                 </table>
                 </div>
@@ -282,8 +305,68 @@
                 </div>
             </div>
         </section>
+
+        <section class="section">
+            <div class="wrap">
+                <h2 class="section-title">What happens after you order</h2>
+                <ol class="steps">
+                    <li>
+                        <h3>You get a welcome email</h3>
+                        <p>Once your first payment goes through, we set up your account and email you your
+                        cPanel username and password.</p>
+                    </li>
+                    <li>
+                        <h3>You log in</h3>
+                        <p>Sign in to the client area at my.dredgehost.com and open cPanel from there.
+                        <a href="guides/client-area-and-cpanel.html">Here's a quick tour.</a></p>
+                    </li>
+                    <li>
+                        <h3>You point your domain at Dredge</h3>
+                        <p>Change your domain's nameservers at your registrar.
+                        <a href="guides/connect-domain.html">The domain guide</a> shows exactly where.</p>
+                    </li>
+                    <li>
+                        <h3>You build your site</h3>
+                        <p>Install WordPress in one click, use the site builder, or upload your own files.
+                        <a href="getting-started.html">The getting-started checklist</a> covers the rest.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
     </main>
     <!-- site-footer:start --><footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="assets/logo-light.png" alt="Dredge Host" class="footer-logo" width="296" height="150"><p class="footer-blurb">Independent cPanel hosting.</p></div><nav class="footer-links" aria-label="Footer"><div class="footer-col"><span class="footer-head">Product</span><a href="./#features">Features</a><a href="pricing.html">Pricing</a><a href="status.html">Status</a><a href="guides.html">Guides</a></div><div class="footer-col"><span class="footer-head">Company</span><a href="about.html">About</a><a href="why-dredge.html">Why Dredge</a><a href="contact.html">Contact</a></div><div class="footer-col"><span class="footer-head">Legal</span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="aup.html">Acceptable Use</a><a href="refunds.html">Refunds</a></div><div class="footer-col"><span class="footer-head">Connect</span><a href="mailto:support@dredgehost.com">Email</a><a href="https://github.com/Dredge-Host" rel="noopener">GitHub</a><a href="https://x.com/DredgeHost" rel="noopener">X (Twitter)</a><a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium Support</a></div></nav></div><div class="wrap footer-payment"><p>We accept Visa, Mastercard, Amex, Discover, Apple&nbsp;Pay &amp; Google&nbsp;Pay via Stripe.</p></div><div class="wrap footer-bottom"><p>&copy; <span class="footer-year">2026</span> Dredge Host</p><p><a href="mailto:support@dredgehost.com">support@dredgehost.com</a></p></div></footer><!-- site-footer:end -->
     <script src="assets/site.js"></script>
+    <script>
+    (function () {
+        var plans = [
+            { name: 'Silt', price: '$5/mo', detail: '1 website and 10 email accounts', url: 'https://my.dredgehost.com/index.php?rp=/store/web-hosting/silt' },
+            { name: 'Channel', price: '$12/mo', detail: '5 websites and 30 email accounts', url: 'https://my.dredgehost.com/index.php?rp=/store/web-hosting/channel' },
+            { name: 'Harbor', price: '$25/mo', detail: '15 websites and 75 email accounts', url: 'https://my.dredgehost.com/index.php?rp=/store/web-hosting/harbor' }
+        ];
+        var section = document.getElementById('plan-picker');
+        var form = section.querySelector('.picker');
+        var result = section.querySelector('.picker-result');
+
+        function update() {
+            var need = Math.max(
+                Number(form.querySelector('input[name="sites"]:checked').value),
+                Number(form.querySelector('input[name="email"]:checked').value)
+            );
+            if (need >= plans.length) {
+                result.innerHTML = '<p class="picker-plan">You need more than Harbor includes.</p>' +
+                    '<p>Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we\'ll put together a custom plan.</p>';
+                return;
+            }
+            var plan = plans[need];
+            result.innerHTML = '<p class="picker-plan">We\'d suggest <strong>' + plan.name + '</strong> at ' + plan.price + '.</p>' +
+                '<p>It includes ' + plan.detail + '. If you outgrow it, upgrades apply right away.</p>' +
+                '<a class="btn btn-primary" href="' + plan.url + '">Order ' + plan.name + '</a>';
+        }
+
+        form.addEventListener('change', update);
+        update();
+        section.hidden = false;
+    })();
+    </script>
 </body>
 </html>

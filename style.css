@@ -439,6 +439,10 @@ a { color: inherit; text-decoration: none; }
 .center-stage .btn-primary:hover { background: var(--ink); color: var(--paper); }
 .center-stage .btn-ghost { color: var(--paper); border-color: rgba(255,255,255,0.55); }
 .center-stage .btn-ghost:hover { background: var(--paper); color: var(--teal); border-color: var(--paper); }
+.notfound-search { display: flex; gap: 0.5rem; margin: 2.5rem auto 1rem; max-width: 28rem; }
+.notfound-search .guide-search { margin: 0; flex: 1; min-width: 0; }
+.center-stage .notfound-links { font-size: 0.95rem; margin-bottom: 0; }
+.notfound-links a { color: var(--paper); text-decoration: underline; text-underline-offset: 2px; }
 .center-stage .actions { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
 
 /* ---------- Value cards (about) ---------- */
@@ -467,6 +471,15 @@ a { color: inherit; text-decoration: none; }
     font-size: 0.88rem; line-height: 1.55;
 }
 .prose pre code { background: none; color: inherit; padding: 0; font-size: inherit; }
+.code-block { position: relative; }
+.code-block pre { padding-top: 2.6rem; }
+.copy-btn {
+    position: absolute; top: 0.5rem; right: 0.5rem;
+    font-family: var(--display); font-size: 0.8rem; cursor: pointer;
+    padding: 0.25rem 0.6rem; border-radius: var(--radius);
+    background: transparent; color: var(--paper); border: 1px solid rgba(255,255,255,0.35);
+}
+.copy-btn:hover, .copy-btn:focus-visible { border-color: var(--paper); }
 .prose .compare-table { margin-bottom: 1rem; }
 
 /* Guide gallery */
@@ -569,3 +582,79 @@ a { color: inherit; text-decoration: none; }
     cursor: pointer; font-size: 1.2rem; line-height: 1; padding: 0.25rem;
 }
 .promo-close:hover { opacity: 1; }
+
+/* ---------- Numbered steps ---------- */
+.steps {
+    list-style: none; padding: 0; counter-reset: step;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.25rem 2rem;
+}
+.steps li { counter-increment: step; border-top: 2px solid var(--ink); padding-top: 1rem; }
+.steps li::before {
+    content: counter(step, decimal-leading-zero);
+    display: block; font-family: var(--mono); font-size: 0.85rem; color: var(--teal); margin-bottom: 0.4rem;
+}
+.steps h3 { font-family: var(--display); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+.steps p { font-size: 0.95rem; color: var(--muted); }
+.steps a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 860px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .steps { grid-template-columns: 1fr; } }
+.steps-list { grid-template-columns: repeat(2, 1fr); max-width: 56rem; }
+@media (max-width: 620px) { .steps-list { grid-template-columns: 1fr; } }
+
+/* ---------- Guide contents box and previous/next ---------- */
+.toc {
+    border-left: 2px solid var(--teal); padding: 0.25rem 0 0.25rem 1.1rem; margin: 0 0 2.25rem;
+}
+.prose .toc-title {
+    font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); margin-bottom: 0.5rem;
+}
+.prose .toc ol { list-style: none; padding: 0; margin: 0; }
+.prose .toc li { margin: 0.25rem 0; }
+.prose .toc a { color: var(--teal); text-decoration: none; }
+.prose .toc a:hover { text-decoration: underline; }
+.prose h2[id] { scroll-margin-top: 5.5rem; }
+.guide-pager {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin: 2.5rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
+}
+.prose .guide-pager a {
+    display: block; text-decoration: none; color: var(--ink); font-weight: 600;
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 0.85rem 1rem;
+}
+.prose .guide-pager a:hover { border-color: var(--teal); }
+.guide-pager .pager-next { grid-column: 2; text-align: right; }
+.pager-label { display: block; font-family: var(--mono); font-size: 0.78rem; font-weight: 400; color: var(--muted); margin-bottom: 0.2rem; }
+@media (max-width: 620px) {
+    .guide-pager { grid-template-columns: 1fr; }
+    .guide-pager .pager-next { grid-column: 1; }
+}
+
+/* ---------- Glossary ---------- */
+.glossary { margin: 0 0 2.5rem; }
+.glossary dt {
+    font-family: var(--display); font-weight: 600; color: var(--ink);
+    margin-top: 1.25rem; scroll-margin-top: 5.5rem;
+}
+.glossary dd { margin: 0.25rem 0 0; color: var(--muted); }
+.glossary dd a { white-space: nowrap; }
+.glossary dt:target { color: var(--teal); }
+
+/* ---------- Plan picker ---------- */
+.picker { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; margin-bottom: 1.75rem; }
+.picker fieldset { border: 0; padding: 0; margin: 0; }
+.picker legend { font-family: var(--display); font-weight: 600; color: var(--ink); margin-bottom: 0.6rem; }
+.picker label {
+    display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer;
+    margin: 0 0.5rem 0.5rem 0; padding: 0.4rem 0.85rem; font-size: 0.92rem;
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.picker label:has(input:checked) { border-color: var(--teal); box-shadow: inset 0 0 0 1px var(--teal); }
+.picker input { accent-color: var(--teal); margin: 0; }
+.picker-result { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem 1.5rem; max-width: 40rem; }
+.picker-result p { color: var(--muted); margin-bottom: 0.75rem; }
+.picker-result .picker-plan { color: var(--ink); font-size: 1.1rem; }
+.picker-result a:not(.btn) { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 720px) { .picker { grid-template-columns: 1fr; } }
+
+.reply-times { margin-top: 3.5rem; max-width: 44rem; }
