@@ -30,9 +30,9 @@
     if (!promoDismissed && new Date() < promoEnds) {
         promoHTML =
             '<div class="promo-banner" role="status">' +
-              '35% off your first month — use code ' +
-              '<span class="promo-code">EARLY35</span> at checkout. Ends Dec&nbsp;31.' +
-              ' <a class="promo-cta" href="' + root + 'pricing.html">See plans &rarr;</a>' +
+              '35% off your first order<span class="promo-long"> — use code</span><span class="promo-short">:</span> ' +
+              '<span class="promo-code">EARLY35</span><span class="promo-long"> at checkout. Ends Dec&nbsp;31.</span>' +
+              ' <a class="promo-cta" href="' + root + 'pricing.html">See&nbsp;plans&nbsp;&rarr;</a>' +
               '<button class="promo-close" aria-label="Dismiss">&times;</button>' +
             '</div>';
     }
