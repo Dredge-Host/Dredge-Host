@@ -160,6 +160,15 @@ a { color: inherit; text-decoration: none; }
 .plans.plain { background: var(--paper); }
 .plans-lead { max-width: 56ch; color: var(--muted); margin: -1.25rem 0 2.25rem; }
 .plans-lead a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+.plans-promise { display: flex; justify-content: center; margin-top: 2rem; }
+.plans-promise > span {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--paper); border: 1px solid var(--teal); border-radius: var(--radius);
+    padding: 0.65rem 1.1rem; color: var(--ink); font-size: 0.98rem;
+}
+.plans-promise svg { color: var(--teal); flex-shrink: 0; }
+.plans-promise strong { color: var(--teal); font-weight: 600; }
+.plans-promise + .plans-note { margin-top: 0.9rem; }
 .plans-note { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 1.5rem; }
 .plans-note a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 .plans-note.plans-compare { margin-top: 0.5rem; }
