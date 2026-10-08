@@ -81,6 +81,7 @@ def footer(root):
         '<a href="https://github.com/Dredge-Host" rel="noopener">GitHub</a>'
         '<a href="https://x.com/DredgeHost" rel="noopener">X (Twitter)</a>'
         '<a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium Support</a>'
+        '<a href="https://www.trustpilot.com/review/dredgehost.com" rel="noopener">Trustpilot</a>'
         '</div>'
         '</nav>'
         '</div>'
