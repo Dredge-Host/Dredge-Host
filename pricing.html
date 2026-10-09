@@ -236,7 +236,7 @@
 
         <section class="section">
             <div class="wrap">
-                <h2 class="section-title">Add-ons</h2>
+                <h2 class="section-title" id="add-ons">Add-ons</h2>
                 <div class="addon-intro">
                     <h3>Automated backups</h3>
                     <p>Daily off-site backups of your files and databases with
@@ -244,20 +244,58 @@
                     plan from your client area.</p>
                 </div>
                 <div class="compare-wrap">
-                <table class="compare-table">
+                <table class="compare-table compare-compact">
                     <thead>
-                        <tr><th>Plan</th><th>Backup storage</th><th>Price</th></tr>
+                        <tr><th>Plan</th><th>Storage</th><th>Yearly</th><th>Monthly</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Lite</td><td>1 GB</td><td>$7.50/yr</td></tr>
-                        <tr><td>Professional</td><td>10 GB</td><td>$23.99/yr</td></tr>
-                        <tr><td>Business</td><td>25 GB</td><td>$59.99/yr</td></tr>
-                        <tr><td>Power</td><td>100 GB</td><td>$149.96/yr</td></tr>
+                        <tr><td>Lite</td><td>1 GB</td><td>$7.50</td><td>$2.09</td></tr>
+                        <tr><td>Professional</td><td>10 GB</td><td>$23.99</td><td>$6.28</td></tr>
+                        <tr><td>Business</td><td>25 GB</td><td>$59.99</td><td>$13.97</td></tr>
+                        <tr><td>Power</td><td>100 GB</td><td>$149.96</td><td>$34.91</td></tr>
+                    </tbody>
+                </table>
+                </div>
+                <p class="addon-note">Yearly billing works out much cheaper than monthly.
+                Quarterly, 6-month, 2-year, and 3-year billing are also available in the client area.</p>
+                <p class="addon-cta">
+                    <a class="btn btn-ghost" href="https://my.dredgehost.com/index.php?rp=/store/codeguard">Add backups to your plan</a>
+                </p>
+
+                <div class="addon-intro">
+                    <h3>Domain names</h3>
+                    <p>Register a new domain or transfer one you already own, at checkout or any
+                    time later from your client area. Domain prices are set per extension by the
+                    registries, so unlike our hosting plans, a domain can renew at a different
+                    price from its first year. Here's exactly what you'll pay, per year.</p>
+                </div>
+                <div class="compare-wrap">
+                <table class="compare-table compare-compact">
+                    <thead>
+                        <tr><th>Domain</th><th>Register</th><th>Transfer</th><th>Renew</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>.com</td><td>$14.00</td><td>$14.00</td><td>$15.00</td></tr>
+                        <tr><td>.net</td><td>$16.00</td><td>$16.00</td><td>$17.00</td></tr>
+                        <tr><td>.org</td><td>$16.00</td><td>$16.00</td><td>$17.00</td></tr>
+                        <tr><td>.xyz</td><td>$3.50</td><td>$3.50</td><td>$10.00</td></tr>
                     </tbody>
                 </table>
                 </div>
                 <p class="addon-cta">
-                    <a class="btn btn-ghost" href="https://my.dredgehost.com/index.php?rp=/store/codeguard">Add backups to your plan</a>
+                    <a class="btn btn-ghost" href="https://my.dredgehost.com/cart.php?a=add&amp;domain=register">Register a domain</a>
+                    <a class="btn btn-ghost" href="https://my.dredgehost.com/cart.php?a=add&amp;domain=transfer">Transfer a domain</a>
+                </p>
+
+                <div class="addon-intro">
+                    <h3>NordVPN</h3>
+                    <p>A NordVPN Standard subscription, billed through your Dredge client area: an
+                    encrypted connection for public Wi-Fi and travel, with malware and tracker
+                    blocking, on up to 10 devices. The VPN itself is run by NordVPN under its own
+                    terms. <strong>$9.50/mo</strong>, or <strong>$59.88/yr</strong> (about $4.99/mo).</p>
+                </div>
+                <p class="addon-cta">
+                    <a class="btn btn-ghost" href="https://my.dredgehost.com/index.php?rp=/store/nordvpn">Get NordVPN</a>
                 </p>
             </div>
         </section>
@@ -281,7 +319,10 @@
                         like EARLY35 take money off your first order only; renewals are at the
                         normal price. If you switch plans, or cancel and sign up again later, the
                         current price for that plan applies. The <a href="terms.html">terms</a>
-                        spell this out.</p></div>
+                        spell this out.</p>
+                        <p>This covers hosting plans. Domain names are priced by the registries, and some
+                        renew at a different price from their first year; the
+                        <a href="#add-ons">add-ons table</a> lists both.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" aria-expanded="false">What happens if I go over my storage or transfer?</button>
