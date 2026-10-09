@@ -184,6 +184,7 @@ a { color: inherit; text-decoration: none; }
     color: var(--ink); margin-bottom: 0.4rem;
 }
 .feature p { font-size: 0.95rem; color: var(--muted); }
+.feature p a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 
 /* ---------- Plans ---------- */
 .plans { padding: clamp(3.5rem, 8vw, 6rem) 0; background: var(--teal-tint); }
@@ -608,6 +609,7 @@ a { color: inherit; text-decoration: none; }
 .addon-cta { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .addon-cta + .addon-intro { margin-top: 3rem; }
 .addon-note { color: var(--muted); font-size: 0.9rem; margin-top: 1rem; max-width: 60ch; }
+.addon-note a, .compare-table td a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 
 /* ---------- Payment methods ---------- */
 .payment-methods p { color: var(--muted); max-width: 56ch; margin-bottom: 1rem; }

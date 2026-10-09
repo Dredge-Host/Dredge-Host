@@ -61,6 +61,7 @@ def footer(root):
         f'<a href="{home}#features">Features</a>'
         f'<a href="{root}pricing.html">Pricing</a>'
         f'<a href="{root}domains.html">Domains</a>'
+        f'<a href="{root}wordpress-hosting.html">WordPress hosting</a>'
         f'<a href="{root}status.html">Status</a>'
         f'<a href="{root}guides.html">Guides</a>'
         '<a href="https://my.dredgehost.com/clientarea.php">Client area</a>'
