@@ -34,6 +34,7 @@ def header(root, active):
         + nav(f"{root}about.html", "about", "About")
         + nav(f"{root}guides.html", "guides", "Guides")
         + nav(f"{root}status.html", "status", "Status")
+        + '<a href="https://my.dredgehost.com/clientarea.php">Log in</a>'
         + f'<a class="nav-cta" href="{root}pricing.html">Get started</a>'
         '</nav>'
         '<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">'
@@ -61,6 +62,7 @@ def footer(root):
         f'<a href="{root}pricing.html">Pricing</a>'
         f'<a href="{root}status.html">Status</a>'
         f'<a href="{root}guides.html">Guides</a>'
+        '<a href="https://my.dredgehost.com/clientarea.php">Client area</a>'
         '</div>'
         '<div class="footer-col">'
         '<span class="footer-head">Company</span>'
@@ -80,7 +82,7 @@ def footer(root):
         '<a href="mailto:support@dredgehost.com">Email</a>'
         '<a href="https://github.com/Dredge-Host" rel="noopener">GitHub</a>'
         '<a href="https://x.com/DredgeHost" rel="noopener">X (Twitter)</a>'
-        '<a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium Support</a>'
+        '<a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium community</a>'
         '<a href="https://www.trustpilot.com/review/dredgehost.com" rel="noopener">Trustpilot</a>'
         '</div>'
         '</nav>'

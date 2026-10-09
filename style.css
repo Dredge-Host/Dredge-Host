@@ -662,6 +662,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Plan picker ---------- */
 .picker { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; margin-bottom: 1.75rem; }
 .picker fieldset { border: 0; padding: 0; margin: 0; }
+.picker .picker-wide { grid-column: 1 / -1; }
 .picker legend { font-family: var(--display); font-weight: 600; color: var(--ink); margin-bottom: 0.6rem; }
 .picker label {
     display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer;

@@ -18,7 +18,7 @@
         var pl = document.createElement('script');
         pl.defer = true;
         pl.setAttribute('data-domain', PLAUSIBLE_DOMAIN);
-        pl.src = 'https://plausible.io/js/script.js';
+        pl.src = 'https://plausible.io/js/script.outbound-links.js';
         document.head.appendChild(pl);
     }
 
