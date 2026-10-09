@@ -43,6 +43,26 @@
     var footerYear = document.querySelector('.footer-year');
     if (footerYear) footerYear.textContent = new Date().getFullYear();
 
+    /* ---- Monthly / yearly switch on the plan cards ---- */
+    document.querySelectorAll('.billing-toggle').forEach(function (group) {
+        var scope = group.parentNode;
+        group.hidden = false;
+        group.addEventListener('click', function (e) {
+            var button = e.target.closest('button[data-cycle]');
+            if (!button) return;
+            var cycle = button.getAttribute('data-cycle');
+            group.querySelectorAll('button').forEach(function (b) {
+                b.setAttribute('aria-pressed', String(b === button));
+            });
+            scope.querySelectorAll('[data-' + cycle + ']').forEach(function (el) {
+                el.textContent = el.getAttribute('data-' + cycle);
+            });
+            scope.querySelectorAll('[data-' + cycle + '-href]').forEach(function (el) {
+                el.href = el.getAttribute('data-' + cycle + '-href');
+            });
+        });
+    });
+
     /* ---- Mobile nav toggle ---- */
     var toggle = document.querySelector('.nav-toggle');
     var nav = document.querySelector('.site-nav');

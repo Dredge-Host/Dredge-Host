@@ -31,9 +31,9 @@ def header(root, active):
         '<nav class="site-nav" aria-label="Primary">'
         + nav(f"{home}#features", "features", "Features")
         + nav(f"{root}pricing.html", "pricing", "Pricing")
-        + nav(f"{root}about.html", "about", "About")
+        + nav(f"{root}domains.html", "domains", "Domains")
         + nav(f"{root}guides.html", "guides", "Guides")
-        + nav(f"{root}status.html", "status", "Status")
+        + nav(f"{root}about.html", "about", "About")
         + '<a href="https://my.dredgehost.com/clientarea.php">Log in</a>'
         + f'<a class="nav-cta" href="{root}pricing.html">Get started</a>'
         '</nav>'
@@ -60,6 +60,7 @@ def footer(root):
         '<span class="footer-head">Product</span>'
         f'<a href="{home}#features">Features</a>'
         f'<a href="{root}pricing.html">Pricing</a>'
+        f'<a href="{root}domains.html">Domains</a>'
         f'<a href="{root}status.html">Status</a>'
         f'<a href="{root}guides.html">Guides</a>'
         '<a href="https://my.dredgehost.com/clientarea.php">Client area</a>'
