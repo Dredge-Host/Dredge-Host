@@ -80,7 +80,6 @@ def footer(root):
         '<div class="footer-col">'
         '<span class="footer-head">Connect</span>'
         '<a href="mailto:support@dredgehost.com">Email</a>'
-        '<a href="https://github.com/Dredge-Host" rel="noopener">GitHub</a>'
         '<a href="https://x.com/DredgeHost" rel="noopener">X (Twitter)</a>'
         '<a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium community</a>'
         '<a href="https://www.trustpilot.com/review/dredgehost.com" rel="noopener">Trustpilot</a>'
