@@ -504,6 +504,11 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Value cards (about) ---------- */
 .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin: 1.5rem 0 0.5rem; }
+.value-grid.compare-fit { grid-template-columns: repeat(2, 1fr); margin-bottom: 2rem; }
+.fit-list { margin: 0.5rem 0 0; padding-left: 1.1rem; color: var(--muted); font-size: 0.95rem; }
+.fit-list li { margin-bottom: 0.45rem; }
+.source-list { margin: 0.5rem 0 1rem; padding-left: 1.1rem; color: var(--muted); }
+.source-list a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 .value-grid .value-card { border: 0; border-top: 2px solid var(--ink); border-radius: 0; padding: 0.9rem 0 0; }
 .value-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem 1.5rem; }
 .value-card h3, .prose .value-card h3 {
@@ -589,6 +594,8 @@ a { color: inherit; text-decoration: none; }
     .compare-table th, .compare-table td { padding: 0.75rem 0.6rem; }
     .wrap:not(.prose) > .compare-wrap .compare-table td:first-child { white-space: nowrap; }
     .wrap:not(.prose) > .compare-wrap .compare-table.compare-compact { min-width: 0; }
+    .wrap:not(.prose) > .compare-wrap .compare-table.compare-compact td:first-child { white-space: normal; }
+    .value-grid.compare-fit { grid-template-columns: 1fr; }
     .status-row { flex-direction: row; align-items: flex-start; }
 }
 

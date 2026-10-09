@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect a domain from GoDaddy, Squarespace, or Cloudflare | Dredge Host Guides</title>
+    <meta name="description" content="Point a domain you already own at Dredge, with steps for GoDaddy, Squarespace, Cloudflare, and any other registrar.">
+    <link rel="canonical" href="https://dredgehost.com/guides/connect-existing-domain.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Connect a domain from GoDaddy, Squarespace, or Cloudflare | Dredge Host Guides">
+    <meta property="og:description" content="Point a domain you already own at Dredge, with steps for GoDaddy, Squarespace, Cloudflare, and any other registrar.">
+    <meta property="og:url" content="https://dredgehost.com/guides/connect-existing-domain.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og/guides/connect-existing-domain.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Connect a domain from GoDaddy, Squarespace, or Cloudflare",
+          "item": "https://dredgehost.com/guides/connect-existing-domain.html"
+        }
+      ]
+    }
+    </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Connect a domain from GoDaddy, Squarespace, or Cloudflare",
+  "description": "Point a domain you already own at Dredge, with steps for GoDaddy, Squarespace, Cloudflare, and any other registrar.",
+  "image": "https://dredgehost.com/assets/og/guides/connect-existing-domain.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/connect-existing-domain.html",
+  "dateModified": "2026-10-09",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
+</head>
+<body data-root="../" data-active="guides">
+    <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../domains.html">Domains</a><a href="../guides.html" aria-current="page">Guides</a><a href="../about.html">About</a><a href="https://my.dredgehost.com/clientarea.php">Log in</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Domains</p>
+                <p class="page-meta">6 min read · Updated <time datetime="2026-10-09">October 2026</time></p>
+                <h1>Connect a domain from GoDaddy, Squarespace, or Cloudflare</h1>
+                <p class="lede">Already own a domain? Keep it where it is and point it at Dredge by changing its nameservers. Here's where that setting lives at the registrars most people use.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#before-you-start">Before you start</a></li><li><a href="#godaddy">GoDaddy</a></li><li><a href="#squarespace-including-domains-moved-from-google-domains">Squarespace (including domains moved from Google Domains)</a></li><li><a href="#cloudflare">Cloudflare</a></li><li><a href="#any-other-registrar">Any other registrar</a></li><li><a href="#wait-then-check">Wait, then check</a></li></ol></nav><!-- toc:end -->
+                <h2 id="before-you-start">Before you start</h2>
+                <ul>
+                    <li>Your Dredge nameservers. They're in the <strong>welcome email</strong> we send
+                    when your account is set up, and in your client area at
+                    <a href="https://my.dredgehost.com/clientarea.php">my.dredgehost.com</a> under your hosting service.
+                    There are two of them and they look like <code>ns1.example.com</code>.</li>
+                    <li>The domain added to your hosting. If you ordered your plan with this domain, it's
+                    already there. If not, add it in cPanel first; see
+                    <a href="connect-domain.html#adding-a-second-domain-to-the-same-account">adding a second domain</a>.</li>
+                    <li><strong>Email already on this domain?</strong> If you use Google Workspace,
+                    Microsoft 365, or another email service with this domain, note down its MX records
+                    now. Once the nameservers point at Dredge, your DNS lives in cPanel, and you'll need
+                    to add those records again in the <a href="manage-dns.html">Zone Editor</a> so mail
+                    keeps arriving.</li>
+                    <li><strong>DNSSEC switched on?</strong> Turn it off at your registrar before
+                    changing nameservers. Changing nameservers with DNSSEC still on can make the domain
+                    unreachable.</li>
+                </ul>
+
+                <h2 id="godaddy">GoDaddy</h2>
+                <ol>
+                    <li>Sign in and open your <strong>Domain Portfolio</strong>.</li>
+                    <li>Select the domain to open its <strong>Domain Settings</strong>.</li>
+                    <li>Go to <strong>DNS</strong>, then <strong>Nameservers</strong>, and choose to
+                    change them.</li>
+                    <li>Pick the option to use your own nameservers, and enter your two Dredge
+                    nameservers.</li>
+                    <li>Select <strong>Save</strong>, then <strong>Continue</strong>. If the domain has
+                    Domain Protection, GoDaddy asks for a verification code first.</li>
+                </ol>
+                <p>Older GoDaddy accounts can show a slightly different route: <strong>Domain
+                Settings &rarr; Manage DNS</strong>, then <strong>Change</strong> in the Nameservers
+                section. The rest is the same.</p>
+
+                <h2 id="squarespace-including-domains-moved-from-google-domains">Squarespace (including domains moved from Google Domains)</h2>
+                <ol>
+                    <li>Open the <strong>Domains</strong> dashboard and click the domain.</li>
+                    <li>Go to <strong>DNS</strong>, then <strong>Domain Nameservers</strong>.</li>
+                    <li>Choose the option to use <strong>custom nameservers</strong> and enter your two
+                    Dredge nameservers.</li>
+                    <li>Confirm with your password or two-factor code. Squarespace warns that DNSSEC
+                    will be turned off; accept that.</li>
+                </ol>
+                <p>Once you switch, any Squarespace site stops showing on this domain, and records in
+                Squarespace's DNS panel stop applying. That's expected: from now on your site and DNS
+                live on Dredge.</p>
+
+                <h2 id="cloudflare">Cloudflare</h2>
+                <p>What you do depends on where the domain is registered.</p>
+                <ul>
+                    <li><strong>Registered somewhere else, using Cloudflare for DNS:</strong> change the
+                    nameservers at the registrar where you pay for the domain, using the steps above or
+                    below. That moves DNS from Cloudflare to Dredge.</li>
+                    <li><strong>Registered with Cloudflare Registrar:</strong> Cloudflare doesn't let these
+                    domains use another company's nameservers. Keep Cloudflare's DNS instead and point
+                    the domain at Dredge with DNS records.
+                    <a href="../contact.html">Get in touch</a> and we'll send you the exact records
+                    for your account.</li>
+                </ul>
+                <p>If you add records in Cloudflare, set their proxy status to <strong>DNS
+                only</strong> (the grey cloud). Our free HTTPS certificates are issued directly to your
+                server, and Cloudflare's proxy can get in the way.</p>
+
+                <h2 id="any-other-registrar">Any other registrar</h2>
+                <ol>
+                    <li>Sign in and open the settings for your domain.</li>
+                    <li>Look for <strong>Nameservers</strong>, sometimes under <strong>DNS</strong> or
+                    <strong>Advanced</strong>.</li>
+                    <li>Switch from the registrar's default nameservers to <strong>custom</strong> ones,
+                    enter your two Dredge nameservers, and save.</li>
+                </ol>
+                <p>Some website builders that also sell domains, such as Wix and Shopify, don't let
+                you change nameservers. Either <a href="../domains.html">transfer the domain to us</a>
+                or another registrar, or ask us for the records to add there instead.</p>
+
+                <h2 id="wait-then-check">Wait, then check</h2>
+                <p>Nameserver changes usually show up within an hour or two, but can take up to
+                48 hours. Once they do, your domain shows your Dredge site, and free HTTPS kicks in by
+                itself within a few hours. If you see a certificate warning after a day, see
+                <a href="fix-ssl-errors.html">Fix &ldquo;Your connection is not private&rdquo; errors</a>.</p>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="connect-domain.html"><span class="pager-label">&larr; Previous</span>Buy a domain from Porkbun or Namecheap and connect it</a><a class="pager-next" href="add-subdomain.html"><span class="pager-label">Next &rarr;</span>Add a subdomain like blog.yourdomain.com</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="connect-domain.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Buy a domain from Porkbun or Namecheap and connect it</h3>
+                        <p>Register a domain at Porkbun or Namecheap and point it at your Dredge account.</p>
+                        <span class="guide-meta">6 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="manage-dns.html" data-cat="domains">
+                        <span class="doc-cat">Domains</span>
+                        <h3>Manage DNS records</h3>
+                        <p>Add or edit A, CNAME, MX, and TXT records in cPanel's Zone Editor.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="fix-ssl-errors.html" data-cat="troubleshooting">
+                        <span class="doc-cat">Troubleshooting</span>
+                        <h3>Fix "Your connection is not private" errors</h3>
+                        <p>Troubleshoot SSL certificate errors that show a warning page instead of your site.</p>
+                        <span class="guide-meta">4 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+                <p>Did this guide help? A short <a href="https://www.trustpilot.com/review/dredgehost.com" target="_blank" rel="noopener">review on Trustpilot</a> helps other people find a small host they can trust.</p>
+            </div>
+        </section>
+    </main>
+    <!-- site-footer:start --><footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="../assets/logo-light.png" alt="Dredge Host" class="footer-logo" width="296" height="150"><p class="footer-blurb">Independent cPanel hosting.</p></div><nav class="footer-links" aria-label="Footer"><div class="footer-col"><span class="footer-head">Product</span><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../domains.html">Domains</a><a href="../wordpress-hosting.html">WordPress hosting</a><a href="../status.html">Status</a><a href="../guides.html">Guides</a><a href="https://my.dredgehost.com/clientarea.php">Client area</a></div><div class="footer-col"><span class="footer-head">Company</span><a href="../about.html">About</a><a href="../why-dredge.html">Why Dredge</a><a href="../contact.html">Contact</a></div><div class="footer-col"><span class="footer-head">Legal</span><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../aup.html">Acceptable Use</a><a href="../refunds.html">Refunds</a></div><div class="footer-col"><span class="footer-head">Connect</span><a href="mailto:support@dredgehost.com">Email</a><a href="https://x.com/DredgeHost" rel="noopener">X (Twitter)</a><a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium community</a><a href="https://www.trustpilot.com/review/dredgehost.com" rel="noopener">Trustpilot</a></div></nav></div><div class="wrap footer-payment"><p>We accept Visa, Mastercard, Amex, Discover, Apple&nbsp;Pay &amp; Google&nbsp;Pay via Stripe.</p></div><div class="wrap footer-bottom"><p>&copy; <span class="footer-year">2026</span> Dredge Host</p><p><a href="mailto:support@dredgehost.com">support@dredgehost.com</a></p></div></footer><!-- site-footer:end -->
+    <script src="../assets/site.js"></script>
+</body>
+</html>
