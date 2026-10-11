@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the dredge-vs-*.html comparison pages from the prices below. When a host
 changes its prices, update its entry (and its `checked` date), then run:
-    python3 scripts/make-comparisons.py && python3 scripts/sync-layout.py
+    python3 scripts/make-comparisons.py && python3 scripts/make-share-images.py && python3 scripts/sync-layout.py
 """
 import pathlib
 from html import escape
@@ -229,7 +229,7 @@ def page(slug, p):
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="What {name}'s intro price turns into at renewal, compared with Dredge's same-price renewals.">
     <meta property="og:url" content="https://dredgehost.com/{fn}">
-    <meta property="og:image" content="https://dredgehost.com/assets/og-image.png">
+    <meta property="og:image" content="https://dredgehost.com/assets/og/pages/{fn[:-5]}.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0f5c58">
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -381,8 +381,8 @@ def page(slug, p):
 SLIDER_START, SLIDER_END = "<!-- vs-slider:start -->", "<!-- vs-slider:end -->"
 
 
-def slider():
-    """One slide per host for the Why Dredge page, with arrows and dots."""
+def slider(title, lead, more=""):
+    """One slide per host, with arrows and dots, for the home and Why Dredge pages."""
     slides = []
     for i, (slug, p) in enumerate(HOSTS.items(), 1):
         six = cumulative(p["yearly"])[-1]
@@ -411,16 +411,15 @@ def slider():
     return f"""
         <section class="section">
             <div class="wrap">
-                <h2 class="section-title">Compared with specific hosts</h2>
-                <p class="plans-lead">Entry-plan prices at sign-up and at renewal, from each host's own website.
-                Use the arrows to move between them.</p>
+                <h2 class="section-title">{title}</h2>
+                <p class="plans-lead">{lead}</p>
                 <div class="vs-slider" aria-roledescription="carousel" aria-label="Price comparisons with other hosts">
                     <button type="button" class="vs-arrow vs-prev" aria-label="Previous host" hidden>&larr;</button>
                     <div class="vs-track" tabindex="0">{''.join(slides)}
                     </div>
                     <button type="button" class="vs-arrow vs-next" aria-label="Next host" hidden>&rarr;</button>
                     <div class="vs-dots" hidden>{dots}</div>
-                </div>
+                </div>{more}
             </div>
         </section>
         """
@@ -431,11 +430,24 @@ def main():
         fn, text = page(slug, p)
         (SITE / fn).write_text(text)
         print(f"wrote {fn}")
-    why = SITE / "why-dredge.html"
-    text = why.read_text()
-    start, end = text.index(SLIDER_START) + len(SLIDER_START), text.index(SLIDER_END)
-    why.write_text(text[:start] + slider() + text[end:])
-    print("updated why-dredge.html")
+    sliders = {
+        "why-dredge.html": slider(
+            "Compared with specific hosts",
+            "Entry-plan prices at sign-up and at renewal, from each host's own website. "
+            "Use the arrows to move between them."),
+        "index.html": slider(
+            "What you'd pay elsewhere",
+            "Most big hosts advertise a low first-term price, then raise it at renewal. Here's their "
+            "entry plan against Silt, from each host's own website.",
+            '\n                <p class="plans-note plans-compare"><a href="why-dredge.html">'
+            'See how we compare in more detail &rarr;</a></p>'),
+    }
+    for name, html in sliders.items():
+        target = SITE / name
+        text = target.read_text()
+        start, end = text.index(SLIDER_START) + len(SLIDER_START), text.index(SLIDER_END)
+        target.write_text(text[:start] + html + text[end:])
+        print(f"updated {name}")
 
 
 if __name__ == "__main__":
