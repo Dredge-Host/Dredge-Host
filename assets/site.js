@@ -63,6 +63,73 @@
         });
     });
 
+    /* ---- Comparison charts: crosshair and tooltip per year ---- */
+    document.querySelectorAll('.vs-chart-wrap').forEach(function (wrap) {
+        var svg = wrap.querySelector('svg');
+        var tip = wrap.querySelector('.vs-tip');
+        var cursor = svg.querySelector('.vs-cursor');
+        var names = Array.prototype.map.call(
+            wrap.closest('.chart-card').querySelectorAll('.vs-legend span'),
+            function (el) { return el.textContent.trim(); });
+        function show(hit) {
+            var x = hit.getAttribute('data-x');
+            cursor.setAttribute('x1', x); cursor.setAttribute('x2', x);
+            cursor.style.opacity = 1;
+            tip.innerHTML = '<strong>Total by year ' + hit.getAttribute('data-year') + '</strong>' +
+                '<i class="key key-them"></i>' + names[0] + ': ' + hit.getAttribute('data-them') + '<br>' +
+                '<i class="key key-us"></i>' + names[1] + ': ' + hit.getAttribute('data-us');
+            tip.hidden = false;
+            var scale = svg.getBoundingClientRect().width / svg.viewBox.baseVal.width;
+            var left = x * scale + 12;
+            if (left + tip.offsetWidth > wrap.clientWidth) left = x * scale - tip.offsetWidth - 12;
+            tip.style.left = Math.max(0, left) + 'px';
+        }
+        function hide() { cursor.style.opacity = 0; tip.hidden = true; }
+        svg.querySelectorAll('.vs-hit').forEach(function (hit) {
+            hit.addEventListener('pointerenter', function () { show(hit); });
+        });
+        svg.addEventListener('pointerleave', hide);
+    });
+
+    /* ---- Slider of comparisons on the Why Dredge page ---- */
+    document.querySelectorAll('.vs-slider').forEach(function (slider) {
+        var track = slider.querySelector('.vs-track');
+        var slides = track.querySelectorAll('.vs-slide');
+        var prev = slider.querySelector('.vs-prev');
+        var next = slider.querySelector('.vs-next');
+        var dots = slider.querySelectorAll('.vs-dot-btn');
+        [prev, next, slider.querySelector('.vs-dots')].forEach(function (el) { el.hidden = false; });
+        function current() {
+            var best = 0;
+            slides.forEach(function (s, n) {
+                if (Math.abs(s.offsetLeft - track.scrollLeft) < Math.abs(slides[best].offsetLeft - track.scrollLeft)) best = n;
+            });
+            return best;
+        }
+        function go(i) {
+            i = Math.max(0, Math.min(slides.length - 1, i));
+            track.scrollTo({ left: slides[i].offsetLeft });
+        }
+        function update() {
+            var i = current();
+            prev.disabled = i === 0;
+            next.disabled = i === slides.length - 1;
+            dots.forEach(function (d, n) { d.setAttribute('aria-current', String(n === i)); });
+        }
+        prev.addEventListener('click', function () { go(current() - 1); });
+        next.addEventListener('click', function () { go(current() + 1); });
+        dots.forEach(function (d) {
+            d.addEventListener('click', function () { go(Number(d.getAttribute('data-slide'))); });
+        });
+        track.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); }
+        });
+        track.addEventListener('scroll', update);
+        window.addEventListener('resize', update);
+        update();
+    });
+
     /* ---- Mobile nav toggle ---- */
     var toggle = document.querySelector('.nav-toggle');
     var nav = document.querySelector('.site-nav');

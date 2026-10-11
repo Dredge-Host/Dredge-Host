@@ -739,3 +739,107 @@ a { color: inherit; text-decoration: none; }
 .review-ask p { color: var(--muted); margin-bottom: 1rem; }
 .review-ask .trustpilot-widget { max-width: 22rem; }
 .about-badges .trustpilot-widget { width: 240px; zoom: 1.45; margin: 0 -29px -13px; }
+
+/* ---------- Comparison pages and the Why Dredge slider ---------- */
+:root { --vs-them: #c8642a; --vs-us: #00968a; }
+.vs-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
+.jump-card {
+    background: var(--paper); color: var(--ink); border-radius: var(--radius);
+    padding: 1.5rem 1.6rem; box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+.jump-row + .jump-row { border-top: 1px solid var(--line); margin-top: 1.1rem; padding-top: 1.1rem; }
+.jump-name { font-family: var(--display); font-weight: 600; font-size: 0.95rem; color: var(--muted); margin-bottom: 0.2rem; }
+.jump-prices { font-family: var(--mono); color: var(--ink); display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+.jump-prices span:first-child { font-size: 1.15rem; color: var(--muted); }
+.jump-prices strong { font-size: 2rem; font-weight: 500; }
+.jump-arrow { color: var(--muted); font-family: var(--body); }
+.jump-per { color: var(--muted); font-size: 0.9rem; margin-left: -0.35rem; }
+.jump-tag { display: inline-block; font-size: 0.8rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: 999px; margin-top: 0.45rem; }
+.jump-up { background: #f7e7dd; color: #8a3f16; }
+.jump-same { background: var(--teal-tint); color: var(--teal); }
+
+.vs-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.75rem; }
+.vs-stat { border-top: 2px solid var(--ink); padding-top: 0.75rem; }
+.vs-stat-label { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.2rem; }
+.vs-stat-value { font-family: var(--display); font-weight: 600; font-size: clamp(1.6rem, 3.4vw, 2.3rem); color: var(--ink); line-height: 1.15; }
+
+.chart-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem 1.25rem 1rem; background: var(--paper); }
+.vs-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.5rem; }
+.vs-legend span { display: inline-flex; align-items: center; gap: 0.5rem; }
+.key { display: inline-block; width: 18px; height: 3px; border-radius: 2px; }
+.key-them { background: var(--vs-them); }
+.key-us { background: var(--vs-us); }
+.vs-chart-wrap { position: relative; }
+.vs-chart { display: block; width: 100%; height: auto; overflow: visible; }
+.vs-grid { stroke: #e7ebea; stroke-width: 1; }
+.vs-tick { fill: var(--muted); font-family: var(--body); font-size: 12px; }
+.vs-line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.vs-them { stroke: var(--vs-them); }
+.vs-us { stroke: var(--vs-us); }
+.vs-dot { stroke: var(--paper); stroke-width: 2; }
+.vs-them-dot { fill: var(--vs-them); }
+.vs-us-dot { fill: var(--vs-us); }
+.vs-end { fill: var(--ink); font-family: var(--body); font-size: 13px; font-weight: 600; }
+.vs-cursor { stroke: #c4ccca; stroke-width: 1; opacity: 0; }
+.vs-hit { fill: transparent; cursor: crosshair; }
+.vs-tip {
+    position: absolute; top: 0; pointer-events: none; z-index: 2;
+    background: var(--ink); color: var(--paper); border-radius: var(--radius);
+    padding: 0.55rem 0.75rem; font-size: 0.85rem; line-height: 1.5; white-space: nowrap;
+}
+.vs-tip strong { display: block; font-weight: 600; margin-bottom: 0.15rem; }
+.vs-tip .key { margin-right: 0.4rem; vertical-align: middle; }
+.vs-table { margin-top: 0.75rem; }
+.vs-table summary { cursor: pointer; color: var(--teal); font-size: 0.92rem; font-weight: 500; }
+.vs-compare td:first-child { color: var(--muted); }
+.fit-card { border-top-color: var(--vs-them) !important; }
+.fit-card.fit-us { border-top-color: var(--teal) !important; }
+
+.vs-slider { position: relative; }
+.vs-track {
+    position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 1rem;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    scrollbar-width: none; border-radius: var(--radius);
+}
+.vs-track::-webkit-scrollbar { display: none; }
+.vs-slide {
+    scroll-snap-align: start; background: var(--paper); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 1.75rem 4rem;
+}
+.vs-slide-title { font-family: var(--display); font-weight: 600; font-size: 1.3rem; color: var(--ink); margin-bottom: 1.25rem; }
+.vs-slide-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.vs-slide-col { border-top: 2px solid var(--vs-them); padding-top: 0.9rem; }
+.vs-slide-col.vs-slide-us { border-top-color: var(--teal); }
+.vs-slide-six { font-family: var(--mono); font-size: 0.92rem; color: var(--ink); margin-top: 0.75rem; }
+.vs-slide-link { display: inline-block; margin-top: 1.5rem; color: var(--teal); text-decoration: underline; text-underline-offset: 2px; font-weight: 500; }
+.vs-arrow {
+    position: absolute; top: calc(50% - 1.5rem); transform: translateY(-50%); z-index: 2;
+    width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+    background: var(--paper); border: 1px solid var(--line); color: var(--teal);
+    font-size: 1.2rem; line-height: 1; box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+.vs-arrow:hover:not(:disabled) { background: var(--teal); color: var(--paper); border-color: var(--teal); }
+.vs-arrow:disabled { opacity: 0.35; cursor: default; }
+.vs-prev { left: 0.6rem; }
+.vs-next { right: 0.6rem; }
+.vs-dots { display: flex; justify-content: center; gap: 0.6rem; margin-top: 1rem; }
+.vs-dot-btn { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 0; background: var(--line); cursor: pointer; }
+.vs-dot-btn[aria-current="true"] { background: var(--teal); }
+
+@media (max-width: 860px) {
+    .vs-hero { grid-template-columns: 1fr; gap: 2rem; }
+    .jump-card { max-width: 28rem; }
+}
+@media (max-width: 620px) {
+    .vs-stats { grid-template-columns: 1fr; gap: 1rem; }
+    .vs-tick { font-size: 22px; }
+    .vs-end { font-size: 24px; }
+    .vs-slide { padding: 1.4rem 1.25rem; }
+    .vs-slide-cols { grid-template-columns: 1fr; gap: 1.25rem; }
+    .vs-arrow { position: static; transform: none; }
+    .vs-slider { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.75rem 0.5rem; }
+    .vs-track { grid-column: 1 / -1; grid-row: 1; }
+    .vs-prev { grid-row: 2; grid-column: 1; }
+    .vs-dots { grid-row: 2; grid-column: 2; margin-top: 0; }
+    .vs-next { grid-row: 2; grid-column: 3; }
+}
