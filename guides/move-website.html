@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move any website to Dredge | Dredge Host Guides</title>
+    <meta name="description" content="Bring a static, PHP, or database-driven site over from another host: copy the files, move the database, and switch your domain.">
+    <link rel="canonical" href="https://dredgehost.com/guides/move-website.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dredge Host">
+    <meta property="og:title" content="Move any website to Dredge | Dredge Host Guides">
+    <meta property="og:description" content="Bring a static, PHP, or database-driven site over from another host: copy the files, move the database, and switch your domain.">
+    <meta property="og:url" content="https://dredgehost.com/guides/move-website.html">
+    <meta property="og:image" content="https://dredgehost.com/assets/og/guides/move-website.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c58">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/dredge-app-tile-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dredgehost.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dredgehost.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Move any website to Dredge",
+          "item": "https://dredgehost.com/guides/move-website.html"
+        }
+      ]
+    }
+    </script>
+<!-- article-schema:start -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Move any website to Dredge",
+  "description": "Bring a static, PHP, or database-driven site over from another host: copy the files, move the database, and switch your domain.",
+  "image": "https://dredgehost.com/assets/og/guides/move-website.png",
+  "mainEntityOfPage": "https://dredgehost.com/guides/move-website.html",
+  "dateModified": "2026-10-11",
+  "author": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "url": "https://dredgehost.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dredge Host",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dredgehost.com/assets/dredge-app-tile-512.png"
+    }
+  }
+}
+    </script>
+    <!-- article-schema:end -->
+</head>
+<body data-root="../" data-active="guides">
+    <!-- site-header:start --><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../" aria-label="Dredge Host home"><img src="../assets/logo.png" alt="Dredge Host" class="brand-logo" width="296" height="150"></a><nav class="site-nav" aria-label="Primary"><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../domains.html">Domains</a><a href="../guides.html" aria-current="page">Guides</a><a href="../about.html">About</a><a href="https://my.dredgehost.com/clientarea.php">Log in</a><a class="nav-cta" href="../pricing.html">Get started</a></nav><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header><!-- site-header:end -->
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="../">Home</a> / <a href="../guides.html">Guides</a> / Your site</p>
+                <p class="page-meta">8 min read · Updated <time datetime="2026-10-11">October 2026</time></p>
+                <h1>Move any website to Dredge</h1>
+                <p class="lede">Moving a site that isn't WordPress comes down to the same three things: copy the files, move the database if there is one, and point your domain at Dredge once everything works.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap prose"><!-- toc:start --><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#before-you-start">Before you start</a></li><li><a href="#step-1-copy-your-files">Step 1: Copy your files</a></li><li><a href="#step-2-move-the-database">Step 2: Move the database</a></li><li><a href="#step-3-update-your-site-s-settings">Step 3: Update your site&#x27;s settings</a></li><li><a href="#step-4-match-the-rest-of-the-setup">Step 4: Match the rest of the setup</a></li><li><a href="#step-5-preview-it-before-you-switch">Step 5: Preview it before you switch</a></li><li><a href="#step-6-go-live">Step 6: Go live</a></li></ol></nav><!-- toc:end -->
+                <h2 id="before-you-start">Before you start</h2>
+                <ul>
+                    <li>Moving WordPress? Use <a href="move-wordpress.html">Move a WordPress site to Dredge</a>
+                    instead. It has a plugin method that's easier.</li>
+                    <li>Take a full backup on your old host: every file, plus an export of each database. Keep
+                    it until the move is finished.</li>
+                    <li>Leave your old hosting running until the very end. Visitors keep seeing the old site
+                    while you set up the new one.</li>
+                </ul>
+
+                <h2 id="step-1-copy-your-files">Step 1: Copy your files</h2>
+                <ol>
+                    <li>On your old host, compress the site's folder into a <code>.zip</code> file with its
+                    file manager, and download it. If there's no way to zip it, download the folder with an
+                    <a href="connect-with-ftp.html">FTP client</a>.</li>
+                    <li>In cPanel on Dredge, open <strong>File Manager</strong> and go to
+                    <code>public_html</code>, or the folder for your domain if it's an extra domain on your
+                    account.</li>
+                    <li>Upload the <code>.zip</code>, right-click it, choose <strong>Extract</strong>, then delete
+                    the <code>.zip</code>. Check the site's files sit directly in the folder, not in a
+                    subfolder inside it. <a href="upload-website.html">Upload a website</a> covers this in
+                    more detail.</li>
+                </ol>
+
+                <h2 id="step-2-move-the-database">Step 2: Move the database</h2>
+                <p>Skip this if your site is plain HTML with no database.</p>
+                <ol>
+                    <li>On your old host, open <strong>phpMyAdmin</strong>, select the database, click
+                    <strong>Export</strong>, and download the <code>.sql</code> file.</li>
+                    <li>On Dredge, <a href="create-mysql-database.html">create a database and a user</a> with all
+                    privileges. Note the names: cPanel adds your username to the front, so
+                    <code>shop</code> becomes something like <code>youruser_shop</code>.</li>
+                    <li>In cPanel, open <strong>phpMyAdmin</strong>, select the new database, click
+                    <strong>Import</strong>, choose your <code>.sql</code> file, and click
+                    <strong>Import</strong>.</li>
+                </ol>
+                <p>Large database? Compress the export to <code>.sql.gz</code> first; phpMyAdmin shows the
+                largest file it accepts on the Import page. If yours is bigger,
+                <a href="../contact.html">get in touch</a> and we'll help.</p>
+
+                <h2 id="step-3-update-your-site-s-settings">Step 3: Update your site's settings</h2>
+                <p>Your site has a settings file that tells it how to reach its database. It's often called
+                <code>config.php</code>, <code>.env</code>, <code>configuration.php</code> (Joomla), or
+                <code>settings.php</code> (Drupal). Open it in File Manager and update:</p>
+                <ul>
+                    <li>the database name and user, with the prefix cPanel added</li>
+                    <li>the password you set for that user</li>
+                    <li>the database host, which is usually <code>localhost</code></li>
+                </ul>
+                <p>If the settings mention a full folder path from your old host, change it to your path on
+                Dredge, which looks like <code>/home/youruser/public_html</code>.</p>
+
+                <h2 id="step-4-match-the-rest-of-the-setup">Step 4: Match the rest of the setup</h2>
+                <ul>
+                    <li><strong>PHP version:</strong> use the same one your old host ran.
+                    <a href="change-php-version.html">Change your PHP version</a> takes about thirty seconds.</li>
+                    <li><strong>Scheduled tasks:</strong> recreate any cron jobs; see
+                    <a href="cron-jobs.html">Set up a cron job</a>.</li>
+                    <li><strong>Email:</strong> recreate your mailboxes and forwarders on Dredge, or follow
+                    <a href="google-workspace-microsoft-365.html">the Google Workspace and Microsoft 365 guide</a>
+                    if your email lives there.</li>
+                    <li><strong>Redirects and rewrites:</strong> make sure the <code>.htaccess</code> file came
+                    across. File Manager hides files starting with a dot until you turn on
+                    <strong>Show Hidden Files</strong> in Settings.</li>
+                </ul>
+
+                <h2 id="step-5-preview-it-before-you-switch">Step 5: Preview it before you switch</h2>
+                <p>Your domain still points at the old host, so you can check the Dredge copy privately. Add
+                a line to your computer's hosts file with your Dredge server's IP address (shown in cPanel
+                under <strong>Server Information</strong>) followed by your domain, for example:</p>
+                <pre><code>203.0.113.10 yourdomain.com www.yourdomain.com</code></pre>
+                <p>On Windows the file is <code>C:\Windows\System32\drivers\etc\hosts</code>; on Mac and
+                Linux it's <code>/etc/hosts</code>. Click through the site, test forms and logins, then remove
+                the line.</p>
+
+                <h2 id="step-6-go-live">Step 6: Go live</h2>
+                <ol>
+                    <li>Change your domain's nameservers to Dredge: see
+                    <a href="connect-existing-domain.html">GoDaddy, Squarespace, or Cloudflare</a> or
+                    <a href="connect-domain.html">Porkbun or Namecheap</a>.</li>
+                    <li>Once the change has spread and your free certificate is issued, check the site loads
+                    over <code>https://</code>.</li>
+                    <li>Give it a few days, take a last backup from the old host, then cancel it.</li>
+                </ol>
+                <!-- guide-pager:start --><nav class="guide-pager" aria-label="More guides on this topic"><a class="pager-prev" href="upload-website.html"><span class="pager-label">&larr; Previous</span>Upload a website with File Manager or FTP</a><a class="pager-next" href="connect-with-ftp.html"><span class="pager-label">Next &rarr;</span>Connect with an FTP client</a></nav><!-- guide-pager:end -->
+<p class="guide-back"><a href="../guides.html">&larr; All guides</a></p>
+            </div>
+        </section>
+
+        <section class="section tint">
+            <div class="wrap">
+                <h2 class="section-title">Related guides</h2>
+                <div class="doc-grid">
+                    <a class="doc-card guide-card" href="upload-website.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Upload a website with File Manager or FTP</h3>
+                        <p>Put an HTML site, or one exported from a site builder, live on your domain.</p>
+                        <span class="guide-meta">5 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="create-mysql-database.html" data-cat="site">
+                        <span class="doc-cat">Your site</span>
+                        <h3>Create a MySQL database</h3>
+                        <p>Set up a MySQL database and user in cPanel so your app or CMS can store data.</p>
+                        <span class="guide-meta">3 min read</span>
+                    </a>
+                    <a class="doc-card guide-card" href="move-wordpress.html" data-cat="wordpress">
+                        <span class="doc-cat">WordPress</span>
+                        <h3>Move a WordPress site to Dredge</h3>
+                        <p>Bring an existing WordPress site over from another host without losing anything.</p>
+                        <span class="guide-meta">12 min read</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section help-line">
+            <div class="wrap">
+                <p>Stuck on a step? Email <a href="mailto:support@dredgehost.com">support@dredgehost.com</a> and we'll help you sort it out.</p>
+                <p>Did this guide help? A short <a href="https://www.trustpilot.com/review/dredgehost.com" target="_blank" rel="noopener">review on Trustpilot</a> helps other people find a small host they can trust.</p>
+            </div>
+        </section>
+    </main>
+    <!-- site-footer:start --><footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="../assets/logo-light.png" alt="Dredge Host" class="footer-logo" width="296" height="150"><p class="footer-blurb">Independent cPanel hosting.</p></div><nav class="footer-links" aria-label="Footer"><div class="footer-col"><span class="footer-head">Product</span><a href="../#features">Features</a><a href="../pricing.html">Pricing</a><a href="../domains.html">Domains</a><a href="../wordpress-hosting.html">WordPress hosting</a><a href="../status.html">Status</a><a href="../guides.html">Guides</a><a href="https://my.dredgehost.com/clientarea.php">Client area</a></div><div class="footer-col"><span class="footer-head">Company</span><a href="../about.html">About</a><a href="../why-dredge.html">Why Dredge</a><a href="../contact.html">Contact</a></div><div class="footer-col"><span class="footer-head">Legal</span><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../aup.html">Acceptable Use</a><a href="../refunds.html">Refunds</a></div><div class="footer-col"><span class="footer-head">Connect</span><a href="mailto:support@dredgehost.com">Email</a><a href="https://x.com/DredgeHost" rel="noopener">X (Twitter)</a><a href="https://osm.pm/i/HvWItOqDiLXq1VhB" rel="noopener">Osmium community</a><a href="https://www.trustpilot.com/review/dredgehost.com" rel="noopener">Trustpilot</a></div></nav></div><div class="wrap footer-payment"><p>We accept Visa, Mastercard, Amex, Discover, Apple&nbsp;Pay &amp; Google&nbsp;Pay via Stripe.</p></div><div class="wrap footer-bottom"><p>&copy; <span class="footer-year">2026</span> Dredge Host</p><p><a href="mailto:support@dredgehost.com">support@dredgehost.com</a></p></div></footer><!-- site-footer:end -->
+    <script src="../assets/site.js"></script>
+</body>
+</html>
