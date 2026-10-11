@@ -25,6 +25,8 @@ PAGES = {
                 "Register, transfer, or bring your own, with renewal prices listed up front"),
     "wordpress-hosting": ("WordPress hosting", "WordPress hosting from $5 a month",
                           "One-click install · Any plugin or theme · Same price at renewal"),
+    "website-builder": ("Website builder", "Build a website without code, from $5 a month",
+                        "Templates · Drag-and-drop editing · Your own domain and free HTTPS"),
     "why-dredge": ("Why Dredge", "Hosting without the fine print",
                    "Renewal prices compared with Hostinger, Bluehost, SiteGround, and DreamHost"),
 }
