@@ -8,13 +8,14 @@ from html import escape
 
 SITE = pathlib.Path(__file__).resolve().parent.parent
 
-# Dredge Silt on yearly billing: the same $50 every year.
+# Dredge Silt on yearly billing: the same $50 every year. Monthly billing is $5/mo.
 DREDGE_YEAR = 50.00
+DREDGE_MONTH = 5.00
 YEARS = 6
 
 HOSTS = {
     "hostinger": dict(
-        name="Hostinger", plan="Premium", checked="October 9, 2026",
+        name="Hostinger", term=48, plan="Premium", checked="October 16, 2026",
         intro="$2.99", renew="$10.99",
         # Cost of each year of hosting. Prepaid terms are spread over the years they cover.
         yearly=[35.88] * 4 + [131.88] * 2,
@@ -42,7 +43,7 @@ HOSTS = {
         sources=[("Hostinger web hosting plans", "https://www.hostinger.com/web-hosting")],
     ),
     "bluehost": dict(
-        name="Bluehost", plan="Starter", checked="October 9, 2026",
+        name="Bluehost", term=36, plan="Starter", checked="October 16, 2026",
         intro="$3.99", renew="$9.99",
         yearly=[47.88] * 3 + [119.88] * 3,
         lede="Bluehost's advertised price needs a three-year prepay, and renewals cost more than "
@@ -70,7 +71,7 @@ HOSTS = {
                   "https://www.bluehost.com/help/article/renewal-price-faq")],
     ),
     "siteground": dict(
-        name="SiteGround", plan="StartUp", checked="October 11, 2026",
+        name="SiteGround", term=12, plan="StartUp", checked="October 16, 2026",
         intro="$2.99", renew="$17.99",
         yearly=[35.88] + [215.88] * 5,
         lede="SiteGround's advertised price lasts for the first year, and renewals cost six times "
@@ -96,7 +97,7 @@ HOSTS = {
         sources=[("SiteGround web hosting plans", "https://www.siteground.com/web-hosting.htm")],
     ),
     "dreamhost": dict(
-        name="DreamHost", plan="Launch", checked="October 11, 2026",
+        name="DreamHost", term=12, plan="Launch", checked="October 16, 2026",
         intro="$2.89", renew="$10.99",
         yearly=[34.68] + [131.88] * 5,
         lede="DreamHost's advertised price lasts for the first year, then nearly quadruples. "
@@ -283,7 +284,7 @@ def page(slug, p):
                 <h2 class="section-title">What it costs over six years</h2>
                 <div class="vs-stats">
                     <div class="vs-stat"><p class="vs-stat-label">{name} {plan}, six years</p><p class="vs-stat-value">{money(theirs[-1])}</p></div>
-                    <div class="vs-stat"><p class="vs-stat-label">Dredge Silt, six years</p><p class="vs-stat-value">{money(ours[-1])}</p></div>
+                    <div class="vs-stat"><p class="vs-stat-label">Dredge Silt, six years</p><p class="vs-stat-value">{money(ours[-1])}</p><p class="vs-stat-sub">Billed $50 yearly. {money(DREDGE_MONTH * 12 * YEARS)} if you pay monthly.</p></div>
                     <div class="vs-stat"><p class="vs-stat-label">You'd save with Dredge</p><p class="vs-stat-value">{money(theirs[-1] - ours[-1])}</p></div>
                 </div>
                 <div class="chart-card">
@@ -306,6 +307,8 @@ def page(slug, p):
                     </details>
                 </div>
                 <p class="addon-note">{escape(p['cost_note'])} Dredge figures use Silt on yearly billing. Prices exclude tax.</p>
+                <p class="addon-note">{name} prices checked {p['checked']} from <a href="{p['sources'][0][1]}" rel="noopener">its own pricing page</a>.
+                Its intro price requires prepaying {p['term']} months.</p>
             </div>
         </section>
 
@@ -401,11 +404,17 @@ def slider(title, lead, more=""):
                                 <p class="jump-name">Dredge Silt</p>
                                 <p class="jump-prices"><span>$5</span><span class="jump-arrow" aria-hidden="true">&rarr;</span><strong>$5</strong><span class="jump-per">/mo</span></p>
                                 <p class="jump-tag jump-same">Same price at renewal</p>
-                                <p class="vs-slide-six">{money(DREDGE_YEAR * YEARS)} over six years</p>
+                                <p class="vs-slide-six">{money(DREDGE_YEAR * YEARS)} over six years, billed yearly at $50/yr</p>
                             </div>
                         </div>
                         <a class="vs-slide-link" href="dredge-vs-{slug}.html">Full comparison with {p['name']} &rarr;</a>
                     </article>""")
+    months = sorted({" ".join(p["checked"].replace(",", "").split()[::2]) for p in HOSTS.values()})
+    links = ", ".join(f'<a href="{p["sources"][0][1]}" rel="noopener">{p["name"]}</a>' for p in HOSTS.values())
+    terms = sorted({p["term"] for p in HOSTS.values()})
+    checked = (f'\n                <p class="plans-note">Prices checked {" and ".join(months)} from each host\'s own '
+               f'pricing page: {links}. Intro prices usually require prepaying {terms[0]}&ndash;{terms[-1]} months. '
+               f'Silt over six years is billed yearly, or {money(DREDGE_MONTH * 12 * YEARS)} if you pay monthly.</p>')
     dots = "".join(f'<button type="button" class="vs-dot-btn" aria-label="Show {p["name"]}" data-slide="{i}"></button>'
                    for i, p in enumerate(HOSTS.values()))
     return f"""
@@ -419,7 +428,7 @@ def slider(title, lead, more=""):
                     </div>
                     <button type="button" class="vs-arrow vs-next" aria-label="Next host" hidden>&rarr;</button>
                     <div class="vs-dots" hidden>{dots}</div>
-                </div>{more}
+                </div>{checked}{more}
             </div>
         </section>
         """

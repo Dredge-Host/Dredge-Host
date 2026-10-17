@@ -21,7 +21,7 @@ spec.loader.exec_module(comparisons)
 PAGES = {
     "pricing": ("Pricing", "Simple cPanel hosting from $5 a month",
                 "Same price at renewal · 17% off yearly · 7-day money-back guarantee"),
-    "domains": ("Domains", "Domain names from $3.50 a year",
+    "domains": ("Domains", ".com domains, $14 a year",
                 "Register, transfer, or bring your own, with renewal prices listed up front"),
     "wordpress-hosting": ("WordPress hosting", "WordPress hosting from $5 a month",
                           "One-click install · Any plugin or theme · Same price at renewal"),

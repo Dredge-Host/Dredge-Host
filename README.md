@@ -17,7 +17,7 @@ Sign up and manage your account at [my.dredgehost.com](https://my.dredgehost.com
 Step-by-step help for new customers lives at [dredgehost.com/guides.html](https://dredgehost.com/guides.html):
 
 - Find your way around your client area and cPanel
-- Buy a domain from Porkbun or Namecheap and connect it
+- Buy a domain from Dredge, Porkbun, or Namecheap and connect it
 - Add a subdomain
 - Install WordPress in one click
 - Move a WordPress site to Dredge
