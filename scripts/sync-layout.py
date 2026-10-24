@@ -100,6 +100,11 @@ def footer(root):
     )
 
 
+ANALYTICS_START, ANALYTICS_END = "<!-- Cloudflare Web Analytics -->", "<!-- End Cloudflare Web Analytics -->"
+ANALYTICS = ("<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
+             "data-cf-beacon='{\"token\": \"a952b3d58fd140baaa22d6516434cc22\"}'></script>")
+
+
 ARTICLE_START, ARTICLE_END = "<!-- article-schema:start -->", "<!-- article-schema:end -->"
 
 
@@ -218,6 +223,7 @@ def main():
         root, active = body.groups()
         new = replace_block(html, HEADER_START, HEADER_END, '<div id="site-header"></div>', header(root, active))
         new = replace_block(new, FOOTER_START, FOOTER_END, '<div id="site-footer"></div>', footer(root))
+        new = replace_block(new, ANALYTICS_START, ANALYTICS_END, "</body>", ANALYTICS, where="before")
         if page.parent.name == "guides":
             new = replace_block(new, ARTICLE_START, ARTICLE_END, "</head>", article_schema(new), where="before")
             new = add_heading_ids(new)
