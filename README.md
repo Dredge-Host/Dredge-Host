@@ -6,9 +6,9 @@ Every plan includes cPanel, SSD storage, free HTTPS certificates, email on your 
 
 | Plan | Price | Sites | SSD storage | Transfer / month |
 |------|-------|-------|-------------|------------------|
-| Silt | $5/mo | 1 | 2 GB | 50 GB |
-| Channel | $12/mo | 5 | 6 GB | 150 GB |
-| Harbor | $25/mo | 15 | 15 GB | 300 GB |
+| Silt | $3/mo | 1 | 2 GB | 50 GB |
+| Channel | $8/mo | 5 | 6 GB | 150 GB |
+| Harbor | $15/mo | 15 | 15 GB | 300 GB |
 
 Sign up and manage your account at [my.dredgehost.com](https://my.dredgehost.com). Questions go to [support@dredgehost.com](mailto:support@dredgehost.com).
 

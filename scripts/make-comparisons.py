@@ -8,9 +8,9 @@ from html import escape
 
 SITE = pathlib.Path(__file__).resolve().parent.parent
 
-# Dredge Silt on yearly billing: the same $50 every year. Monthly billing is $5/mo.
-DREDGE_YEAR = 50.00
-DREDGE_MONTH = 5.00
+# Dredge Silt on yearly billing: the same $30 every year. Monthly billing is $3/mo.
+DREDGE_YEAR = 30.00
+DREDGE_MONTH = 3.00
 YEARS = 6
 
 HOSTS = {
@@ -20,12 +20,12 @@ HOSTS = {
         # Cost of each year of hosting. Prepaid terms are spread over the years they cover.
         yearly=[35.88] * 4 + [131.88] * 2,
         lede="Hostinger's advertised price needs a four-year prepay, and it more than triples at "
-             "renewal. Dredge costs more per month in that first term, and the same every year after.",
+             "renewal. Billed yearly, Dredge costs less even in that first term, and the same every year after.",
         rows=[
-            ("Advertised price", "$2.99/mo", "$5/mo, or $50/yr"),
-            ("To get that price", "Pay $143.52 up front for 48 months", "Pay monthly, or $50 for a year"),
-            ("Renewal price", "$10.99/mo", "$5/mo, or $50/yr"),
-            ("Websites", "3", "1 (5 on Channel, $12/mo)"),
+            ("Advertised price", "$2.99/mo", "$3/mo, or $30/yr"),
+            ("To get that price", "Pay $143.52 up front for 48 months", "Pay monthly, or $30 for a year"),
+            ("Renewal price", "$10.99/mo", "$3/mo, or $30/yr"),
+            ("Websites", "3", "1 (5 on Channel, $8/mo)"),
             ("Storage", "20 GB SSD", "2 GB SSD (6 GB on Channel)"),
             ("Email", "2 mailboxes per site, free for the first year", "10 mailboxes, included for as long as you host"),
             ("Free domain", "First year, on plans of a year or longer", "Not included (.com is $14/yr)"),
@@ -36,7 +36,7 @@ HOSTS = {
         cost_note="Hostinger figures use the 48-month intro price ($143.52, spread over four years) "
                   "and the $10.99/mo renewal rate.",
         theirs=[
-            "You need more storage or several sites and want the lowest price for the first few years.",
+            "You need several sites or more storage, and want the lowest price for them over the first four years.",
             "You're happy to pay four years up front, and to move hosts again when the term ends.",
             "You want a free domain for the first year, or a 30-day money-back window.",
         ],
@@ -49,10 +49,10 @@ HOSTS = {
         lede="Bluehost's advertised price needs a three-year prepay, and renewals cost more than "
              "double, or four times as much if you pay monthly. Dredge charges the same at every renewal.",
         rows=[
-            ("Advertised price", "$3.99/mo", "$5/mo, or $50/yr"),
-            ("To get that price", "Pay $143.64 up front for 36 months", "Pay monthly, or $50 for a year"),
-            ("Renewal price", "$9.99/mo (3-year term) to $15.99/mo (monthly)", "$5/mo, or $50/yr"),
-            ("Websites", "10", "1 (5 on Channel, $12/mo)"),
+            ("Advertised price", "$3.99/mo", "$3/mo, or $30/yr"),
+            ("To get that price", "Pay $143.64 up front for 36 months", "Pay monthly, or $30 for a year"),
+            ("Renewal price", "$9.99/mo (3-year term) to $15.99/mo (monthly)", "$3/mo, or $30/yr"),
+            ("Websites", "10", "1 (5 on Channel, $8/mo)"),
             ("Storage", "10 GB NVMe SSD", "2 GB SSD (6 GB on Channel)"),
             ("Email", "Pro Email free for one month, then $2.50/mo", "10 mailboxes, included for as long as you host"),
             ("Free domain", "First year", "Not included (.com is $14/yr)"),
@@ -75,12 +75,12 @@ HOSTS = {
         intro="$2.99", renew="$17.99",
         yearly=[35.88] + [215.88] * 5,
         lede="SiteGround's advertised price lasts for the first year, and renewals cost six times "
-             "as much. Dredge costs more per month in year one, and the same every year after.",
+             "as much. Billed yearly, Dredge costs less even in year one, and the same every year after.",
         rows=[
-            ("Advertised price", "$2.99/mo", "$5/mo, or $50/yr"),
-            ("To get that price", "Pay $35.88 up front for 12 months", "Pay monthly, or $50 for a year"),
-            ("Renewal price", "$17.99/mo", "$5/mo, or $50/yr"),
-            ("Websites", "1", "1 (5 on Channel, $12/mo)"),
+            ("Advertised price", "$2.99/mo", "$3/mo, or $30/yr"),
+            ("To get that price", "Pay $35.88 up front for 12 months", "Pay monthly, or $30 for a year"),
+            ("Renewal price", "$17.99/mo", "$3/mo, or $30/yr"),
+            ("Websites", "1", "1 (5 on Channel, $8/mo)"),
             ("Storage", "10 GB", "2 GB SSD (6 GB on Channel)"),
             ("Email", "Included", "10 mailboxes, included for as long as you host"),
             ("Free domain", "First year (.com, .net, or .org)", "Not included (.com is $14/yr)"),
@@ -91,8 +91,8 @@ HOSTS = {
         cost_note="SiteGround figures use the 12-month intro price and the $17.99/mo renewal rate.",
         theirs=[
             "You want daily backups and more storage included on the entry plan.",
-            "You only need hosting for a year, and plan to move or rebuild after that.",
-            "You want a free domain for the first year, or a 30-day money-back window.",
+            "You only need hosting and a domain for a year: with the free domain, that year costs less than Silt plus a .com.",
+            "You want a 30-day money-back window.",
         ],
         sources=[("SiteGround web hosting plans", "https://www.siteground.com/web-hosting.htm")],
     ),
@@ -101,12 +101,12 @@ HOSTS = {
         intro="$2.89", renew="$10.99",
         yearly=[34.68] + [131.88] * 5,
         lede="DreamHost's advertised price lasts for the first year, then nearly quadruples. "
-             "Dredge costs more per month in year one, and the same every year after.",
+             "Billed yearly, Dredge costs less even in year one, and the same every year after.",
         rows=[
-            ("Advertised price", "$2.89/mo", "$5/mo, or $50/yr"),
-            ("To get that price", "Pay $34.68 up front for the first year", "Pay monthly, or $50 for a year"),
-            ("Renewal price", "$10.99/mo", "$5/mo, or $50/yr"),
-            ("Websites", "25", "1 (5 on Channel, $12/mo)"),
+            ("Advertised price", "$2.89/mo", "$3/mo, or $30/yr"),
+            ("To get that price", "Pay $34.68 up front for the first year", "Pay monthly, or $30 for a year"),
+            ("Renewal price", "$10.99/mo", "$3/mo, or $30/yr"),
+            ("Websites", "25", "1 (5 on Channel, $8/mo)"),
             ("Storage", "25 GB NVMe SSD", "2 GB SSD (6 GB on Channel)"),
             ("Email", "20 mailboxes, free for 3 months", "10 mailboxes, included for as long as you host"),
             ("Free domain", "First year, on yearly plans", "Not included (.com is $14/yr)"),
@@ -117,8 +117,8 @@ HOSTS = {
         cost_note="DreamHost figures use the first-year price and the $10.99/mo renewal rate.",
         theirs=[
             "You want lots of sites and storage on the entry plan.",
-            "You only need hosting for a year, and plan to move or rebuild after that.",
-            "You want a free domain for the first year, or a 30-day money-back window.",
+            "You only need hosting and a domain for a year: with the free domain, that year costs less than Silt plus a .com.",
+            "You want a 30-day money-back window.",
         ],
         sources=[("DreamHost shared hosting plans", "https://www.dreamhost.com/hosting/shared/")],
     ),
@@ -206,7 +206,7 @@ def page(slug, p):
     ours = cumulative([DREDGE_YEAR] * YEARS)
     jump = float(p["renew"][1:]) / float(p["intro"][1:])
     desc = (f"{name} {plan} is advertised at {p['intro']}/mo, then renews at {p['renew']}/mo. Dredge Silt is "
-            f"$5/mo or $50/yr, at the same price every renewal. Here's the full comparison.")
+            f"$3/mo or $30/yr, at the same price every renewal. Here's the full comparison.")
     tr = lambda cells: "<tr>" + "".join(f"<td>{c}</td>" for c in cells) + "</tr>"
     rows = "\n".join("                        " + tr(r) for r in p["rows"])
     years = "\n".join(f"                            <tr><td>Year {i + 1}</td><td>{money(t)}</td><td>{money(o)}</td></tr>"
@@ -272,7 +272,7 @@ def page(slug, p):
                     </div>
                     <div class="jump-row">
                         <p class="jump-name">Dredge Silt</p>
-                        <p class="jump-prices"><span>$5</span><span class="jump-arrow" aria-hidden="true">&rarr;</span><strong>$5</strong><span class="jump-per">/mo</span></p>
+                        <p class="jump-prices"><span>$3</span><span class="jump-arrow" aria-hidden="true">&rarr;</span><strong>$3</strong><span class="jump-per">/mo</span></p>
                         <p class="jump-tag jump-same">Same price at renewal</p>
                     </div>
                 </div>
@@ -284,7 +284,7 @@ def page(slug, p):
                 <h2 class="section-title">What it costs over six years</h2>
                 <div class="vs-stats">
                     <div class="vs-stat"><p class="vs-stat-label">{name} {plan}, six years</p><p class="vs-stat-value">{money(theirs[-1])}</p></div>
-                    <div class="vs-stat"><p class="vs-stat-label">Dredge Silt, six years</p><p class="vs-stat-value">{money(ours[-1])}</p><p class="vs-stat-sub">Billed $50 yearly. {money(DREDGE_MONTH * 12 * YEARS)} if you pay monthly.</p></div>
+                    <div class="vs-stat"><p class="vs-stat-label">Dredge Silt, six years</p><p class="vs-stat-value">{money(ours[-1])}</p><p class="vs-stat-sub">Billed $30 yearly. {money(DREDGE_MONTH * 12 * YEARS)} if you pay monthly.</p></div>
                     <div class="vs-stat"><p class="vs-stat-label">You'd save with Dredge</p><p class="vs-stat-value">{money(theirs[-1] - ours[-1])}</p></div>
                 </div>
                 <div class="chart-card">
@@ -402,9 +402,9 @@ def slider(title, lead, more=""):
                             </div>
                             <div class="vs-slide-col vs-slide-us">
                                 <p class="jump-name">Dredge Silt</p>
-                                <p class="jump-prices"><span>$5</span><span class="jump-arrow" aria-hidden="true">&rarr;</span><strong>$5</strong><span class="jump-per">/mo</span></p>
+                                <p class="jump-prices"><span>$3</span><span class="jump-arrow" aria-hidden="true">&rarr;</span><strong>$3</strong><span class="jump-per">/mo</span></p>
                                 <p class="jump-tag jump-same">Same price at renewal</p>
-                                <p class="vs-slide-six">{money(DREDGE_YEAR * YEARS)} over six years, billed yearly at $50/yr</p>
+                                <p class="vs-slide-six">{money(DREDGE_YEAR * YEARS)} over six years, billed yearly at $30/yr</p>
                             </div>
                         </div>
                         <a class="vs-slide-link" href="dredge-vs-{slug}.html">Full comparison with {p['name']} &rarr;</a>
