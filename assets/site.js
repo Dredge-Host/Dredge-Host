@@ -25,8 +25,13 @@
     /* ---- Promo banner ---- */
     var promoHTML = '';
     var promoEnds = new Date('2027-01-01T00:00:00-05:00');
+    /* Dismissing hides the banner for a week, not for good. */
+    var promoSnooze = 7 * 24 * 60 * 60 * 1000;
     var promoDismissed = false;
-    try { promoDismissed = localStorage.getItem('promo_early35') === '1'; } catch (e) {}
+    try {
+        var dismissedAt = Number(localStorage.getItem('promo_early35'));
+        promoDismissed = dismissedAt > 0 && Date.now() - dismissedAt < promoSnooze;
+    } catch (e) {}
     if (!promoDismissed && new Date() < promoEnds) {
         promoHTML =
             '<div class="promo-banner" role="status">' +
@@ -152,7 +157,7 @@
         promoClose.addEventListener('click', function () {
             var banner = document.querySelector('.promo-banner');
             if (banner) banner.remove();
-            try { localStorage.setItem('promo_early35', '1'); } catch (e) {}
+            try { localStorage.setItem('promo_early35', String(Date.now())); } catch (e) {}
         });
     }
 
