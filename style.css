@@ -458,6 +458,13 @@ a { color: inherit; text-decoration: none; }
 }
 .contact-method p { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.5rem; }
 .contact-method a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+.contact-email { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; }
+.copy-email {
+    font-family: var(--display); font-size: 0.8rem; cursor: pointer;
+    padding: 0.2rem 0.6rem; border-radius: var(--radius);
+    background: transparent; color: var(--teal); border: 1px solid var(--line);
+}
+.copy-email:hover, .copy-email:focus-visible { border-color: var(--teal); }
 .contact-grid .hero-actions { margin: 1.25rem 0 1rem; }
 
 /* ---------- FAQ accordion ---------- */
@@ -519,7 +526,7 @@ a { color: inherit; text-decoration: none; }
 }
 .value-card p { font-size: 0.92rem; color: var(--muted); }
 .value-card p + p { margin-top: 0.75rem; }
-.value-card a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+.value-card a:not(.btn) { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 .prose .person { margin: 1.25rem 0 0.5rem; line-height: 1.4; }
 .prose .person-name { display: block; font-weight: 600; color: var(--ink); }
 .prose .person-role { display: block; font-size: 0.9rem; color: var(--muted); }

@@ -42,6 +42,11 @@
             '</div>';
     }
 
+    /* Mentions of the code in page copy come out once it has ended. */
+    if (new Date() >= promoEnds) {
+        document.querySelectorAll('.promo-mention').forEach(function (el) { el.remove(); });
+    }
+
     var siteHeader = document.querySelector('.site-header');
     if (siteHeader && promoHTML) siteHeader.insertAdjacentHTML('afterend', promoHTML);
 
@@ -161,8 +166,18 @@
         });
     }
 
-    /* ---- Copy buttons on code blocks ---- */
+    /* ---- Copy buttons on code blocks and email addresses ---- */
     if (navigator.clipboard) {
+        document.querySelectorAll('.copy-email').forEach(function (btn) {
+            btn.hidden = false;
+            btn.addEventListener('click', function () {
+                navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function () {
+                    btn.textContent = 'Copied';
+                    setTimeout(function () { btn.textContent = 'Copy address'; }, 2000);
+                });
+            });
+        });
+
         document.querySelectorAll('.prose pre').forEach(function (pre) {
             var wrap = document.createElement('div');
             wrap.className = 'code-block';
